@@ -26,7 +26,7 @@ CREATE TABLE `jsh_account` (
   `InitialAmount` DECIMAL(24,6) DEFAULT NULL COMMENT '期初金额',
   `CurrentAmount` DECIMAL(24,6) DEFAULT NULL COMMENT '当前余额',
   `Remark` VARCHAR(100) DEFAULT NULL COMMENT '备注',
-  `IsDefault` BIT(1) DEFAULT NULL COMMENT '是否默认,1表示是,0表示否',
+  `IsDefault` int(1) DEFAULT NULL COMMENT '是否默认,1表示是,0表示否',
   `tenant_id` BIGINT(20) DEFAULT NULL COMMENT '租户id',
   `delete_Flag` VARCHAR(1) DEFAULT '0' COMMENT '删除标记，0未删除，1删除',
   PRIMARY KEY (`Id`)
@@ -159,7 +159,7 @@ CREATE TABLE `jsh_depot` (
   `principal` BIGINT(20) DEFAULT NULL COMMENT '负责人',
   `tenant_id` BIGINT(20) DEFAULT NULL COMMENT '租户id',
   `delete_Flag` VARCHAR(1) DEFAULT '0' COMMENT '删除标记，0未删除，1删除',
-  `is_default` BIT(1) DEFAULT NULL COMMENT '是否默认',
+  `is_default` int(1) DEFAULT NULL COMMENT '是否默认',
   PRIMARY KEY (`id`)
 ) ENGINE=INNODB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8 COMMENT='仓库表';
 
@@ -579,9 +579,9 @@ CREATE TABLE `jsh_functions` (
   `Name` VARCHAR(50) DEFAULT NULL COMMENT '名称',
   `PNumber` VARCHAR(50) DEFAULT NULL COMMENT '上级编号',
   `URL` VARCHAR(100) DEFAULT NULL COMMENT '链接',
-  `State` BIT(1) DEFAULT NULL COMMENT '收缩',
+  `State` int(1) DEFAULT NULL COMMENT '收缩',
   `Sort` VARCHAR(50) DEFAULT NULL COMMENT '排序',
-  `Enabled` BIT(1) DEFAULT NULL COMMENT '启用',
+  `Enabled` int(1) DEFAULT NULL COMMENT '启用',
   `Type` VARCHAR(50) DEFAULT NULL COMMENT '类型',
   `PushBtn` VARCHAR(50) DEFAULT NULL COMMENT '功能按钮',
   `icon` VARCHAR(50) DEFAULT NULL COMMENT '图标',
@@ -1155,7 +1155,7 @@ CREATE TABLE `jsh_material` (
   `FirstOutUnit` VARCHAR(50) DEFAULT NULL COMMENT '首选出库单位',
   `FirstInUnit` VARCHAR(50) DEFAULT NULL COMMENT '首选入库单位',
   `PriceStrategy` VARCHAR(500) DEFAULT NULL COMMENT '价格策略',
-  `Enabled` BIT(1) DEFAULT NULL COMMENT '启用 0-禁用  1-启用',
+  `Enabled` int(1) DEFAULT NULL COMMENT '启用 0-禁用  1-启用',
   `OtherField1` VARCHAR(50) DEFAULT NULL COMMENT '自定义1',
   `OtherField2` VARCHAR(50) DEFAULT NULL COMMENT '自定义2',
   `OtherField3` VARCHAR(50) DEFAULT NULL COMMENT '自定义3',
@@ -1252,7 +1252,7 @@ DROP TABLE IF EXISTS `jsh_materialproperty`;
 CREATE TABLE `jsh_materialproperty` (
   `id` BIGINT(20) NOT NULL AUTO_INCREMENT COMMENT '主键',
   `nativeName` VARCHAR(50) DEFAULT NULL COMMENT '原始名称',
-  `enabled` BIT(1) DEFAULT NULL COMMENT '是否启用',
+  `enabled` int(1) DEFAULT NULL COMMENT '是否启用',
   `sort` VARCHAR(10) DEFAULT NULL COMMENT '排序',
   `anotherName` VARCHAR(50) DEFAULT NULL COMMENT '别名',
   `delete_Flag` VARCHAR(1) DEFAULT '0' COMMENT '删除标记，0未删除，1删除',
@@ -1534,7 +1534,7 @@ CREATE TABLE `jsh_supplier` (
   `description` VARCHAR(500) DEFAULT NULL COMMENT '备注',
   `isystem` TINYINT(4) DEFAULT NULL COMMENT '是否系统自带 0==系统 1==非系统',
   `type` VARCHAR(20) DEFAULT NULL COMMENT '类型',
-  `enabled` BIT(1) DEFAULT NULL COMMENT '启用',
+  `enabled` int(1) DEFAULT NULL COMMENT '启用',
   `AdvanceIn` DECIMAL(24,6) DEFAULT '0.000000' COMMENT '预收款',
   `BeginNeedGet` DECIMAL(24,6) DEFAULT NULL COMMENT '期初应收',
   `BeginNeedPay` DECIMAL(24,6) DEFAULT NULL COMMENT '期初应付',
@@ -1827,3 +1827,4 @@ CREATE TABLE `jsh_msg` (
 -- Records of jsh_msg
 -- ----------------------------
 INSERT INTO `jsh_msg` VALUES ('2', '标题1', '内容1', '2019-09-10 00:11:39', '类型1', '1', '63', '0');
+
