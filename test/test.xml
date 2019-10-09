@@ -20,4 +20,5 @@
         <age>21</age>
         <address>深圳</address>
     </student>
+    <student></student>
 </students>
