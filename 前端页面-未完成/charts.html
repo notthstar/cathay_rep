@@ -209,13 +209,13 @@
                 <div class="col-lg-12">
                   <div class="card">
                     <div class="card-close">
-                      <div class="dropdown">
+                      <!--<div class="dropdown">
                         <button type="button" id="closeCard1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-ellipsis-v"></i></button>
                         <div aria-labelledby="closeCard1" class="dropdown-menu dropdown-menu-right has-shadow">
                         	<a href="#" class="dropdown-item remove"> 
                         		<i class="fa fa-times"></i>Close</a>
                         		<a href="#" class="dropdown-item edit"> <i class="fa fa-gear"></i>Edit</a></div>
-                      </div>
+                      </div>-->
                     </div>
                     <div class="card-header d-flex align-items-center">
                     	<strong>
@@ -223,39 +223,107 @@
                       		零售出库列表</strong>
                     </div>
                     <div class="card-body">
+                    	<form class="form-horizontal">
                       <table>
-                      	<tr>
+                      	<tr class="form-group">
                       		<td>单据编号：</td>
-                      		<td width="120px"><input type="text" class="form-control"></td>
+                      		<td width="150px"><input type="text" class="form-control"></td>
                       		<td>商品信息：</td>
-                      		<td width="120px"><input type="text" class="form-control" placeholder="名称,型号"></td>
+                      		<td width="150px"><input type="text" class="form-control" placeholder="名称/型号"></td>
                       		<td>单据日期：</td>
-                      		<td><input type="date" class="form-control" pattern="yyyy-MM-dd"></td>
+                      		<td width="170px"><input type="date" class="form-control" pattern="yyyy-MM-dd"></td>
                       		<td>-</td>
-                      		<td><input type="date" class="form-control" pattern="yyyy-MM-dd"></td>
-                      		<td><button class="btn btn-success"><i class="fa fa-search"></i>查询</button></td>
-                      		<td><button type="reset" class="btn btn-success"><i class="fa fa-search"></i>重置</button></td>
+                      		<td width="170px"><input type="date" class="form-control" pattern="yyyy-MM-dd"></td>
+                      		<td><button class="btn btn-success" style="width: 122px;"><i class="fa fa-search"></i>查询</button></td>
+                      		<td><button type="reset" class="btn btn-success"  style="width: 122px;"><i class="fa fa-share-square"></i>重置</button></td>
                       	</tr>
                       </table>
-                      <form>
-                        <div class="form-group">
-                          <label class="form-control-label">Email</label>
-                          <input type="email" placeholder="Email Address" class="form-control">
-                        </div>
-                        <div class="form-group">       
-                          <label class="form-control-label">Password</label>
-                          <input type="password" placeholder="Password" class="form-control">
-                        </div>
-                        <div class="form-group">       
-                          <input type="submit" value="Signin" class="btn btn-primary">
-                        </div>
-                      </form>
+                     </form>
+                      <div style="margin-top: 20px;">
+                      	<table class="table table-hover text-center">
+                      		<tr class="text-bold">
+                      			<td><input type="checkbox" title="全选" id="chElt" onclick="checkOrCancelAll()"></td>
+                      			<td>操作</td>
+                      			<td>会员卡号</td>
+                      			<td>单据编号</td>
+                      			<td>商品信息</td>
+                      			<td>单据日期</td>
+                      			<td>操作员</td>
+                      			<td>金额合计</td>
+                      			<td>收款</td>
+                      		</tr>
+                      		<tr>
+                      			<td><input type="checkbox" name="cElt"></td>
+                      			<td style="display: flex; justify-content: space-between;">
+                      				<a href="#">
+                      					<i class="fa fa-list" title="查看"></i>
+                      				</a>
+                      				<a href="#" style="color: green;">
+                      					<i class="fa fa-pencil-square-o" title="编辑"></i>
+                      				</a>
+                      				<a href="#" style="color: red;">
+                      					<i class="fa fa-trash-o" title="删除"></i>
+                      				</a>
+                      			</td>
+                      			<td>数据</td>
+                      			<td>数据</td>
+                      			<td>数据</td>
+                      			<td>数据</td>
+                      			<td>数据</td>
+                      			<td>数据</td>
+                      			<td>数据</td>
+                      		</tr>
+                      	</table>
+                      </div>
+                      <div style="display: flex;justify-content: flex-end;">
+                      	<button class="btn btn-success" title="添加" data-toggle="modal" data-target="#insert">
+                      		<i class="fa fa-plus"></i>
+                      	</button>&nbsp;
+                      	<button class="btn btn-danger" title="删除"><i class="fa fa-times"></i></button>
+                      </div>
+                      <div>
+                         	<ul class="pagination">
+    												<li class="page-item">
+      												<a href="#" class="page-link">
+        												<span aria-hidden="true">&laquo;</span>
+      												</a>
+    												</li>
+    												<li class="page-item">
+    													<a href="#" class="page-link">1</a>
+    												</li>
+    												<li class="page-item">
+    													<a href="#" class="page-link">2</a>
+    												</li>
+    												<li class="page-item">
+    													<a href="#" class="page-link">3</a>
+    												</li>
+    												<li class="page-item">
+    													<a href="#" class="page-link">4</a>
+    												</li>
+    												<li class="page-item">
+    													<a href="#" class="page-link">5</a>
+    												</li>
+    												<li class="page-item">
+      												<a href="#" class="page-link">
+        												<span aria-hidden="true">&raquo;</span>
+      												</a>
+    												</li>
+  												</ul>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
           </section> 
+          
+          
+          
+          
+          
+          
+          
+          
           
           
           
@@ -434,6 +502,141 @@
         </div>
       </div>
     </div>
+    
+    			<!--模态框-->
+          <div class="modal fade" id="insert" tabindex="-1" role="dialog" aria-hidden="false" aria-labelledby="mymodalriLabel" data-backdrop="static" data-keyboard="true">
+							<div class="modal-dialog modal-lg">
+								<div class="modal-content" style="width: 880px;">
+									<div class="modal-header">
+										<span class="modal-title" id="mymodalriLabel">
+											<i class="fa fa-bookmark-o" style="color: blue;"></i>
+											添加零售出库信息
+										</span>
+										<button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="fa fa-times" style="color: red;"></i>
+										</button>
+									</div>
+									<div class="modal-body">
+										<form class="form-horizontal">
+											<table class="form-group">
+												<tr>
+													<td>会员卡号：</td>
+													<td width="120px">
+														<select class="form-control">
+															<option>1</option>
+															<option>2</option>
+														</select>
+													</td>
+													<td>单据日期：</td>
+													<td width="170px"><input type="date" class="form-control" pattern="yyyy-MM-dd"></td>
+													<td>单据编号：</td>
+													<td width="120px">
+														<input type="text" class="form-control">
+													</td>
+													<td>付款方式：</td>
+													<td width="120px">
+														<select class="form-control">
+															<option>现金</option>
+															<option>微信</option>
+														</select>
+													</td>
+												</tr>
+											</table>
+													<div style="display: flex;justify-content: space-between;">
+														<a href="#">
+															<button class="btn btn-success btn-sm" title="添加行">
+                      					<i class="fa fa-plus-square"></i>
+                      				</button>
+                      			</a>
+                      			<a href="#">
+                      				<button class="btn btn-danger btn-sm" title="删除行">
+                      					<i class="fa fa-times-circle"></i>
+                      				</button>
+                      			</a>
+                      			<a href="#">
+                      				<button class="btn btn-success btn-sm" title="新增仓库">
+                      					<i class="fa fa-cart-arrow-down"></i>
+                      				</button>
+                      			</a>
+                      			<a href="#">
+                      				<button class="btn btn-success btn-sm" title="新增商品">
+                      					<i class="fa fa-cart-plus"></i>
+                      				</button>
+                      			</a>
+                      			<a href="#">
+                      				<button class="btn btn-warning btn-sm" title="撤销">
+                      					<i class="fa fa-mail-reply"></i>
+                      				</button>
+                      			</a>
+                      			<a href="#">
+                      				<button class="btn btn-success btn-sm" title="新增会员">
+                      					<i class="fa fa-user-o"></i>
+                      				</button>
+                      			</a>
+													</div>
+										<div style="margin-top: 20px;">
+                      	<table class="table table-hover text-center">
+                      		<tr class="text-bold">
+                      			<td><input type="checkbox" title="全选" id="thElt" onclick="checkOrCancelMo()"></td>
+                      			<td>仓库名称</td>
+                      			<td>品名(型号)</td>
+                      			<td>库存</td>
+                      			<td>单位</td>
+                      			<td>数量</td>
+                      			<td>单价</td>
+                      			<td>金额</td>
+                      			<td>备注</td>
+                      		</tr>
+                      		<tr>
+                      			<td><input type="checkbox" name="tElt"></td>
+                      			<td>数据</td>
+                      			<td>数据</td>
+                      			<td>数据</td>
+                      			<td>数据</td>
+                      			<td>数据</td>
+                      			<td>数据</td>
+                      			<td>数据</td>
+                      			<td>数据</td>
+                      		</tr>
+                      	</table>
+                      </div>
+                      <div>
+                      	<table>
+                      		<tr >
+                      			<td>实收金额:</td>
+                      			<td width="153px">
+                      				<input type="text" value="128" readonly="readonly" class="form-control" style="color: green;">
+                      			</td>
+                      			<td>收款金额:</td>
+                      			<td width="153px">
+                      				<input type="text"class="form-control" style="color: red;">
+                      			</td>
+                      			<td>找零:</td>
+                      			<td width="153px">
+                      				<input type="text"class="form-control">
+                      			</td>
+                      			<td>收款账户:</td>
+                      			<td width="153px">
+                      				<select class="form-control">
+                      					<option>wg127</option>
+                      					<option>vg454</option>
+                      				</select>
+                      			</td>
+                      		</tr>
+                      	</table>
+                      	<div style="margin-top: 10px;">
+                      		<textarea class="form-control" rows="2" placeholder="备注信息"></textarea>
+                      	</div>
+                      </div>
+                      <div style="margin-top: 10px;display: flex;justify-content: flex-end;">
+                      	<button class="btn btn-success">保存</button>&nbsp;
+                      	<button class="btn btn-danger">取消</button>
+                      </div>
+                  </form>
+							</div>
+						</div>
+					</div>
+			</div>
+    
     <!-- JavaScript files-->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/popper.js/umd/popper.min.js"> </script>
@@ -444,5 +647,37 @@
     <script src="js/charts-custom.js"></script>
     <!-- Main File-->
     <script src="js/front.js"></script>
+    <!--全选框-->
+    <script type="text/javascript">
+    	function checkOrCancelAll(){
+				var chElt=document.getElementById("chElt");
+				var checkedElt=chElt.checked;
+				var allCheck=document.getElementsByName("Elt");
+				if(checkedElt){
+					for(var i=0;i<allCheck.length;i++){
+					allCheck[i].checked=true;
+					}
+				}else{
+					for(var i=0;i<allCheck.length;i++){
+					allCheck[i].checked=false;
+					}
+				}
+			}
+    	
+    	function checkOrCancelMo(){
+				var chElt=document.getElementById("thElt");
+				var checkedElt=chElt.checked;
+				var allCheck=document.getElementsByName("tElt");
+				if(checkedElt){
+					for(var i=0;i<allCheck.length;i++){
+					allCheck[i].checked=true;
+					}
+				}else{
+					for(var i=0;i<allCheck.length;i++){
+					allCheck[i].checked=false;
+					}
+				}
+			}
+    </script>
   </body>
 </html>
