@@ -8,10 +8,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  *
  */
 @SpringBootApplication(scanBasePackages = "com.t28")
-public class App
+public class MainApplication
 {
     public static void main( String[] args )
     {
-        SpringApplication.run(App.class, args);
+        SpringApplication.run(MainApplication.class, args);
     }
 }
