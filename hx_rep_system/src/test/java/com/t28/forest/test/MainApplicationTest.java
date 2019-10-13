@@ -1,4 +1,4 @@
-package com.t28;
+package com.t28.forest.test;
 
 import static org.junit.Assert.assertTrue;
 

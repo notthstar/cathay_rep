@@ -4,7 +4,7 @@
  * @create 2019/10/10
  * @since 1.0.0
  */
-package com.t28.controller;
+package com.t28.forest.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
