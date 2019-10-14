@@ -1,4 +1,4 @@
-package com.t28.forest.warehouse_mgt;
+package com.t28.forest.retail;
 
 /**
  * @author XiangYuFeng

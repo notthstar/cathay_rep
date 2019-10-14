@@ -9,10 +9,10 @@
 
 ## 项目结构：
     com.t28.forest
-        ->purchasing_mgt : 采购管理
-        ->retail_mgt : 零售管理
-        ->sales_mgt : 销售管理
-        ->warehouse_mgt : 仓库管理
+        ->purchasing : 采购管理
+        ->retail : 零售管理
+        ->sales : 销售管理
+        ->warehouse : 仓库管理
         MainApplication.java : 主程序运行类
     
     每个功能模块的单元测试类都在：test/java/com.t28.forest包下

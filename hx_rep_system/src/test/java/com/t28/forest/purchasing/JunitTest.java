@@ -4,7 +4,7 @@
  * @create 2019/10/13
  * @since 1.0.0
  */
-package com.t28.forest.purchasing_mgt;
+package com.t28.forest.purchasing;
 
 public class JunitTest {
 }

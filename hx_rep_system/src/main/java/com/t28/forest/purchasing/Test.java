@@ -1,4 +1,4 @@
-package com.t28.forest.retail_mgt;
+package com.t28.forest.purchasing;
 
 /**
  * @author XiangYuFeng

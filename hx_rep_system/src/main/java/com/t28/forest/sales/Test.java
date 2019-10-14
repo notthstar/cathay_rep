@@ -1,4 +1,4 @@
-package com.t28.forest.sales_mgt;
+package com.t28.forest.sales;
 
 /**
  * @author XiangYuFeng
