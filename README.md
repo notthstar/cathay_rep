@@ -17,3 +17,8 @@
     
     每个功能模块的单元测试类都在：test/java/com.t28.forest包下
 
+## 日志文件配置
+    在log4j.properties配置中更改完成后，
+    阻止配置文件的上传：在.gitignore文件中的Your Configure
+    配置log4j.properties
+    
