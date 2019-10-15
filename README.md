@@ -20,5 +20,5 @@
 ## 日志文件配置
     在log4j.properties配置中更改完成后，
     阻止配置文件的上传：在.gitignore文件中的Your Configure
-    配置*.properties,.gitignore
+    配置hx_rep_system/src/main/resources/log4j.properties,.gitignore
     

@@ -35,5 +35,16 @@ hs_err_pid*
 out
 gen
 
-# Your Configure
+# unversioned file
+hx_rep_system/target/classes/META-INF/
+hx_rep_system/target/classes/application.yml
+hx_rep_system/target/classes/log4j.properties
+hx_rep_system/target/classes/mapper/
+hx_rep_system/target/classes/static/
+hx_rep_system/target/classes/templates/
+hx_rep_system/target/generated-sources/
+hx_rep_system/target/generated-test-sources/
+hx_rep_system/target/test-classes/META-INF/
+
+# Your config
 
