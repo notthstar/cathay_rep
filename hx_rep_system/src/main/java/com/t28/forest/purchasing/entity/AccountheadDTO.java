@@ -9,43 +9,43 @@ package com.t28.forest.purchasing.entity;
 import java.util.Date;
 
 public class AccountheadDTO {
-    private Integer Id;
+    private Integer id;
     /**
      * 主键
      */
-    private String Type;
+    private String type;
     /**
      * 类型(支出/收入/收款/付款/转账)
      */
-    private Integer OrganId;
+    private Integer organId;
     /**
      * 单位Id(收款/付款单位)
      */
-    private Integer HandsPersonId;
+    private Integer handsPersonId;
     /**
      * 经手人Id
      */
-    private double ChangeAmount;
+    private Double changeAmount;
     /**
      * 变动金额(优惠/收款/付款/实付)
      */
-    private double TotalPrice;
+    private Double totalPrice;
     /**
      * 合计金额
      */
-    private Integer AccountId;
+    private Integer accountId;
     /**
      * 账户(收款/付款)
      */
-    private String BillNo;
+    private String billNo;
     /**
      * 单据编号
      */
-    private Date BillTime;
+    private Date billTime;
     /**
      * 单据日期
      */
-    private String Remark;
+    private String remark;
     /**
      * 备注
      */
@@ -58,83 +58,83 @@ public class AccountheadDTO {
      * 删除标记，0未删除，1删除
      */
     public Integer getId() {
-        return Id;
+        return id;
     }
 
     public void setId(Integer id) {
-        Id = id;
+        this.id = id;
     }
 
     public String getType() {
-        return Type;
+        return type;
     }
 
     public void setType(String type) {
-        Type = type;
+        this.type = type;
     }
 
     public Integer getOrganId() {
-        return OrganId;
+        return organId;
     }
 
     public void setOrganId(Integer organId) {
-        OrganId = organId;
+        this.organId = organId;
     }
 
     public Integer getHandsPersonId() {
-        return HandsPersonId;
+        return handsPersonId;
     }
 
     public void setHandsPersonId(Integer handsPersonId) {
-        HandsPersonId = handsPersonId;
+        this.handsPersonId = handsPersonId;
     }
 
-    public double getChangeAmount() {
-        return ChangeAmount;
+    public Double getChangeAmount() {
+        return changeAmount;
     }
 
-    public void setChangeAmount(double changeAmount) {
-        ChangeAmount = changeAmount;
+    public void setChangeAmount(Double changeAmount) {
+        this.changeAmount = changeAmount;
     }
 
-    public double getTotalPrice() {
-        return TotalPrice;
+    public Double getTotalPrice() {
+        return totalPrice;
     }
 
-    public void setTotalPrice(double totalPrice) {
-        TotalPrice = totalPrice;
+    public void setTotalPrice(Double totalPrice) {
+        this.totalPrice = totalPrice;
     }
 
     public Integer getAccountId() {
-        return AccountId;
+        return accountId;
     }
 
     public void setAccountId(Integer accountId) {
-        AccountId = accountId;
+        this.accountId = accountId;
     }
 
     public String getBillNo() {
-        return BillNo;
+        return billNo;
     }
 
     public void setBillNo(String billNo) {
-        BillNo = billNo;
+        this.billNo = billNo;
     }
 
     public Date getBillTime() {
-        return BillTime;
+        return billTime;
     }
 
     public void setBillTime(Date billTime) {
-        BillTime = billTime;
+        this.billTime = billTime;
     }
 
     public String getRemark() {
-        return Remark;
+        return remark;
     }
 
     public void setRemark(String remark) {
-        Remark = remark;
+        this.remark = remark;
     }
 
     public Integer getTenantId() {
@@ -156,16 +156,16 @@ public class AccountheadDTO {
     @Override
     public String toString() {
         return "AccountheadDTO{" +
-                "Id=" + Id +
-                ", Type='" + Type + '\'' +
-                ", OrganId=" + OrganId +
-                ", HandsPersonId=" + HandsPersonId +
-                ", ChangeAmount=" + ChangeAmount +
-                ", TotalPrice=" + TotalPrice +
-                ", AccountId=" + AccountId +
-                ", BillNo='" + BillNo + '\'' +
-                ", BillTime=" + BillTime +
-                ", Remark='" + Remark + '\'' +
+                "id=" + id +
+                ", type='" + type + '\'' +
+                ", organId=" + organId +
+                ", handsPersonId=" + handsPersonId +
+                ", changeAmount=" + changeAmount +
+                ", totalPrice=" + totalPrice +
+                ", accountId=" + accountId +
+                ", billNo='" + billNo + '\'' +
+                ", billTime=" + billTime +
+                ", remark='" + remark + '\'' +
                 ", tenantId=" + tenantId +
                 ", deleteFlag='" + deleteFlag + '\'' +
                 '}';

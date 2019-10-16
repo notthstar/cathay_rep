@@ -7,95 +7,95 @@
 package com.t28.forest.purchasing.entity;
 
 public class MaterialDTO {
-    private Integer Id;
+    private Integer id;
     /**
      * 主键
      */
-    private Integer CategoryId;
+    private Integer categoryId;
     /**
      * 产品类型
      */
-    private String Name;
+    private String name;
     /**
      * 名称
      */
-    private String Mfrs;
+    private String mfrs;
     /**
      * 制造商
      */
-    private double Packing;
+    private double packing;
     /**
      * 包装（KG/包）
      */
-    private double SafetyStock;
+    private double safetyStock;
     /**
      * 安全存量（KG）
      */
-    private String Model;
+    private String model;
     /**
      * 型号
      */
-    private String Standard;
+    private String standard;
     /**
      * 规格
      */
-    private String Color;
+    private String color;
     /**
      * 颜色
      */
-    private String Unit;
+    private String unit;
     /**
      * 单位-单个
      */
-    private String Remark;
+    private String remark;
     /**
      * 备注
      */
-    private double RetailPrice;
+    private double retailPrice;
     /**
      * 零售价
      */
-    private double LowPrice;
+    private double lowPrice;
     /**
      * 最低售价
      */
-    private double PresetPriceOne;
+    private double presetPriceOne;
     /**
      * 预设售价一
      */
-    private double PresetPriceTwo;
+    private double presetPriceTwo;
     /**
      * 预设售价二
      */
-    private Integer UnitId;
+    private Integer unitId;
     /**
      * 计量单位Id
      */
-    private String FirstOutUnit;
+    private String firstOutUnit;
     /**
      * 首选出库单位
      */
-    private String FirstInUnit;
+    private String firstInUnit;
     /**
      * 首选入库单位
      */
-    private String PriceStrategy;
+    private String priceStrategy;
     /**
      * 价格策略
      */
-    private Integer Enabled;
+    private Integer enabled;
     /**
      * 启用 0-禁用  1-启用
      */
-    private String OtherField1;
+    private String otherField1;
     /**
      * 自定义1
      */
-    private String OtherField2;
+    private String otherField2;
     /**
      * 自定义2
      */
-    private String OtherField3;
+    private String otherField3;
     /**
      * 自定义3
      */
@@ -112,187 +112,187 @@ public class MaterialDTO {
      * 删除标记，0未删除，1删除
      */
     public Integer getId() {
-        return Id;
+        return id;
     }
 
     public void setId(Integer id) {
-        Id = id;
+        this.id = id;
     }
 
     public Integer getCategoryId() {
-        return CategoryId;
+        return categoryId;
     }
 
     public void setCategoryId(Integer categoryId) {
-        CategoryId = categoryId;
+        this.categoryId = categoryId;
     }
 
     public String getName() {
-        return Name;
+        return name;
     }
 
     public void setName(String name) {
-        Name = name;
+        this.name = name;
     }
 
     public String getMfrs() {
-        return Mfrs;
+        return mfrs;
     }
 
     public void setMfrs(String mfrs) {
-        Mfrs = mfrs;
+        this.mfrs = mfrs;
     }
 
     public double getPacking() {
-        return Packing;
+        return packing;
     }
 
     public void setPacking(double packing) {
-        Packing = packing;
+        this.packing = packing;
     }
 
     public double getSafetyStock() {
-        return SafetyStock;
+        return safetyStock;
     }
 
     public void setSafetyStock(double safetyStock) {
-        SafetyStock = safetyStock;
+        this.safetyStock = safetyStock;
     }
 
     public String getModel() {
-        return Model;
+        return model;
     }
 
     public void setModel(String model) {
-        Model = model;
+        this.model = model;
     }
 
     public String getStandard() {
-        return Standard;
+        return standard;
     }
 
     public void setStandard(String standard) {
-        Standard = standard;
+        this.standard = standard;
     }
 
     public String getColor() {
-        return Color;
+        return color;
     }
 
     public void setColor(String color) {
-        Color = color;
+        this.color = color;
     }
 
     public String getUnit() {
-        return Unit;
+        return unit;
     }
 
     public void setUnit(String unit) {
-        Unit = unit;
+        this.unit = unit;
     }
 
     public String getRemark() {
-        return Remark;
+        return remark;
     }
 
     public void setRemark(String remark) {
-        Remark = remark;
+        this.remark = remark;
     }
 
     public double getRetailPrice() {
-        return RetailPrice;
+        return retailPrice;
     }
 
     public void setRetailPrice(double retailPrice) {
-        RetailPrice = retailPrice;
+        this.retailPrice = retailPrice;
     }
 
     public double getLowPrice() {
-        return LowPrice;
+        return lowPrice;
     }
 
     public void setLowPrice(double lowPrice) {
-        LowPrice = lowPrice;
+        this.lowPrice = lowPrice;
     }
 
     public double getPresetPriceOne() {
-        return PresetPriceOne;
+        return presetPriceOne;
     }
 
     public void setPresetPriceOne(double presetPriceOne) {
-        PresetPriceOne = presetPriceOne;
+        this.presetPriceOne = presetPriceOne;
     }
 
     public double getPresetPriceTwo() {
-        return PresetPriceTwo;
+        return presetPriceTwo;
     }
 
     public void setPresetPriceTwo(double presetPriceTwo) {
-        PresetPriceTwo = presetPriceTwo;
+        this.presetPriceTwo = presetPriceTwo;
     }
 
     public Integer getUnitId() {
-        return UnitId;
+        return unitId;
     }
 
     public void setUnitId(Integer unitId) {
-        UnitId = unitId;
+        this.unitId = unitId;
     }
 
     public String getFirstOutUnit() {
-        return FirstOutUnit;
+        return firstOutUnit;
     }
 
     public void setFirstOutUnit(String firstOutUnit) {
-        FirstOutUnit = firstOutUnit;
+        this.firstOutUnit = firstOutUnit;
     }
 
     public String getFirstInUnit() {
-        return FirstInUnit;
+        return firstInUnit;
     }
 
     public void setFirstInUnit(String firstInUnit) {
-        FirstInUnit = firstInUnit;
+        this.firstInUnit = firstInUnit;
     }
 
     public String getPriceStrategy() {
-        return PriceStrategy;
+        return priceStrategy;
     }
 
     public void setPriceStrategy(String priceStrategy) {
-        PriceStrategy = priceStrategy;
+        this.priceStrategy = priceStrategy;
     }
 
     public Integer getEnabled() {
-        return Enabled;
+        return enabled;
     }
 
     public void setEnabled(Integer enabled) {
-        Enabled = enabled;
+        this.enabled = enabled;
     }
 
     public String getOtherField1() {
-        return OtherField1;
+        return otherField1;
     }
 
     public void setOtherField1(String otherField1) {
-        OtherField1 = otherField1;
+        this.otherField1 = otherField1;
     }
 
     public String getOtherField2() {
-        return OtherField2;
+        return otherField2;
     }
 
     public void setOtherField2(String otherField2) {
-        OtherField2 = otherField2;
+        this.otherField2 = otherField2;
     }
 
     public String getOtherField3() {
-        return OtherField3;
+        return otherField3;
     }
 
     public void setOtherField3(String otherField3) {
-        OtherField3 = otherField3;
+        this.otherField3 = otherField3;
     }
 
     public String getEnableSerialNumber() {
@@ -322,29 +322,29 @@ public class MaterialDTO {
     @Override
     public String toString() {
         return "MaterialDTO{" +
-                "Id=" + Id +
-                ", CategoryId=" + CategoryId +
-                ", Name='" + Name + '\'' +
-                ", Mfrs='" + Mfrs + '\'' +
-                ", Packing=" + Packing +
-                ", SafetyStock=" + SafetyStock +
-                ", Model='" + Model + '\'' +
-                ", Standard='" + Standard + '\'' +
-                ", Color='" + Color + '\'' +
-                ", Unit='" + Unit + '\'' +
-                ", Remark='" + Remark + '\'' +
-                ", RetailPrice=" + RetailPrice +
-                ", LowPrice=" + LowPrice +
-                ", PresetPriceOne=" + PresetPriceOne +
-                ", PresetPriceTwo=" + PresetPriceTwo +
-                ", UnitId=" + UnitId +
-                ", FirstOutUnit='" + FirstOutUnit + '\'' +
-                ", FirstInUnit='" + FirstInUnit + '\'' +
-                ", PriceStrategy='" + PriceStrategy + '\'' +
-                ", Enabled=" + Enabled +
-                ", OtherField1='" + OtherField1 + '\'' +
-                ", OtherField2='" + OtherField2 + '\'' +
-                ", OtherField3='" + OtherField3 + '\'' +
+                "id=" + id +
+                ", categoryId=" + categoryId +
+                ", name='" + name + '\'' +
+                ", mfrs='" + mfrs + '\'' +
+                ", packing=" + packing +
+                ", safetyStock=" + safetyStock +
+                ", model='" + model + '\'' +
+                ", standard='" + standard + '\'' +
+                ", color='" + color + '\'' +
+                ", unit='" + unit + '\'' +
+                ", remark='" + remark + '\'' +
+                ", retailPrice=" + retailPrice +
+                ", lowPrice=" + lowPrice +
+                ", presetPriceOne=" + presetPriceOne +
+                ", presetPriceTwo=" + presetPriceTwo +
+                ", unitId=" + unitId +
+                ", firstOutUnit='" + firstOutUnit + '\'' +
+                ", firstInUnit='" + firstInUnit + '\'' +
+                ", priceStrategy='" + priceStrategy + '\'' +
+                ", enabled=" + enabled +
+                ", otherField1='" + otherField1 + '\'' +
+                ", otherField2='" + otherField2 + '\'' +
+                ", otherField3='" + otherField3 + '\'' +
                 ", enableSerialNumber='" + enableSerialNumber + '\'' +
                 ", tenantId=" + tenantId +
                 ", deleteFlag='" + deleteFlag + '\'' +
