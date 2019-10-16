@@ -1,14 +1,16 @@
-/**
- * @description 实体类
- * @author HF
- * @create 2019/10/14
- * @since 1.0.0
- */
-package com.t28.forest.purchasing.entity;
+package com.t28.forest.retail.entity;
 
 import java.util.Date;
 
+/**
+ * 功能描述:Depothead数据传输对象
+ *
+ * @since: 1.0.0
+ * @Author: Zsy
+ * @Date: 2019/10/16$
+ */
 public class DepotheadDTO {
+
     private Integer id;
     /**
      * 主键
@@ -133,6 +135,7 @@ public class DepotheadDTO {
     /**
      * 删除标记，0未删除，1删除
      */
+
     public Integer getId() {
         return id;
     }

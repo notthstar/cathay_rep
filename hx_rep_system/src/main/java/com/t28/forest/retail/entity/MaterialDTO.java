@@ -1,11 +1,12 @@
-/**
- * @description 实体类
- * @author HF
- * @create 2019/10/14
- * @since 1.0.0
- */
-package com.t28.forest.purchasing.entity;
+package com.t28.forest.retail.entity;
 
+/**
+ * 功能描述:Material数据传输对象
+ *
+ * @since: 1.0.0
+ * @Author: Zsy
+ * @Date: 2019/10/16$
+ */
 public class MaterialDTO {
     private Integer id;
     /**
@@ -23,11 +24,11 @@ public class MaterialDTO {
     /**
      * 制造商
      */
-    private double packing;
+    private Double packing;
     /**
      * 包装（KG/包）
      */
-    private double safetyStock;
+    private Double safetyStock;
     /**
      * 安全存量（KG）
      */
@@ -51,19 +52,19 @@ public class MaterialDTO {
     /**
      * 备注
      */
-    private double retailPrice;
+    private Double retailPrice;
     /**
      * 零售价
      */
-    private double lowPrice;
+    private Double lowPrice;
     /**
      * 最低售价
      */
-    private double presetPriceOne;
+    private Double presetPriceOne;
     /**
      * 预设售价一
      */
-    private double presetPriceTwo;
+    private Double presetPriceTwo;
     /**
      * 预设售价二
      */
@@ -111,6 +112,7 @@ public class MaterialDTO {
     /**
      * 删除标记，0未删除，1删除
      */
+
     public Integer getId() {
         return id;
     }
@@ -143,19 +145,19 @@ public class MaterialDTO {
         this.mfrs = mfrs;
     }
 
-    public double getPacking() {
+    public Double getPacking() {
         return packing;
     }
 
-    public void setPacking(double packing) {
+    public void setPacking(Double packing) {
         this.packing = packing;
     }
 
-    public double getSafetyStock() {
+    public Double getSafetyStock() {
         return safetyStock;
     }
 
-    public void setSafetyStock(double safetyStock) {
+    public void setSafetyStock(Double safetyStock) {
         this.safetyStock = safetyStock;
     }
 
@@ -199,35 +201,35 @@ public class MaterialDTO {
         this.remark = remark;
     }
 
-    public double getRetailPrice() {
+    public Double getRetailPrice() {
         return retailPrice;
     }
 
-    public void setRetailPrice(double retailPrice) {
+    public void setRetailPrice(Double retailPrice) {
         this.retailPrice = retailPrice;
     }
 
-    public double getLowPrice() {
+    public Double getLowPrice() {
         return lowPrice;
     }
 
-    public void setLowPrice(double lowPrice) {
+    public void setLowPrice(Double lowPrice) {
         this.lowPrice = lowPrice;
     }
 
-    public double getPresetPriceOne() {
+    public Double getPresetPriceOne() {
         return presetPriceOne;
     }
 
-    public void setPresetPriceOne(double presetPriceOne) {
+    public void setPresetPriceOne(Double presetPriceOne) {
         this.presetPriceOne = presetPriceOne;
     }
 
-    public double getPresetPriceTwo() {
+    public Double getPresetPriceTwo() {
         return presetPriceTwo;
     }
 
-    public void setPresetPriceTwo(double presetPriceTwo) {
+    public void setPresetPriceTwo(Double presetPriceTwo) {
         this.presetPriceTwo = presetPriceTwo;
     }
 
