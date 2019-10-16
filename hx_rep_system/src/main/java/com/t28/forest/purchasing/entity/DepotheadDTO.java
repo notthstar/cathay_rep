@@ -9,119 +9,119 @@ package com.t28.forest.purchasing.entity;
 import java.util.Date;
 
 public class DepotheadDTO {
-    private Integer Id;
+    private Integer id;
     /**
      * 主键
      */
-    private String Type;
+    private String type;
     /**
      * 类型(出库/入库)
      */
-    private String SubType;
+    private String subType;
     /**
      * 出入库分类
      */
-    private Integer ProjectId;
+    private Integer projectId;
     /**
      * 项目Id
      */
-    private String DefaultNumber;
+    private String defaultNumber;
     /**
      * 初始票据号
      */
-    private String Number;
+    private String number;
     /**
      * 票据号
      */
-    private String OperPersonName;
+    private String operPersonName;
     /**
      * 操作员名字
      */
-    private Date CreateTime;
+    private Date createTime;
     /**
      * 创建时间
      */
-    private Date OperTime;
+    private Date operTime;
     /**
      * 出入库时间
      */
-    private Integer OrganId;
+    private Integer organId;
     /**
      * 供应商Id
      */
-    private double HandsPersonId;
+    private Double handsPersonId;
     /**
      * 采购/领料-经手人Id
      */
-    private Integer AccountId;
+    private Integer accountId;
     /**
      * 账户Id
      */
-    private double ChangeAmount;
+    private Double changeAmount;
     /**
      * 变动金额(收款/付款)
      */
-    private Integer AllocationProjectId;
+    private Integer allocationProjectId;
     /**
      * 调拨时，对方项目Id
      */
-    private double TotalPrice;
+    private Double totalPrice;
     /**
      * 合计金额
      */
-    private String PayType;
+    private String payType;
     /**
      * 付款类型(现金、记账等)
      */
-    private String Remark;
+    private String remark;
     /**
      * 备注
      */
-    private String Salesman;
+    private String salesman;
     /**
      * 业务员（可以多个）
      */
-    private String AccountIdList;
+    private String accountIdList;
     /**
      * 多账户ID列表
      */
-    private String AccountMoneyList;
+    private String accountMoneyList;
     /**
      * 多账户金额列表
      */
-    private double Discount;
+    private Double discount;
     /**
      * 优惠率
      */
-    private double DiscountMoney;
+    private Double discountMoney;
     /**
      * 优惠金额
      */
-    private double DiscountLastMoney;
+    private Double discountLastMoney;
     /**
      * 优惠后金额
      */
-    private double OtherMoney;
+    private Double otherMoney;
     /**
      * 销售或采购费用合计
      */
-    private String OtherMoneyList;
+    private String otherMoneyList;
     /**
      * 销售或采购费用涉及项目Id数组（包括快递、招待等）
      */
-    private String OtherMoneyItem;
+    private String otherMoneyItem;
     /**
      * 销售或采购费用涉及项目（包括快递、招待等）
      */
-    private Integer AccountDay;
+    private Integer accountDay;
     /**
      * 结算天数
      */
-    private String Status;
+    private String status;
     /**
      * 状态，0未审核、1已审核、2已转采购|销售
      */
-    private String LinkNumber;
+    private String linkNumber;
     /**
      * 关联订单号
      */
@@ -134,235 +134,235 @@ public class DepotheadDTO {
      * 删除标记，0未删除，1删除
      */
     public Integer getId() {
-        return Id;
+        return id;
     }
 
     public void setId(Integer id) {
-        Id = id;
+        this.id = id;
     }
 
     public String getType() {
-        return Type;
+        return type;
     }
 
     public void setType(String type) {
-        Type = type;
+        this.type = type;
     }
 
     public String getSubType() {
-        return SubType;
+        return subType;
     }
 
     public void setSubType(String subType) {
-        SubType = subType;
+        this.subType = subType;
     }
 
     public Integer getProjectId() {
-        return ProjectId;
+        return projectId;
     }
 
     public void setProjectId(Integer projectId) {
-        ProjectId = projectId;
+        this.projectId = projectId;
     }
 
     public String getDefaultNumber() {
-        return DefaultNumber;
+        return defaultNumber;
     }
 
     public void setDefaultNumber(String defaultNumber) {
-        DefaultNumber = defaultNumber;
+        this.defaultNumber = defaultNumber;
     }
 
     public String getNumber() {
-        return Number;
+        return number;
     }
 
     public void setNumber(String number) {
-        Number = number;
+        this.number = number;
     }
 
     public String getOperPersonName() {
-        return OperPersonName;
+        return operPersonName;
     }
 
     public void setOperPersonName(String operPersonName) {
-        OperPersonName = operPersonName;
+        this.operPersonName = operPersonName;
     }
 
     public Date getCreateTime() {
-        return CreateTime;
+        return createTime;
     }
 
     public void setCreateTime(Date createTime) {
-        CreateTime = createTime;
+        this.createTime = createTime;
     }
 
     public Date getOperTime() {
-        return OperTime;
+        return operTime;
     }
 
     public void setOperTime(Date operTime) {
-        OperTime = operTime;
+        this.operTime = operTime;
     }
 
     public Integer getOrganId() {
-        return OrganId;
+        return organId;
     }
 
     public void setOrganId(Integer organId) {
-        OrganId = organId;
+        this.organId = organId;
     }
 
-    public double getHandsPersonId() {
-        return HandsPersonId;
+    public Double getHandsPersonId() {
+        return handsPersonId;
     }
 
-    public void setHandsPersonId(double handsPersonId) {
-        HandsPersonId = handsPersonId;
+    public void setHandsPersonId(Double handsPersonId) {
+        this.handsPersonId = handsPersonId;
     }
 
     public Integer getAccountId() {
-        return AccountId;
+        return accountId;
     }
 
     public void setAccountId(Integer accountId) {
-        AccountId = accountId;
+        this.accountId = accountId;
     }
 
-    public double getChangeAmount() {
-        return ChangeAmount;
+    public Double getChangeAmount() {
+        return changeAmount;
     }
 
-    public void setChangeAmount(double changeAmount) {
-        ChangeAmount = changeAmount;
+    public void setChangeAmount(Double changeAmount) {
+        this.changeAmount = changeAmount;
     }
 
     public Integer getAllocationProjectId() {
-        return AllocationProjectId;
+        return allocationProjectId;
     }
 
     public void setAllocationProjectId(Integer allocationProjectId) {
-        AllocationProjectId = allocationProjectId;
+        this.allocationProjectId = allocationProjectId;
     }
 
-    public double getTotalPrice() {
-        return TotalPrice;
+    public Double getTotalPrice() {
+        return totalPrice;
     }
 
-    public void setTotalPrice(double totalPrice) {
-        TotalPrice = totalPrice;
+    public void setTotalPrice(Double totalPrice) {
+        this.totalPrice = totalPrice;
     }
 
     public String getPayType() {
-        return PayType;
+        return payType;
     }
 
     public void setPayType(String payType) {
-        PayType = payType;
+        this.payType = payType;
     }
 
     public String getRemark() {
-        return Remark;
+        return remark;
     }
 
     public void setRemark(String remark) {
-        Remark = remark;
+        this.remark = remark;
     }
 
     public String getSalesman() {
-        return Salesman;
+        return salesman;
     }
 
     public void setSalesman(String salesman) {
-        Salesman = salesman;
+        this.salesman = salesman;
     }
 
     public String getAccountIdList() {
-        return AccountIdList;
+        return accountIdList;
     }
 
     public void setAccountIdList(String accountIdList) {
-        AccountIdList = accountIdList;
+        this.accountIdList = accountIdList;
     }
 
     public String getAccountMoneyList() {
-        return AccountMoneyList;
+        return accountMoneyList;
     }
 
     public void setAccountMoneyList(String accountMoneyList) {
-        AccountMoneyList = accountMoneyList;
+        this.accountMoneyList = accountMoneyList;
     }
 
-    public double getDiscount() {
-        return Discount;
+    public Double getDiscount() {
+        return discount;
     }
 
-    public void setDiscount(double discount) {
-        Discount = discount;
+    public void setDiscount(Double discount) {
+        this.discount = discount;
     }
 
-    public double getDiscountMoney() {
-        return DiscountMoney;
+    public Double getDiscountMoney() {
+        return discountMoney;
     }
 
-    public void setDiscountMoney(double discountMoney) {
-        DiscountMoney = discountMoney;
+    public void setDiscountMoney(Double discountMoney) {
+        this.discountMoney = discountMoney;
     }
 
-    public double getDiscountLastMoney() {
-        return DiscountLastMoney;
+    public Double getDiscountLastMoney() {
+        return discountLastMoney;
     }
 
-    public void setDiscountLastMoney(double discountLastMoney) {
-        DiscountLastMoney = discountLastMoney;
+    public void setDiscountLastMoney(Double discountLastMoney) {
+        this.discountLastMoney = discountLastMoney;
     }
 
-    public double getOtherMoney() {
-        return OtherMoney;
+    public Double getOtherMoney() {
+        return otherMoney;
     }
 
-    public void setOtherMoney(double otherMoney) {
-        OtherMoney = otherMoney;
+    public void setOtherMoney(Double otherMoney) {
+        this.otherMoney = otherMoney;
     }
 
     public String getOtherMoneyList() {
-        return OtherMoneyList;
+        return otherMoneyList;
     }
 
     public void setOtherMoneyList(String otherMoneyList) {
-        OtherMoneyList = otherMoneyList;
+        this.otherMoneyList = otherMoneyList;
     }
 
     public String getOtherMoneyItem() {
-        return OtherMoneyItem;
+        return otherMoneyItem;
     }
 
     public void setOtherMoneyItem(String otherMoneyItem) {
-        OtherMoneyItem = otherMoneyItem;
+        this.otherMoneyItem = otherMoneyItem;
     }
 
     public Integer getAccountDay() {
-        return AccountDay;
+        return accountDay;
     }
 
     public void setAccountDay(Integer accountDay) {
-        AccountDay = accountDay;
+        this.accountDay = accountDay;
     }
 
     public String getStatus() {
-        return Status;
+        return status;
     }
 
     public void setStatus(String status) {
-        Status = status;
+        this.status = status;
     }
 
     public String getLinkNumber() {
-        return LinkNumber;
+        return linkNumber;
     }
 
     public void setLinkNumber(String linkNumber) {
-        LinkNumber = linkNumber;
+        this.linkNumber = linkNumber;
     }
 
     public Integer getTenantId() {
@@ -384,35 +384,35 @@ public class DepotheadDTO {
     @Override
     public String toString() {
         return "DepotheadDTO{" +
-                "Id=" + Id +
-                ", Type='" + Type + '\'' +
-                ", SubType='" + SubType + '\'' +
-                ", ProjectId=" + ProjectId +
-                ", DefaultNumber='" + DefaultNumber + '\'' +
-                ", Number='" + Number + '\'' +
-                ", OperPersonName='" + OperPersonName + '\'' +
-                ", CreateTime=" + CreateTime +
-                ", OperTime=" + OperTime +
-                ", OrganId=" + OrganId +
-                ", HandsPersonId=" + HandsPersonId +
-                ", AccountId=" + AccountId +
-                ", ChangeAmount=" + ChangeAmount +
-                ", AllocationProjectId=" + AllocationProjectId +
-                ", TotalPrice=" + TotalPrice +
-                ", PayType='" + PayType + '\'' +
-                ", Remark='" + Remark + '\'' +
-                ", Salesman='" + Salesman + '\'' +
-                ", AccountIdList='" + AccountIdList + '\'' +
-                ", AccountMoneyList='" + AccountMoneyList + '\'' +
-                ", Discount=" + Discount +
-                ", DiscountMoney=" + DiscountMoney +
-                ", DiscountLastMoney=" + DiscountLastMoney +
-                ", OtherMoney=" + OtherMoney +
-                ", OtherMoneyList='" + OtherMoneyList + '\'' +
-                ", OtherMoneyItem='" + OtherMoneyItem + '\'' +
-                ", AccountDay=" + AccountDay +
-                ", Status='" + Status + '\'' +
-                ", LinkNumber='" + LinkNumber + '\'' +
+                "id=" + id +
+                ", type='" + type + '\'' +
+                ", subType='" + subType + '\'' +
+                ", projectId=" + projectId +
+                ", defaultNumber='" + defaultNumber + '\'' +
+                ", number='" + number + '\'' +
+                ", operPersonName='" + operPersonName + '\'' +
+                ", createTime=" + createTime +
+                ", operTime=" + operTime +
+                ", organId=" + organId +
+                ", handsPersonId=" + handsPersonId +
+                ", accountId=" + accountId +
+                ", changeAmount=" + changeAmount +
+                ", allocationProjectId=" + allocationProjectId +
+                ", totalPrice=" + totalPrice +
+                ", payType='" + payType + '\'' +
+                ", remark='" + remark + '\'' +
+                ", salesman='" + salesman + '\'' +
+                ", accountIdList='" + accountIdList + '\'' +
+                ", accountMoneyList='" + accountMoneyList + '\'' +
+                ", discount=" + discount +
+                ", discountMoney=" + discountMoney +
+                ", discountLastMoney=" + discountLastMoney +
+                ", otherMoney=" + otherMoney +
+                ", otherMoneyList='" + otherMoneyList + '\'' +
+                ", otherMoneyItem='" + otherMoneyItem + '\'' +
+                ", accountDay=" + accountDay +
+                ", status='" + status + '\'' +
+                ", linkNumber='" + linkNumber + '\'' +
                 ", tenantId=" + tenantId +
                 ", deleteFlag='" + deleteFlag + '\'' +
                 '}';
