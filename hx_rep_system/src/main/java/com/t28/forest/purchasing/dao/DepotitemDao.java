@@ -1,5 +1,5 @@
 /**
- * 类名称:SupplierDao
+ * 类名称:DepotitemDao
  *
  * @description 接口
  * @Author:HF
@@ -8,6 +8,6 @@
  */
 package com.t28.forest.purchasing.dao;
 
-public interface SupplierDao {
+public interface DepotitemDao {
 }
 
