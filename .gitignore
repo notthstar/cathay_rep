@@ -47,4 +47,5 @@ hx_rep_system/target/generated-test-sources/
 hx_rep_system/target/test-classes/META-INF/
 
 # Your config
-
+hx_rep_system/src/main/resources/log4j.properties
+.gitignore
