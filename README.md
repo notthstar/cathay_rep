@@ -6,6 +6,9 @@
 
     此文档由小组所有成员共同维护
 
+## 项目框架
+    使用ssm架构：
+        SpringBoot、Spring MVC、Mybatis
 
 ## 项目结构：
     com.t28.forest
@@ -13,6 +16,7 @@
         ->retail : 零售管理
         ->sales : 销售管理
         ->warehouse : 仓库管理
+        ->shared : 存放公共部分代码
         MainApplication.java : 主程序运行类
     
     每个功能模块的单元测试类都在：test/java/com.t28.forest包下
