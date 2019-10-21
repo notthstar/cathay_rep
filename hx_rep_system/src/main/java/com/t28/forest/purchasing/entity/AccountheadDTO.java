@@ -155,7 +155,7 @@ public class AccountheadDTO {
 
     @Override
     public String toString() {
-        return "AccountheadDTO{" +
+        return "AccounTheadDTO{" +
                 "id=" + id +
                 ", type='" + type + '\'' +
                 ", organId=" + organId +

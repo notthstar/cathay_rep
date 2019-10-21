@@ -17,8 +17,7 @@
     
     每个功能模块的单元测试类都在：test/java/com.t28.forest包下
 
-## 日志文件配置
-    在log4j.properties配置中更改完成后，
-    阻止配置文件的上传：在.gitignore文件中的Your Configure
-    配置hx_rep_system/src/main/resources/log4j.properties,.gitignore
+## 文件上传设置
+    注意：
+        上传文件的时候注意取消勾选不需要上传的文件！！！
     
