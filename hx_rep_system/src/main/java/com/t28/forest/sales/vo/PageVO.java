@@ -17,7 +17,7 @@ public class PageVO {
     private Integer pageSize;
 
     public Integer getCurrent() {
-        return current;
+        return (current-1) * pageSize;
     }
 
     public void setCurrent(Integer current) {

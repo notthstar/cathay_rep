@@ -3,7 +3,9 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.t28.forest.sales.dao.DepoTheadDao">
 
-    <!--销售订单查询SQL语句-->
+    <!--销售订单查询SQL语句
+    #{pageVO.current - 1 * pageVO.pageSize}
+    -->
     <select id="findBillByPage" resultMap="sales.entity.vo.SalesBillVO">
         SELECT t4.supplier 'customerName',t1.Number 'billNum',t3.Name 'productName',t1.CreateTime 'billCreateTime',t1.OperPersonName 'operator',t1.TotalPrice 'totalPrice',t1.Status 'billStatus'
         FROM jsh_depothead t1,jsh_depotitem t2,jsh_material t3,jsh_supplier t4
@@ -11,7 +13,7 @@
         AND t2.MaterialId = t3.Id
         AND t1.OrganId=t4.id
         AND t1.SubType='销售'
-        LIMIT #{(pageVO.current - 1) * pageVO.pageSize},#{pageVO.pageSize};
+        LIMIT #{pageVO.current},#{pageVO.pageSize};
     </select>
 
 </mapper>
