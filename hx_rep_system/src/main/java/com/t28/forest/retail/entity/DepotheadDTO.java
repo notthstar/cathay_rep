@@ -386,7 +386,7 @@ public class DepotheadDTO {
 
     @Override
     public String toString() {
-        return "DepotheadDTO{" +
+        return "DepoTheadDTO{" +
                 "id=" + id +
                 ", type='" + type + '\'' +
                 ", subType='" + subType + '\'' +

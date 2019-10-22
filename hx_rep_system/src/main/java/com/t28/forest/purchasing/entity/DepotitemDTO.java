@@ -309,7 +309,7 @@ public class DepotitemDTO {
 
     @Override
     public String toString() {
-        return "DepotitemDTO{" +
+        return "DepotItemDTO{" +
                 "id=" + id +
                 ", headerId=" + headerId +
                 ", materialId=" + materialId +

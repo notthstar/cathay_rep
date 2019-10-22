@@ -11,7 +11,7 @@ import java.math.BigDecimal;
  * @since 2019-10-21
  */
 
-public class JshSupplier implements Serializable {
+public class SupplierDTO implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -145,7 +145,7 @@ public class JshSupplier implements Serializable {
         return id;
     }
 
-    public JshSupplier setId(Long id) {
+    public SupplierDTO setId(Long id) {
         this.id = id;
         return this;
     }
@@ -153,7 +153,7 @@ public class JshSupplier implements Serializable {
         return supplier;
     }
 
-    public JshSupplier setSupplier(String supplier) {
+    public SupplierDTO setSupplier(String supplier) {
         this.supplier = supplier;
         return this;
     }
@@ -161,7 +161,7 @@ public class JshSupplier implements Serializable {
         return contacts;
     }
 
-    public JshSupplier setContacts(String contacts) {
+    public SupplierDTO setContacts(String contacts) {
         this.contacts = contacts;
         return this;
     }
@@ -169,7 +169,7 @@ public class JshSupplier implements Serializable {
         return phonenum;
     }
 
-    public JshSupplier setPhonenum(String phonenum) {
+    public SupplierDTO setPhonenum(String phonenum) {
         this.phonenum = phonenum;
         return this;
     }
@@ -177,7 +177,7 @@ public class JshSupplier implements Serializable {
         return email;
     }
 
-    public JshSupplier setEmail(String email) {
+    public SupplierDTO setEmail(String email) {
         this.email = email;
         return this;
     }
@@ -185,7 +185,7 @@ public class JshSupplier implements Serializable {
         return description;
     }
 
-    public JshSupplier setDescription(String description) {
+    public SupplierDTO setDescription(String description) {
         this.description = description;
         return this;
     }
@@ -193,7 +193,7 @@ public class JshSupplier implements Serializable {
         return isystem;
     }
 
-    public JshSupplier setIsystem(Integer isystem) {
+    public SupplierDTO setIsystem(Integer isystem) {
         this.isystem = isystem;
         return this;
     }
@@ -201,7 +201,7 @@ public class JshSupplier implements Serializable {
         return type;
     }
 
-    public JshSupplier setType(String type) {
+    public SupplierDTO setType(String type) {
         this.type = type;
         return this;
     }
@@ -209,7 +209,7 @@ public class JshSupplier implements Serializable {
         return enabled;
     }
 
-    public JshSupplier setEnabled(Integer enabled) {
+    public SupplierDTO setEnabled(Integer enabled) {
         this.enabled = enabled;
         return this;
     }
@@ -217,7 +217,7 @@ public class JshSupplier implements Serializable {
         return AdvanceIn;
     }
 
-    public JshSupplier setAdvanceIn(BigDecimal AdvanceIn) {
+    public SupplierDTO setAdvanceIn(BigDecimal AdvanceIn) {
         this.AdvanceIn = AdvanceIn;
         return this;
     }
@@ -225,7 +225,7 @@ public class JshSupplier implements Serializable {
         return BeginNeedGet;
     }
 
-    public JshSupplier setBeginNeedGet(BigDecimal BeginNeedGet) {
+    public SupplierDTO setBeginNeedGet(BigDecimal BeginNeedGet) {
         this.BeginNeedGet = BeginNeedGet;
         return this;
     }
@@ -233,7 +233,7 @@ public class JshSupplier implements Serializable {
         return BeginNeedPay;
     }
 
-    public JshSupplier setBeginNeedPay(BigDecimal BeginNeedPay) {
+    public SupplierDTO setBeginNeedPay(BigDecimal BeginNeedPay) {
         this.BeginNeedPay = BeginNeedPay;
         return this;
     }
@@ -241,7 +241,7 @@ public class JshSupplier implements Serializable {
         return AllNeedGet;
     }
 
-    public JshSupplier setAllNeedGet(BigDecimal AllNeedGet) {
+    public SupplierDTO setAllNeedGet(BigDecimal AllNeedGet) {
         this.AllNeedGet = AllNeedGet;
         return this;
     }
@@ -249,7 +249,7 @@ public class JshSupplier implements Serializable {
         return AllNeedPay;
     }
 
-    public JshSupplier setAllNeedPay(BigDecimal AllNeedPay) {
+    public SupplierDTO setAllNeedPay(BigDecimal AllNeedPay) {
         this.AllNeedPay = AllNeedPay;
         return this;
     }
@@ -257,7 +257,7 @@ public class JshSupplier implements Serializable {
         return fax;
     }
 
-    public JshSupplier setFax(String fax) {
+    public SupplierDTO setFax(String fax) {
         this.fax = fax;
         return this;
     }
@@ -265,7 +265,7 @@ public class JshSupplier implements Serializable {
         return telephone;
     }
 
-    public JshSupplier setTelephone(String telephone) {
+    public SupplierDTO setTelephone(String telephone) {
         this.telephone = telephone;
         return this;
     }
@@ -273,7 +273,7 @@ public class JshSupplier implements Serializable {
         return address;
     }
 
-    public JshSupplier setAddress(String address) {
+    public SupplierDTO setAddress(String address) {
         this.address = address;
         return this;
     }
@@ -281,7 +281,7 @@ public class JshSupplier implements Serializable {
         return taxNum;
     }
 
-    public JshSupplier setTaxNum(String taxNum) {
+    public SupplierDTO setTaxNum(String taxNum) {
         this.taxNum = taxNum;
         return this;
     }
@@ -289,7 +289,7 @@ public class JshSupplier implements Serializable {
         return bankName;
     }
 
-    public JshSupplier setBankName(String bankName) {
+    public SupplierDTO setBankName(String bankName) {
         this.bankName = bankName;
         return this;
     }
@@ -297,7 +297,7 @@ public class JshSupplier implements Serializable {
         return accountNumber;
     }
 
-    public JshSupplier setAccountNumber(String accountNumber) {
+    public SupplierDTO setAccountNumber(String accountNumber) {
         this.accountNumber = accountNumber;
         return this;
     }
@@ -305,7 +305,7 @@ public class JshSupplier implements Serializable {
         return taxRate;
     }
 
-    public JshSupplier setTaxRate(BigDecimal taxRate) {
+    public SupplierDTO setTaxRate(BigDecimal taxRate) {
         this.taxRate = taxRate;
         return this;
     }
@@ -313,7 +313,7 @@ public class JshSupplier implements Serializable {
         return tenantId;
     }
 
-    public JshSupplier setTenantId(Long tenantId) {
+    public SupplierDTO setTenantId(Long tenantId) {
         this.tenantId = tenantId;
         return this;
     }
@@ -321,14 +321,14 @@ public class JshSupplier implements Serializable {
         return deleteFlag;
     }
 
-    public JshSupplier setDeleteFlag(String deleteFlag) {
+    public SupplierDTO setDeleteFlag(String deleteFlag) {
         this.deleteFlag = deleteFlag;
         return this;
     }
 
     @Override
     public String toString() {
-        return "JshSupplier{" +
+        return "SupplierDTO{" +
             "id=" + id +
             ", supplier=" + supplier +
             ", contacts=" + contacts +

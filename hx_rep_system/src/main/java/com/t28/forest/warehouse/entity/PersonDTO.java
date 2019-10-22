@@ -12,7 +12,7 @@ import java.io.Serializable;
  * @since 2019-10-21
  */
 
-public class JshPerson implements Serializable {
+public class PersonDTO implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -49,7 +49,7 @@ public class JshPerson implements Serializable {
         return Id;
     }
 
-    public JshPerson setId(Long Id) {
+    public PersonDTO setId(Long Id) {
         this.Id = Id;
         return this;
     }
@@ -57,7 +57,7 @@ public class JshPerson implements Serializable {
         return Type;
     }
 
-    public JshPerson setType(String Type) {
+    public PersonDTO setType(String Type) {
         this.Type = Type;
         return this;
     }
@@ -65,7 +65,7 @@ public class JshPerson implements Serializable {
         return Name;
     }
 
-    public JshPerson setName(String Name) {
+    public PersonDTO setName(String Name) {
         this.Name = Name;
         return this;
     }
@@ -73,7 +73,7 @@ public class JshPerson implements Serializable {
         return tenantId;
     }
 
-    public JshPerson setTenantId(Long tenantId) {
+    public PersonDTO setTenantId(Long tenantId) {
         this.tenantId = tenantId;
         return this;
     }
@@ -81,14 +81,14 @@ public class JshPerson implements Serializable {
         return deleteFlag;
     }
 
-    public JshPerson setDeleteFlag(String deleteFlag) {
+    public PersonDTO setDeleteFlag(String deleteFlag) {
         this.deleteFlag = deleteFlag;
         return this;
     }
 
     @Override
     public String toString() {
-        return "JshPerson{" +
+        return "PersonDTO{" +
             "Id=" + Id +
             ", Type=" + Type +
             ", Name=" + Name +

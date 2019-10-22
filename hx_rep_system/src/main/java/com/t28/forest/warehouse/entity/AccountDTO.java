@@ -11,7 +11,7 @@ import java.math.BigDecimal;
  * @author lcy
  * @since 2019-10-21
  */
-public class JshAccount implements Serializable {
+public class AccountDTO implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -72,7 +72,7 @@ public class JshAccount implements Serializable {
         return Id;
     }
 
-    public JshAccount setId(Long Id) {
+    public AccountDTO setId(Long Id) {
         this.Id = Id;
         return this;
     }
@@ -80,7 +80,7 @@ public class JshAccount implements Serializable {
         return Name;
     }
 
-    public JshAccount setName(String Name) {
+    public AccountDTO setName(String Name) {
         this.Name = Name;
         return this;
     }
@@ -88,7 +88,7 @@ public class JshAccount implements Serializable {
         return SerialNo;
     }
 
-    public JshAccount setSerialNo(String SerialNo) {
+    public AccountDTO setSerialNo(String SerialNo) {
         this.SerialNo = SerialNo;
         return this;
     }
@@ -96,7 +96,7 @@ public class JshAccount implements Serializable {
         return InitialAmount;
     }
 
-    public JshAccount setInitialAmount(BigDecimal InitialAmount) {
+    public AccountDTO setInitialAmount(BigDecimal InitialAmount) {
         this.InitialAmount = InitialAmount;
         return this;
     }
@@ -104,7 +104,7 @@ public class JshAccount implements Serializable {
         return CurrentAmount;
     }
 
-    public JshAccount setCurrentAmount(BigDecimal CurrentAmount) {
+    public AccountDTO setCurrentAmount(BigDecimal CurrentAmount) {
         this.CurrentAmount = CurrentAmount;
         return this;
     }
@@ -112,7 +112,7 @@ public class JshAccount implements Serializable {
         return Remark;
     }
 
-    public JshAccount setRemark(String Remark) {
+    public AccountDTO setRemark(String Remark) {
         this.Remark = Remark;
         return this;
     }
@@ -120,7 +120,7 @@ public class JshAccount implements Serializable {
         return IsDefault;
     }
 
-    public JshAccount setIsDefault(Integer IsDefault) {
+    public AccountDTO setIsDefault(Integer IsDefault) {
         this.IsDefault = IsDefault;
         return this;
     }
@@ -128,7 +128,7 @@ public class JshAccount implements Serializable {
         return tenantId;
     }
 
-    public JshAccount setTenantId(Long tenantId) {
+    public AccountDTO setTenantId(Long tenantId) {
         this.tenantId = tenantId;
         return this;
     }
@@ -136,14 +136,14 @@ public class JshAccount implements Serializable {
         return deleteFlag;
     }
 
-    public JshAccount setDeleteFlag(String deleteFlag) {
+    public AccountDTO setDeleteFlag(String deleteFlag) {
         this.deleteFlag = deleteFlag;
         return this;
     }
 
     @Override
     public String toString() {
-        return "JshAccount{" +
+        return "AccountDTO{" +
             "Id=" + Id +
             ", Name=" + Name +
             ", SerialNo=" + SerialNo +

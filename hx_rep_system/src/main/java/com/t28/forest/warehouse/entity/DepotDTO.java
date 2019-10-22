@@ -12,7 +12,7 @@ import java.math.BigDecimal;
  * @author lcy
  * @since 2019-10-21
  */
-public class JshDepot implements Serializable {
+public class DepotDTO implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -82,7 +82,7 @@ public class JshDepot implements Serializable {
         return id;
     }
 
-    public JshDepot setId(Long id) {
+    public DepotDTO setId(Long id) {
         this.id = id;
         return this;
     }
@@ -90,7 +90,7 @@ public class JshDepot implements Serializable {
         return name;
     }
 
-    public JshDepot setName(String name) {
+    public DepotDTO setName(String name) {
         this.name = name;
         return this;
     }
@@ -98,7 +98,7 @@ public class JshDepot implements Serializable {
         return address;
     }
 
-    public JshDepot setAddress(String address) {
+    public DepotDTO setAddress(String address) {
         this.address = address;
         return this;
     }
@@ -106,7 +106,7 @@ public class JshDepot implements Serializable {
         return warehousing;
     }
 
-    public JshDepot setWarehousing(BigDecimal warehousing) {
+    public DepotDTO setWarehousing(BigDecimal warehousing) {
         this.warehousing = warehousing;
         return this;
     }
@@ -114,7 +114,7 @@ public class JshDepot implements Serializable {
         return truckage;
     }
 
-    public JshDepot setTruckage(BigDecimal truckage) {
+    public DepotDTO setTruckage(BigDecimal truckage) {
         this.truckage = truckage;
         return this;
     }
@@ -122,7 +122,7 @@ public class JshDepot implements Serializable {
         return type;
     }
 
-    public JshDepot setType(Integer type) {
+    public DepotDTO setType(Integer type) {
         this.type = type;
         return this;
     }
@@ -130,7 +130,7 @@ public class JshDepot implements Serializable {
         return sort;
     }
 
-    public JshDepot setSort(String sort) {
+    public DepotDTO setSort(String sort) {
         this.sort = sort;
         return this;
     }
@@ -138,7 +138,7 @@ public class JshDepot implements Serializable {
         return remark;
     }
 
-    public JshDepot setRemark(String remark) {
+    public DepotDTO setRemark(String remark) {
         this.remark = remark;
         return this;
     }
@@ -146,7 +146,7 @@ public class JshDepot implements Serializable {
         return principal;
     }
 
-    public JshDepot setPrincipal(Long principal) {
+    public DepotDTO setPrincipal(Long principal) {
         this.principal = principal;
         return this;
     }
@@ -154,7 +154,7 @@ public class JshDepot implements Serializable {
         return tenantId;
     }
 
-    public JshDepot setTenantId(Long tenantId) {
+    public DepotDTO setTenantId(Long tenantId) {
         this.tenantId = tenantId;
         return this;
     }
@@ -162,7 +162,7 @@ public class JshDepot implements Serializable {
         return deleteFlag;
     }
 
-    public JshDepot setDeleteFlag(String deleteFlag) {
+    public DepotDTO setDeleteFlag(String deleteFlag) {
         this.deleteFlag = deleteFlag;
         return this;
     }
@@ -170,14 +170,14 @@ public class JshDepot implements Serializable {
         return isDefault;
     }
 
-    public JshDepot setIsDefault(Integer isDefault) {
+    public DepotDTO setIsDefault(Integer isDefault) {
         this.isDefault = isDefault;
         return this;
     }
 
     @Override
     public String toString() {
-        return "JshDepot{" +
+        return "DepotDTO{" +
             "id=" + id +
             ", name=" + name +
             ", address=" + address +
