@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.t28.forest.sales.dao.AccounTheadDao">
+
+    <!--销售订单查询SQL语句-->
+    <select id="findAccountByPage" resultMap="sales.entity.vo.SalesBillVO">
+        SELECT t4.supplier 'customerName',t1.Number 'billNum',t3.Name 'productName',t1.CreateTime 'billCreateTime',t1.OperPersonName 'operator',t1.TotalPrice 'totalPrice',t1.Status 'billStatus'
+        FROM jsh_depothead t1,jsh_depotitem t2,jsh_material t3,jsh_supplier t4
+        WHERE t1.id = t2.HeaderId
+        AND t2.MaterialId = t3.Id
+        AND t1.OrganId=t4.id
+        AND t1.SubType='销售'
+        LIMIT #{(pageVO.current - 1) * pageVO.pageSize},#{pageVO.pageSize};
+    </select>
+
+</mapper>
