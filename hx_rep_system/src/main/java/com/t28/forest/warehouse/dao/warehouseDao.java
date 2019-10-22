@@ -6,7 +6,7 @@
  */
 package com.t28.forest.warehouse.dao;
 
-import com.t28.forest.warehouse.entity.DepotheadDTO;
+import com.t28.forest.shared.entity.DepoTheadDTO;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
@@ -31,6 +31,6 @@ public interface warehouseDao {
       * @Author: lcy
       * @Date: 2019/10/21 17:15
       */
-      List<DepotheadDTO> selectAll(@Param("type") String type, @Param("subType") String subType);
+      List<DepoTheadDTO> selectAll(@Param("type") String type, @Param("subType") String subType);
 
 }
