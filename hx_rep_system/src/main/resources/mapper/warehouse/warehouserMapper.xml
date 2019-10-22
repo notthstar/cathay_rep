@@ -5,27 +5,20 @@
 
 <!-- namespace指用户自定义的命名空间 -->
 <mapper namespace="com.t28.forest.warehouse.dao.warehouseDao">
-      <select id="selectmaterial" resultType="java.lang.Object" >
+      <select id="selectmaterial" resultType="java.lang.String" >
         select group_concat(concat(jsh_material.`Name`,' ',jsh_material.Model)) as mName
         from jsh_depotitem
         inner join jsh_material on jsh_depotitem.MaterialId = jsh_material.Id
         and ifnull(jsh_material.delete_Flag,'0') !='1'
-        where jsh_depotitem.HeaderId = 193
+        where jsh_depotitem.HeaderId = #{id}
         and ifnull(jsh_depotitem.delete_Flag,'0') !='1'
       </select>
 
-     <select id="selectAll" resultMap="depotheadAll">
-        select distinct dh.*, d.name ProjectName,
-         s.supplier OrganName, p.name HandsPersonName,
-         a.name AccountName, dd.name AllocationProjectName
+     <select id="selectAll" resultType="com.t28.forest.warehouse.entity.vo.wareBillVO">
+        select distinct dh.*,
+         s.supplier supplier
         from jsh_depothead dh
-        left join jsh_depot d on dh.ProjectId=d.id and ifnull(d.delete_Flag,'0') !='1'
         left join jsh_supplier s on dh.OrganId=s.id and ifnull(s.delete_Flag,'0') !='1'
-        left join jsh_person p on dh.HandsPersonId=p.id and ifnull(p.delete_Flag,'0') !='1'
-        left join jsh_account a on dh.AccountId=a.id and ifnull(a.delete_Flag,'0') !='1'
-        left join jsh_depot dd on dh.AllocationProjectId=dd.id and ifnull(dd.delete_Flag,'0') !='1'
-        left join jsh_depotitem di on dh.Id = di.HeaderId and ifnull(di.delete_Flag,'0') !='1'
-        left join jsh_material m on di.MaterialId = m.Id and ifnull(m.delete_Flag,'0') !='1'
         where 1=1
             and dh.Type=#{Type}
             and dh.SubType=#{SubType};
