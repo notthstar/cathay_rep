@@ -16,6 +16,11 @@ public class PageVO {
      */
     private Integer pageSize;
 
+    public PageVO(Integer current, Integer pageSize) {
+        setCurrent(current);
+        this.pageSize = pageSize;
+    }
+
     public Integer getCurrent() {
         return (current-1) * pageSize;
     }
