@@ -3,17 +3,47 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.t28.forest.sales.dao.DepoTheadDao">
 
-    <!--销售订单查询SQL语句
-    #{pageVO.current - 1 * pageVO.pageSize}
-    -->
-    <select id="findBillByPage" resultMap="sales.entity.vo.SalesBillVO">
+    <!--销售订单查询SQL语句-->
+    <select id="findBillByPage" resultType="com.t28.forest.sales.vo.SalesBillVO">
         SELECT t4.supplier 'customerName',t1.Number 'billNum',t3.Name 'productName',t1.CreateTime 'billCreateTime',t1.OperPersonName 'operator',t1.TotalPrice 'totalPrice',t1.Status 'billStatus'
         FROM jsh_depothead t1,jsh_depotitem t2,jsh_material t3,jsh_supplier t4
         WHERE t1.id = t2.HeaderId
         AND t2.MaterialId = t3.Id
         AND t1.OrganId=t4.id
         AND t1.SubType='销售'
+        <if test="null != condition">
+            <include refid="selectSql"/>
+        </if>
         LIMIT #{pageVO.current},#{pageVO.pageSize};
     </select>
+
+    <!--查询SQL语句条件拼接-->
+    <sql id="selectSql">
+--         模糊查询单据编号信息
+        <if test="null != condition.code">
+            AND `number` LIKE '%${condition.code}%'
+        </if>
+--         模糊查询商品名称
+        <if test="null != condition.name">
+            AND `name` LIKE '%${condition.name}%'
+        </if>
+--         查询日期范围
+        <choose>
+            <when test="null != condition.endDate">
+                <if test="null != condition.startDate">
+                    <![CDATA[ AND createTime >= '${condition.startDate} 00'
+                    AND createTime <= '${condition.endDate} 24']]>
+                </if>
+                <![CDATA[AND createTime <= '${condition.endDate} 24']]>
+            </when>
+            <when test="null != condition.startDate">
+                <if test="null != condition.endDate">
+                    <![CDATA[ AND createTime >= '${condition.startDate} 00'
+                    AND createTime <= '${condition.endDate} 24']]>
+                </if>
+                AND createTime >= '${condition.startDate} 00'
+            </when>
+        </choose>
+    </sql>
 
 </mapper>
