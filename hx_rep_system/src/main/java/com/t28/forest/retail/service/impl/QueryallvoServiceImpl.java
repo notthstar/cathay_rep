@@ -22,7 +22,7 @@ public class QueryallvoServiceImpl implements QueryallvoService {
     private QueryallvoDAO queryallvoDAO;
 
     @Override
-    public List<Queryallvo> queryAll() {
+    public List<Queryallvo> getqueryAll() {
         return queryallvoDAO.queryAll();
     }
 }

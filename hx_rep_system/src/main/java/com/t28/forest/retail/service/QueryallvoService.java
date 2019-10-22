@@ -20,5 +20,5 @@ public interface QueryallvoService {
      * @rate: 2019/10/21
      * @return :List
      */
-    public List<Queryallvo> queryAll();
+    public List<Queryallvo> getqueryAll();
 }

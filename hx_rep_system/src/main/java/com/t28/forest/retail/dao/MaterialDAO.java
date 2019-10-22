@@ -1,5 +1,7 @@
 package com.t28.forest.retail.dao;
 
+import org.springframework.stereotype.Repository;
+
 /**
  * 功能描述:MaterialDAO接口
  *
@@ -7,5 +9,7 @@ package com.t28.forest.retail.dao;
  * @Author: Zsy
  * @Date: 2019/10/16$
  */
+@Repository
 public interface MaterialDAO {
+
 }
