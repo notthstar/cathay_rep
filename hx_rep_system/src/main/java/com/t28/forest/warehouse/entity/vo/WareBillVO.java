@@ -17,7 +17,7 @@ import java.util.Date;
  * @Author: lcy
  * @Date: 2019/10/22 9:15
  */
-public class wareBillVO {
+public class WareBillVO {
 
     /**
      *供应商名称
@@ -95,7 +95,7 @@ public class wareBillVO {
 
     @Override
     public String toString() {
-        return "wareBillVO{" +
+        return "WareBillVO{" +
                 "supplier='" + supplier + '\'' +
                 ", number='" + number + '\'' +
                 ", Mate='" + mate + '\'' +

@@ -4,8 +4,8 @@
 
 
 <!-- namespace指用户自定义的命名空间 -->
-<mapper namespace="com.t28.forest.warehouse.dao.warehouseDao">
-      <select id="selectmaterial" resultType="java.lang.String" >
+<mapper namespace="com.t28.forest.warehouse.dao.WarehouseDao">
+      <select id="selectMaterial" resultType="java.lang.String" >
         select group_concat(concat(jsh_material.`Name`,' ',jsh_material.Model)) as mName
         from jsh_depotitem
         inner join jsh_material on jsh_depotitem.MaterialId = jsh_material.Id
@@ -14,7 +14,7 @@
         and ifnull(jsh_depotitem.delete_Flag,'0') !='1'
       </select>
 
-     <select id="selectAll" resultType="com.t28.forest.warehouse.entity.vo.wareBillVO">
+     <select id="selectAll" resultType="com.t28.forest.warehouse.entity.vo.WareBillVO">
         select distinct dh.*,
          s.supplier supplier
         from jsh_depothead dh
