@@ -1,5 +1,6 @@
 package com.t28.forest;
 
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -8,6 +9,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  *
  */
 @SpringBootApplication(scanBasePackages = "com.t28.forest")
+@MapperScan(basePackages = "com.t28.forest.*.dao")
 public class MainApplication
 {
     public static void main( String[] args )

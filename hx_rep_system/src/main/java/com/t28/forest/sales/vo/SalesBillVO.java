@@ -1,4 +1,4 @@
-package com.t28.forest.sales.entity.vo;
+package com.t28.forest.sales.vo;
 
 import java.util.Date;
 

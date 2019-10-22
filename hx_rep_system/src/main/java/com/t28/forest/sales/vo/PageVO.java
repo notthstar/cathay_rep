@@ -1,4 +1,4 @@
-package com.t28.forest.sales.entity.vo;
+package com.t28.forest.sales.vo;
 
 /**
  * @author XiangYuFeng
@@ -17,7 +17,7 @@ public class PageVO {
     private Integer pageSize;
 
     public Integer getCurrent() {
-        return current;
+        return (current-1) * pageSize;
     }
 
     public void setCurrent(Integer current) {
