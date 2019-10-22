@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<!-- namespace指用户自定义的命名空间 -->
+<mapper namespace="com.t28.forest.warehouse.dao.warehouseDao">
+      <select id="selectmaterial" resultType="java.lang.String" >
+        select group_concat(concat(jsh_material.`Name`,' ',jsh_material.Model)) as mName
+        from jsh_depotitem
+        inner join jsh_material on jsh_depotitem.MaterialId = jsh_material.Id
+        and ifnull(jsh_material.delete_Flag,'0') !='1'
+        where jsh_depotitem.HeaderId = #{id}
+        and ifnull(jsh_depotitem.delete_Flag,'0') !='1'
+      </select>
+
+     <select id="selectAll" resultType="com.t28.forest.warehouse.entity.vo.wareBillVO">
+        select distinct dh.*,
+         s.supplier supplier
+        from jsh_depothead dh
+        left join jsh_supplier s on dh.OrganId=s.id and ifnull(s.delete_Flag,'0') !='1'
+        where 1=1
+            and dh.Type=#{Type}
+            and dh.SubType=#{SubType};
+     </select>
+</mapper>
