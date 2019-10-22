@@ -10,7 +10,7 @@ import org.junit.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 //@SpringBootTest
-public class JunitTest {
+public class WarehouseJunitTest {
 
     @Test
     public void test(){

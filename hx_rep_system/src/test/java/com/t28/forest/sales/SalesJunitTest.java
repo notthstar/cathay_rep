@@ -19,14 +19,14 @@ import java.util.List;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class JunitTest {
+public class SalesJunitTest {
 
     @Autowired
     DepoTheadDao depoTheadDao;
 
     @Test
     public void findPageTest() {
-        List<SalesBillVO> bills = depoTheadDao.findBillByPage(new PageVO(1, 4), null);
+        List<SalesBillVO> bills = depoTheadDao.findBillByPage(new PageVO(0, 4), null);
         for (SalesBillVO bill : bills) {
             System.out.println(bill);
         }
