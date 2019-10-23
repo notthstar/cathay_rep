@@ -64,6 +64,13 @@ public class UserDTO {
      */
     private Integer tenantId;
 
+    public UserDTO() {}
+
+    public UserDTO(String userName, String password) {
+        this.userName = userName;
+        this.password = password;
+    }
+
     public Integer getId() {
         return id;
     }

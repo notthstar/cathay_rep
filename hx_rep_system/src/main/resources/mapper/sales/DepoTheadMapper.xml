@@ -11,6 +11,7 @@
         AND t2.MaterialId = t3.Id
         AND t1.OrganId=t4.id
         AND t1.SubType='销售'
+        AND t1.delete_Flag = 0
         <if test="null != condition">
             <include refid="selectSql"/>
         </if>

@@ -1,6 +1,7 @@
 package com.t28.forest.user.dao;
 
 import com.t28.forest.user.entity.UserDTO;
+import org.springframework.stereotype.Repository;
 
 /**
  * @author XiangYuFeng
@@ -8,6 +9,7 @@ import com.t28.forest.user.entity.UserDTO;
  * @create 2019/10/14
  * @since 1.0.0
  */
+@Repository
 public interface UserDao {
 
     /**
