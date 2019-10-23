@@ -4,7 +4,7 @@
 
 <!-- namespace指用户自定义的命名空间 -->
 <mapper namespace="com.t28.forest.retail.dao.QueryallvoDAO">
-    <!--零售出库首页显示数据-->
+    <!--首页显示数据-->
     <select id="queryAll" resultType="com.t28.forest.retail.entity.Queryallvo">
         SELECT
         distinct
@@ -26,4 +26,8 @@
         AND
         mi.tenant_id = sl.id;
     </select>
+    <!--根据id删除数据-->
+    <delete id="deleteById" parameterType="com.t28.forest.retail.entity.Queryallvo">
+        delete
+    </delete>
 </mapper>

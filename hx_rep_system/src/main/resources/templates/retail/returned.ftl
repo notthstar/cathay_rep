@@ -97,8 +97,8 @@
           	<!--下拉列表1-->
                     <li><a href="#retailmanagement" aria-expanded="false" data-toggle="collapse" id="retailadministration"> <i class="fa fa-podcast"></i>零售管理 </a>
                     	<ul class="collapse list-unstyled" id="retailmanagement">
-                    		<li><a href="/storage.html"><i class="fa fa-toggle-off"></i>零售出库</a></li>
-                    		<li class="active"><a href="/returned.html"><i class="fa fa-toggle-off"></i>零售退货</a></li>
+                    		<li><a href="/storage"><i class="fa fa-toggle-off"></i>零售出库</a></li>
+                    		<li class="active"><a href="/returned"><i class="fa fa-toggle-off"></i>零售退货</a></li>
                     	</ul>
                     </li>
                     <!--下拉列表2-->
@@ -224,8 +224,9 @@
                       			<td>单据日期</td>
                       			<td>操作员</td>
                       			<td>金额合计</td>
-                      			<td>收款</td>
+                      			<td>付款</td>
                       		</tr>
+                            <#list queryReturnedList as returnedList>
                       		<tr>
                       			<td><input type="checkbox" name="cElt"></td>
                       			<td style="display: flex; justify-content: space-between;">
@@ -239,14 +240,15 @@
                       					<i class="fa fa-trash-o" title="删除"></i>
                       				</a>
                       			</td>
-                      			<td>数据</td>
-                      			<td>数据</td>
-                      			<td>数据</td>
-                      			<td>数据</td>
-                      			<td>数据</td>
-                      			<td>数据</td>
-                      			<td>数据</td>
+                                <td>${returnedList.supplier}</td>
+                                <td>${returnedList.number}</td>
+                                <td>${returnedList.name}&nbsp;${returnedList.model}</td>
+                                <td>${returnedList.createTime?string("yyyy-MM-dd HH:mm:ss")}</td>
+                                <td>${returnedList.operPersonName}</td>
+                                <td>${returnedList.totalPrice}</td>
+                                <td>${returnedList.allPrice}</td>
                       		</tr>
+                            </#list>
                       	</table>
                       </div>
                       <div style="display: flex;justify-content: flex-end;">

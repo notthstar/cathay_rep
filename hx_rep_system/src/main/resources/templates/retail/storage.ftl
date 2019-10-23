@@ -97,8 +97,8 @@
           			<!--下拉导航列表1-->
                     <li><a href="#retailmanagement" aria-expanded="false" data-toggle="collapse" id="retailadministration"> <i class="fa fa-podcast"></i>零售管理 </a>
                     	<ul class="collapse list-unstyled" id="retailmanagement">
-                    		<li class="active"><a href="/storage.html"><i class="fa fa-toggle-off"></i>零售出库</a></li>
-                    		<li><a href="/returned.html"><i class="fa fa-toggle-off"></i>零售退货</a></li>
+                    		<li class="active"><a href="/storage"><i class="fa fa-toggle-off"></i>零售出库</a></li>
+                    		<li><a href="/returned"><i class="fa fa-toggle-off"></i>零售退货</a></li>
                     	</ul>
                     </li>
                     <!--下拉导航列表2-->
@@ -219,6 +219,7 @@
                       			<td>金额合计</td>
                       			<td>收款</td>
                       		</tr>
+							<#list queryStorageList as storagelist>
                       		<tr>
                       			<td><input type="checkbox" name="cElt"></td>
                       			<td style="display: flex; justify-content: space-between;">
@@ -232,14 +233,15 @@
                       					<i class="fa fa-trash-o" title="删除"></i>
                       				</a>
                       			</td>
-                      			<td>数据</td>
-                      			<td>数据</td>
-                      			<td>数据</td>
-                      			<td>数据</td>
-                      			<td>数据</td>
-                      			<td>数据</td>
-                      			<td>数据</td>
+                      			<td>${storagelist.supplier}</td>
+                      			<td>${storagelist.number}</td>
+                      			<td>${storagelist.name}&nbsp;${storagelist.model}</td>
+                      			<td>${storagelist.createTime?string("yyyy-MM-dd HH:mm:ss")}</td>
+                      			<td>${storagelist.operPersonName}</td>
+                      			<td>${storagelist.totalPrice}</td>
+                      			<td>${storagelist.allPrice}</td>
                       		</tr>
+							</#list>
                       	</table>
                       </div>
                       <div style="display: flex;justify-content: flex-end;">

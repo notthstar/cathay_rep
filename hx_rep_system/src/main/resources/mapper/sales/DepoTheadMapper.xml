@@ -17,31 +17,27 @@
         LIMIT #{pageVO.current},#{pageVO.pageSize};
     </select>
 
-    <!--查询SQL语句条件拼接-->
+    <!--查询SQL语句条件拼接
+            模糊查询商品名称
+            模糊查询单据编号信息
+            查询日期范围
+    -->
     <sql id="selectSql">
---         模糊查询单据编号信息
         <if test="null != condition.code">
-            AND `number` LIKE '%${condition.code}%'
+            AND `number` LIKE concat('%',#{condition.code},'%')
         </if>
---         模糊查询商品名称
         <if test="null != condition.name">
-            AND `name` LIKE '%${condition.name}%'
+            AND `name` LIKE concat('%',#{condition.name},'%')
         </if>
---         查询日期范围
         <choose>
-            <when test="null != condition.endDate">
-                <if test="null != condition.startDate">
-                    <![CDATA[ AND createTime >= '${condition.startDate} 00'
-                    AND createTime <= '${condition.endDate} 24']]>
-                </if>
-                <![CDATA[AND createTime <= '${condition.endDate} 24']]>
-            </when>
-            <when test="null != condition.startDate">
+            <when test="null != condition.beginDate">
+                <![CDATA[AND createTime >= #{condition.beginDate}]]>
                 <if test="null != condition.endDate">
-                    <![CDATA[ AND createTime >= '${condition.startDate} 00'
-                    AND createTime <= '${condition.endDate} 24']]>
+                    <![CDATA[AND createTime <= #{condition.endDate}]]>
                 </if>
-                AND createTime >= '${condition.startDate} 00'
+            </when>
+            <when test="null != condition.endDate">
+                <![CDATA[AND createTime <= #{condition.endDate}]]>
             </when>
         </choose>
     </sql>
