@@ -18,4 +18,11 @@ public interface UserDao {
      */
     public UserDTO findUserByCondition(UserDTO userDTO);
 
+    /**
+     * 添加用户信息
+     * @param userDTO
+     * @return Integer
+     */
+    public Integer insertUser(UserDTO userDTO);
+
 }

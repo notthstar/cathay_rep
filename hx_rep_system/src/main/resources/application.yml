@@ -13,4 +13,4 @@ mybatis:
 
 # 日志输出级别
 logging:
-  level: debug
+  level: info

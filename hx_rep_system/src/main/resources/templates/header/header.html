@@ -1,0 +1,59 @@
+<header class="header">
+    <nav class="navbar">
+        <!-- Search Box-->
+        <div class="search-box">
+            <button class="dismiss"><i class="icon-close"></i></button>
+            <form id="searchForm" action="#" role="search">
+                <input type="search" placeholder="请输入关键字" class="form-control">
+            </form>
+        </div>
+        <div class="container-fluid">
+            <div class="navbar-holder d-flex align-items-center justify-content-between">
+                <!-- Navbar Header-->
+                <div class="navbar-header">
+                    <!-- Navbar Brand --><a href="/toPage?page=index" class="navbar-brand d-none d-sm-inline-block">
+                    <div class="brand-text d-none d-lg-inline-block"><strong>华夏ERP</strong></div>
+                    <div class="brand-text d-none d-sm-inline-block d-lg-none"><strong>华夏ERP</strong></div></a>
+                    <!-- Toggle Button--><a id="toggle-btn" href="#" class="menu-btn active"><span></span><span></span><span></span></a>
+                </div>
+                <!-- Navbar Menu -->
+                <ul class="nav-menu list-unstyled d-flex flex-md-row align-items-md-center">
+                    <!-- Search-->
+                    <li class="nav-item d-flex align-items-center"><a id="search" href="#"><i class="icon-search"></i></a></li>
+                    <!-- 消息-->
+                    <li class="nav-item dropdown"> <a id="notifications" rel="nofollow" data-target="#" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link"><i class="fa fa-bell-o"></i><span class="badge bg-red badge-corner">0</span></a>
+                        <ul aria-labelledby="notifications" class="dropdown-menu">
+                            <li><a rel="nofollow" href="#" class="dropdown-item">
+                                <div class="notification">
+                                    <div class="notification-content"><i class="fa fa-envelope bg-green"></i>您有0条消息</div>
+                                    <div class="notification-time"><small>信箱空空如也</small></div>
+                                </div></a></li>
+                        </ul>
+                    </li>
+                    <!-- 显示头像   -->
+                    <li class="nav-item dropdown">
+                        <a id="languages" rel="nofollow" data-target="#" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link language dropdown-toggle">
+                            <span class="fa fa-user-o"></span>
+                            <span class="d-none d-sm-inline-block"><#if user??>${user.userName}</#if></span>
+                        </a>
+                        <ul aria-labelledby="languages" class="dropdown-menu">
+                            <li><a rel="nofollow" href="#" class="dropdown-item"> <i class="img-fluid rounded-circle fa fa-key"></i>修改密码</a></li>
+                            <li><a rel="nofollow" href="/userOut" class="dropdown-item"> <i class="img-fluid rounded-circle fa fa-share"></i>退出登录</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+<div class="page-content d-flex align-items-stretch">
+    <!-- Side Navbar -->
+    <nav class="side-navbar">
+        <!-- Sidebar Header-->
+        <div class="sidebar-header d-flex align-items-center">
+            <div class="avatar"><!--<img src="img/avatar-1.jpg" alt="..." class="img-fluid rounded-circle">--><img src="img/nerd bot.png" width="50px" height="50px" title="欢迎你,管理员"></div>
+            <div class="title">
+                <h1 class="h4"><#if user??>${user.userName}</#if></h1>
+                <p>欢迎你</p>
+            </div>
+        </div>

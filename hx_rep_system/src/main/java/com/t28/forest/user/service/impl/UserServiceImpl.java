@@ -21,10 +21,10 @@ public class UserServiceImpl implements UserService {
     UserDao userDao;
 
     @Override
-    public UserDTO login(String userName, String password) {
-        UserDTO user = userDao.findUserByCondition(new UserDTO(userName, password));
+    public UserDTO login(String loginName, String password) {
+        UserDTO user = userDao.findUserByCondition(new UserDTO(loginName, password));
         // 判断用户和用户的ID是否为空
-        if (Objects.isNull(user) && Objects.isNull(user.getId())) {
+        if (Objects.isNull(user) || Objects.isNull(user.getId())) {
             return null;
         }
         return user;
@@ -32,6 +32,10 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public Boolean register(UserDTO userDTO) {
-        return null;
+        int result = userDao.insertUser(userDTO);
+        if (result > 0) {
+            return true;
+        }
+        return false;
     }
 }

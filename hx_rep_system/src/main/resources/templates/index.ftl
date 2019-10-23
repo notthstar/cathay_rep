@@ -4,187 +4,152 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>华夏ERP</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="robots" content="all,follow">
-    <!-- Bootstrap CSS-->
-    <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
-    <!-- Font Awesome CSS-->
-    <link rel="stylesheet" href="vendor/font-awesome/css/font-awesome.min.css">
-    <!-- Fontastic Custom icon font-->
-    <link rel="stylesheet" href="css/fontastic.css">
-    <!-- Google fonts - Poppins -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,700">
-    <!-- theme stylesheet-->
-    <link rel="stylesheet" href="css/style.default.css" id="theme-stylesheet">
-    <!-- Custom stylesheet - for your changes-->
-    <link rel="stylesheet" href="css/custom.css">
-    <!-- Favicon-->
-    <link rel="shortcut icon" href="img/flag-china.png">
-    <!-- Tweaks for older IEs--><!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+    <#include "header/headerLink.html"/>
   </head>
   <body>
     <div class="page">
       <!-- Main Navbar-->
-      <header class="header">
-        <nav class="navbar">
-          <!-- Search Box-->
-          <div class="search-box">
-            <button class="dismiss"><i class="icon-close"></i></button>
-            <form id="searchForm" action="#" role="search">
-              <input type="search" placeholder="请输入关键字" class="form-control">
-            </form>
-          </div>
-          <div class="container-fluid">
-            <div class="navbar-holder d-flex align-items-center justify-content-between">
-              <!-- Navbar Header-->
-              <div class="navbar-header">
-                <!-- Navbar Brand --><a href="index.html" class="navbar-brand d-none d-sm-inline-block">
-                  <div class="brand-text d-none d-lg-inline-block"><strong>华夏ERP</strong></div>
-                  <div class="brand-text d-none d-sm-inline-block d-lg-none"><strong>华夏ERP</strong></div></a>
-                <!-- Toggle Button--><a id="toggle-btn" href="#" class="menu-btn active"><span></span><span></span><span></span></a>
-              </div>
-              <!-- Navbar Menu -->
-              <ul class="nav-menu list-unstyled d-flex flex-md-row align-items-md-center">
-                <!-- Search-->
-                <li class="nav-item d-flex align-items-center"><a id="search" href="#"><i class="icon-search"></i></a></li>
-                
-                
-                <!-- 消息-->
-                <li class="nav-item dropdown"> <a id="notifications" rel="nofollow" data-target="#" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link"><i class="fa fa-bell-o"></i><span class="badge bg-red badge-corner">0</span></a>
-                  <ul aria-labelledby="notifications" class="dropdown-menu">
-                    <li><a rel="nofollow" href="#" class="dropdown-item"> 
-                        <div class="notification">
-                          <div class="notification-content"><i class="fa fa-envelope bg-green"></i>您有0条消息</div>
-                          <div class="notification-time"><small>信箱空空如也</small></div>
-                        </div></a></li>
-                    <!--<li><a rel="nofollow" href="#" class="dropdown-item"> 
-                        <div class="notification">
-                          <div class="notification-content"><i class="fa fa-twitter bg-blue"></i>You have 2 followers</div>
-                          <div class="notification-time"><small>4 minutes ago</small></div>
-                        </div></a></li>
-                    <li><a rel="nofollow" href="#" class="dropdown-item"> 
-                        <div class="notification">
-                          <div class="notification-content"><i class="fa fa-upload bg-orange"></i>Server Rebooted</div>
-                          <div class="notification-time"><small>4 minutes ago</small></div>
-                        </div></a></li>
-                    <li><a rel="nofollow" href="#" class="dropdown-item"> 
-                        <div class="notification">
-                          <div class="notification-content"><i class="fa fa-twitter bg-blue"></i>You have 2 followers</div>
-                          <div class="notification-time"><small>10 minutes ago</small></div>
-                        </div></a></li>
-                    <li><a rel="nofollow" href="#" class="dropdown-item all-notifications text-center"> <strong>view all notifications                                            </strong></a></li>-->
-                  </ul>
-                </li>
-				
-				
-                <!-- 显示头像                        -->
-                <!--<li class="nav-item dropdown"> <a id="messages" rel="nofollow" data-target="#" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link">
-										<span class="fa fa-user-o"></span>
-                		<span class="d-none d-sm-inline-block">管理员</span>
-                </a>
-                  <ul aria-labelledby="notifications" class="dropdown-menu">
-                    <li><a rel="nofollow" href="#" class="dropdown-item d-flex"> 
-                        <div class="msg-profile" > <img src="../image/钥匙.png" alt="..." class="img-fluid rounded-circle"width="40px"></div>
-                        <div class="msg-body">
-                          <h4 class="h5">修改密码</h4><span>修改用户密码</span>
-                        </div></a></li>
-                    <li><a rel="nofollow" href="login.html" class="dropdown-item d-flex"> 
-                        <div class="msg-profile"> <img src="../image/关闭.png" alt="..." class="img-fluid rounded-circle" width="40px"></div>
-                        <div class="msg-body">
-                          <h4 class="h5">退出系统</h4><span>退出系统,重新登录</span>
-                        </div></a></li>
-                  </ul>
-                </li>-->
-				
-				
-                <!-- 显示头像   -->
-                 <li class="nav-item dropdown">
-                	<a id="languages" rel="nofollow" data-target="#" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link language dropdown-toggle">
-                		<span class="fa fa-user-o"></span>
-                		<span class="d-none d-sm-inline-block">管理员</span>
-                	</a>
-                  <ul aria-labelledby="languages" class="dropdown-menu">
-                    <li><a rel="nofollow" href="#" class="dropdown-item"> <i class="img-fluid rounded-circle fa fa-key"></i>修改密码</a></li>
-                    <li><a rel="nofollow" href="login.html" class="dropdown-item"> <i class="img-fluid rounded-circle fa fa-share"></i>退出登录</a></li>
-                  </ul>
-                </li>
-				
-				
-                <!-- 退出    -->
-                <!--<li class="nav-item"><a href="login.html" class="nav-link logout"> <span class="d-none d-sm-inline">Logout</span><i class="fa fa-sign-out"></i></a></li>-->
-              </ul>
-            </div>
-          </div>
-        </nav>
-      </header>
-      <div class="page-content d-flex align-items-stretch"> 
-        <!-- Side Navbar -->
-        <nav class="side-navbar">
-          <!-- Sidebar Header-->
-          <div class="sidebar-header d-flex align-items-center">
-            <div class="avatar"><!--<img src="img/avatar-1.jpg" alt="..." class="img-fluid rounded-circle">--><img src="img/nerd bot.png" width="50px" height="50px" title="欢迎你,管理员"></div>
-            <div class="title">
-              <h1 class="h4">管理员</h1>
-              <p>欢迎你</p>
-            </div>
-          </div>
-          <!-- Sidebar Navidation Menus--><span class="heading">Main</span>
-          <ul class="list-unstyled">
-          					<!--下拉列表1-->
-                    <li><a href="#retailmanagement" aria-expanded="false" data-toggle="collapse"> <i class="fa fa-podcast"></i>零售管理 </a>
-                    	<ul class="collapse list-unstyled" id="retailmanagement">
-                    		<li><a href="retailmanagement/storage.html"><i class="fa fa-toggle-off"></i>零售出库</a></li>
-                    		<li><a href="retailmanagement/returned.html"><i class="fa fa-toggle-off"></i>零售退货</a></li>
-                    	</ul>
-                    </li>
-                    <!--下拉列表2-->
-                    <li><a href="#purchasingmanagement" aria-expanded="false" data-toggle="collapse"> <i class="fa fa-bookmark-o"></i>采购管理</a>
-                    	<ul class="collapse list-unstyled" id="purchasingmanagement">
-                    		<li><a href="purchasingmanagement/purchaseorder.html"><i class="fa fa-toggle-off"></i>采购订单</a></li>
-                    		<li><a href="purchasingmanagement/procurementandstorage.html"><i class="fa fa-toggle-off"></i>采购入库</a></li>
-                    		<li><a href="purchasingmanagement/Purchasereturn.html"><i class="fa fa-toggle-off"></i>采购退货</a></li>
-                    	</ul>
-                    </li>
-                    <!--下拉列表3-->
-                    <li><a href="#salesmanagement" aria-expanded="false" data-toggle="collapse"> <i class="fa fa-plus-square-o"></i>销售管理</a>
-                    	<ul class="collapse list-unstyled" id="salesmanagement">
-                    		<li><a href="salesmanagement/sell.html"><i class="fa fa-toggle-off"></i>销售订单</a></li>
-                    		<li><a href="salesmanagement/Salesofoutbound.html"><i class="fa fa-toggle-off"></i>销售出库</a></li>
-                    		<li><a href="salesmanagement/Salesreturn.html"><i class="fa fa-toggle-off"></i>销售退货</a></li>
-                    	</ul>
-                    </li>
-                    <!--下拉列表4-->
-                    <li><a href="#storemanagement" aria-expanded="false" data-toggle="collapse"> <i class="fa fa-plus-square"></i>仓库管理</a>
-                    	<ul class="collapse list-unstyled" id="storemanagement">
-                    		<li><a href="storemanagement/Otherwarehouse.html"><i class="fa fa-toggle-off"></i>其他入库</a></li>
-                    		<li><a href="storemanagement/Otheroutbound.html"><i class="fa fa-toggle-off"></i>其他出库</a></li>
-                    		<li><a href="storemanagement/allocatingoutbound.html"><i class="fa fa-toggle-off"></i>调拨出库</a></li>
-                    		<li><a href="storemanagement/Assemblythesingle.html"><i class="fa fa-toggle-off"></i>组装单</a></li>
-                    		<li><a href="storemanagement/Removethesingle.html"><i class="fa fa-toggle-off"></i>拆卸单</a></li>
-                    	</ul>
-                    </li>
-                    <!--<li><a href="tables.html"> <i class="icon-grid"></i>Tables </a></li>
-                    <li><a href="charts.html"> <i class="fa fa-bar-chart"></i>Charts </a></li>
-                    <li><a href="forms.html"> <i class="icon-padnote"></i>Forms </a></li>
-                    <li><a href="#exampledropdownDropdown" aria-expanded="false" data-toggle="collapse"> <i class="icon-interface-windows"></i>Example dropdown </a>
-                      <ul id="exampledropdownDropdown" class="collapse list-unstyled ">
-                        <li><a href="#">Page</a></li>
-                        <li><a href="#">Page</a></li>
-                        <li><a href="#">Page</a></li>
-                      </ul>
-                    </li>
-                    <li><a href="login.html"> <i class="icon-interface-windows"></i>Login page </a></li>-->
-          </ul><!--<span class="heading">Extras</span>
-          <ul class="list-unstyled">
-            <li> <a href="#"> <i class="icon-flask"></i>Demo </a></li>
-            <li> <a href="#"> <i class="icon-screen"></i>Demo </a></li>
-            <li> <a href="#"> <i class="icon-mail"></i>Demo </a></li>
-            <li> <a href="#"> <i class="icon-picture"></i>Demo </a></li>
-          </ul>-->
-        </nav>
+      <#--<header class="header">-->
+        <#--<nav class="navbar">-->
+          <#--<!-- Search Box&ndash;&gt;-->
+          <#--<div class="search-box">-->
+            <#--<button class="dismiss"><i class="icon-close"></i></button>-->
+            <#--<form id="searchForm" action="#" role="search">-->
+              <#--<input type="search" placeholder="请输入关键字" class="form-control">-->
+            <#--</form>-->
+          <#--</div>-->
+          <#--<div class="container-fluid">-->
+            <#--<div class="navbar-holder d-flex align-items-center justify-content-between">-->
+              <#--<!-- Navbar Header&ndash;&gt;-->
+              <#--<div class="navbar-header">-->
+                <#--<!-- Navbar Brand &ndash;&gt;<a href="/toPage?page=index" class="navbar-brand d-none d-sm-inline-block">-->
+                  <#--<div class="brand-text d-none d-lg-inline-block"><strong>华夏ERP</strong></div>-->
+                  <#--<div class="brand-text d-none d-sm-inline-block d-lg-none"><strong>华夏ERP</strong></div></a>-->
+                <#--<!-- Toggle Button&ndash;&gt;<a id="toggle-btn" href="#" class="menu-btn active"><span></span><span></span><span></span></a>-->
+              <#--</div>-->
+              <#--<!-- Navbar Menu &ndash;&gt;-->
+              <#--<ul class="nav-menu list-unstyled d-flex flex-md-row align-items-md-center">-->
+                <#--<!-- Search&ndash;&gt;-->
+                <#--<li class="nav-item d-flex align-items-center"><a id="search" href="#"><i class="icon-search"></i></a></li>-->
+                <#---->
+                <#---->
+                <#--<!-- 消息&ndash;&gt;-->
+                <#--<li class="nav-item dropdown"> <a id="notifications" rel="nofollow" data-target="#" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link"><i class="fa fa-bell-o"></i><span class="badge bg-red badge-corner">0</span></a>-->
+                  <#--<ul aria-labelledby="notifications" class="dropdown-menu">-->
+                    <#--<li><a rel="nofollow" href="#" class="dropdown-item"> -->
+                        <#--<div class="notification">-->
+                          <#--<div class="notification-content"><i class="fa fa-envelope bg-green"></i>您有0条消息</div>-->
+                          <#--<div class="notification-time"><small>信箱空空如也</small></div>-->
+                        <#--</div></a></li>-->
+                    <#--<!--<li><a rel="nofollow" href="#" class="dropdown-item"> -->
+                        <#--<div class="notification">-->
+                          <#--<div class="notification-content"><i class="fa fa-twitter bg-blue"></i>You have 2 followers</div>-->
+                          <#--<div class="notification-time"><small>4 minutes ago</small></div>-->
+                        <#--</div></a></li>-->
+                    <#--<li><a rel="nofollow" href="#" class="dropdown-item"> -->
+                        <#--<div class="notification">-->
+                          <#--<div class="notification-content"><i class="fa fa-upload bg-orange"></i>Server Rebooted</div>-->
+                          <#--<div class="notification-time"><small>4 minutes ago</small></div>-->
+                        <#--</div></a></li>-->
+                    <#--<li><a rel="nofollow" href="#" class="dropdown-item"> -->
+                        <#--<div class="notification">-->
+                          <#--<div class="notification-content"><i class="fa fa-twitter bg-blue"></i>You have 2 followers</div>-->
+                          <#--<div class="notification-time"><small>10 minutes ago</small></div>-->
+                        <#--</div></a></li>-->
+                    <#--<li><a rel="nofollow" href="#" class="dropdown-item all-notifications text-center"> <strong>view all notifications                                            </strong></a></li>&ndash;&gt;-->
+                  <#--</ul>-->
+                <#--</li>-->
+				<#---->
+				<#---->
+                <#--<!-- 显示头像                        &ndash;&gt;-->
+                <#--<!--<li class="nav-item dropdown"> <a id="messages" rel="nofollow" data-target="#" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link">-->
+										<#--<span class="fa fa-user-o"></span>-->
+                		<#--<span class="d-none d-sm-inline-block">管理员</span>-->
+                <#--</a>-->
+                  <#--<ul aria-labelledby="notifications" class="dropdown-menu">-->
+                    <#--<li><a rel="nofollow" href="#" class="dropdown-item d-flex"> -->
+                        <#--<div class="msg-profile" > <img src="../image/钥匙.png" alt="..." class="img-fluid rounded-circle"width="40px"></div>-->
+                        <#--<div class="msg-body">-->
+                          <#--<h4 class="h5">修改密码</h4><span>修改用户密码</span>-->
+                        <#--</div></a></li>-->
+                    <#--<li><a rel="nofollow" href="login.html" class="dropdown-item d-flex"> -->
+                        <#--<div class="msg-profile"> <img src="../image/关闭.png" alt="..." class="img-fluid rounded-circle" width="40px"></div>-->
+                        <#--<div class="msg-body">-->
+                          <#--<h4 class="h5">退出系统</h4><span>退出系统,重新登录</span>-->
+                        <#--</div></a></li>-->
+                  <#--</ul>-->
+                <#--</li>&ndash;&gt;-->
+				<#---->
+				<#---->
+                <#--<!-- 显示头像   &ndash;&gt;-->
+                 <#--<li class="nav-item dropdown">-->
+                	<#--<a id="languages" rel="nofollow" data-target="#" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link language dropdown-toggle">-->
+                		<#--<span class="fa fa-user-o"></span>-->
+                		<#--<span class="d-none d-sm-inline-block"><#if user??>${user.userName}</#if></span>-->
+                	<#--</a>-->
+                  <#--<ul aria-labelledby="languages" class="dropdown-menu">-->
+                    <#--<li><a rel="nofollow" href="#" class="dropdown-item"> <i class="img-fluid rounded-circle fa fa-key"></i>修改密码</a></li>-->
+                    <#--<li><a rel="nofollow" href="/userOut" class="dropdown-item"> <i class="img-fluid rounded-circle fa fa-share"></i>退出登录</a></li>-->
+                  <#--</ul>-->
+                <#--</li>-->
+				<#---->
+				<#---->
+                <#--<!-- 退出    &ndash;&gt;-->
+                <#--<!--<li class="nav-item"><a href="login.html" class="nav-link logout"> <span class="d-none d-sm-inline">Logout</span><i class="fa fa-sign-out"></i></a></li>&ndash;&gt;-->
+              <#--</ul>-->
+            <#--</div>-->
+          <#--</div>-->
+        <#--</nav>-->
+      <#--</header>-->
+        <#include "header/header.html"/>
+          <!-- Sidebar Navidation Menus-->
+      <#--<ul class="list-unstyled">-->
+        <#--<!--下拉列表1&ndash;&gt;-->
+        <#--<li><a href="#retailmanagement" aria-expanded="false" data-toggle="collapse"> <i class="fa fa-podcast"></i>零售管理 </a>-->
+          <#--<ul class="collapse list-unstyled" id="retailmanagement">-->
+            <#--<li><a href="retailmanagement/storage.html"><i class="fa fa-toggle-off"></i>零售出库</a></li>-->
+            <#--<li><a href="retailmanagement/returned.html"><i class="fa fa-toggle-off"></i>零售退货</a></li>-->
+          <#--</ul>-->
+        <#--</li>-->
+        <#--<!--下拉列表2&ndash;&gt;-->
+        <#--<li><a href="#purchasingmanagement" aria-expanded="false" data-toggle="collapse"> <i class="fa fa-bookmark-o"></i>采购管理</a>-->
+          <#--<ul class="collapse list-unstyled" id="purchasingmanagement">-->
+            <#--<li><a href="purchasingmanagement/purchaseorder.html"><i class="fa fa-toggle-off"></i>采购订单</a></li>-->
+            <#--<li><a href="purchasingmanagement/procurementandstorage.html"><i class="fa fa-toggle-off"></i>采购入库</a></li>-->
+            <#--<li><a href="purchasingmanagement/Purchasereturn.html"><i class="fa fa-toggle-off"></i>采购退货</a></li>-->
+          <#--</ul>-->
+        <#--</li>-->
+        <#--<!--下拉列表3&ndash;&gt;-->
+        <#--<li><a href="#salesmanagement" aria-expanded="false" data-toggle="collapse"> <i class="fa fa-plus-square-o"></i>销售管理</a>-->
+          <#--<ul class="collapse list-unstyled" id="salesmanagement">-->
+            <#--<li><a href="/toPage?page=sales/sell"><i class="fa fa-toggle-off"></i>销售订单</a></li>-->
+            <#--<li><a href="/toPage?page=sales/Salesofoutbound"><i class="fa fa-toggle-off"></i>销售出库</a></li>-->
+            <#--<li><a href="/toPage?page=sales/Salesreturn"><i class="fa fa-toggle-off"></i>销售退货</a></li>-->
+          <#--</ul>-->
+        <#--</li>-->
+        <#--<!--下拉列表4&ndash;&gt;-->
+        <#--<li><a href="#storemanagement" aria-expanded="false" data-toggle="collapse"> <i class="fa fa-plus-square"></i>仓库管理</a>-->
+          <#--<ul class="collapse list-unstyled" id="storemanagement">-->
+            <#--<li><a href="storemanagement/Otherwarehouse.html"><i class="fa fa-toggle-off"></i>其他入库</a></li>-->
+            <#--<li><a href="storemanagement/Otheroutbound.html"><i class="fa fa-toggle-off"></i>其他出库</a></li>-->
+            <#--<li><a href="storemanagement/allocatingoutbound.html"><i class="fa fa-toggle-off"></i>调拨出库</a></li>-->
+            <#--<li><a href="storemanagement/Assemblythesingle.html"><i class="fa fa-toggle-off"></i>组装单</a></li>-->
+            <#--<li><a href="storemanagement/Removethesingle.html"><i class="fa fa-toggle-off"></i>拆卸单</a></li>-->
+          <#--</ul>-->
+        <#--</li>-->
+        <#--<!--<li><a href="tables.html"> <i class="icon-grid"></i>Tables </a></li>-->
+        <#--<li><a href="charts.html"> <i class="fa fa-bar-chart"></i>Charts </a></li>-->
+        <#--<li><a href="forms.html"> <i class="icon-padnote"></i>Forms </a></li>-->
+        <#--<li><a href="#exampledropdownDropdown" aria-expanded="false" data-toggle="collapse"> <i class="icon-interface-windows"></i>Example dropdown </a>-->
+          <#--<ul id="exampledropdownDropdown" class="collapse list-unstyled ">-->
+            <#--<li><a href="#">Page</a></li>-->
+            <#--<li><a href="#">Page</a></li>-->
+            <#--<li><a href="#">Page</a></li>-->
+          <#--</ul>-->
+        <#--</li>-->
+        <#--<li><a href="login.html"> <i class="icon-interface-windows"></i>Login page </a></li>&ndash;&gt;-->
+      <#--</ul>-->
+      <#include "leftList/left_list.html"/>
         <div class="content-inner">
           <!-- Page Header-->
           <header class="page-header">
@@ -712,7 +677,7 @@
             <div class="container-fluid">
               <div class="row">
                 <div class="col-sm-6">
-                  <p>Copyright &copy; 2015-2020&nbsp;华夏ERP&nbsp;Dome - Powered By&nbsp;<a href="#" target="_blank">官方网站</a></p>
+                  <p>Copyright &copy; 2015-2020&nbsp;华夏ERP&nbsp;Dome - Powered By&nbsp;<a href="https://www.huaxiaerp.com" target="_blank">官方网站</a></p>
                 </div>
                 <div class="col-sm-6 text-right">
                   <p></p>
@@ -724,15 +689,6 @@
         </div>
       </div>
     </div>
-    <!-- JavaScript files-->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/popper.js/umd/popper.min.js"> </script>
-    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-    <script src="vendor/jquery.cookie/jquery.cookie.js"> </script>
-    <script src="vendor/chart.js/Chart.min.js"></script>
-    <script src="vendor/jquery-validation/jquery.validate.min.js"></script>
-    <script src="js/charts-home.js"></script>
-    <!-- Main File-->
-    <script src="js/front.js"></script>
+    <#include "footer/footerLink.html"/>
   </body>
 </html>

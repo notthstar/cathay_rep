@@ -11,7 +11,12 @@
 
     <!--查询用户信息根据条件-->
     <select id="findUserByCondition" resultMap="selectMap" parameterType="com.t28.forest.user.entity.UserDTO">
-        SELECT * FROM jsh_user WHERE logiName=#{loginName} AND password=#{password};
+        SELECT * FROM jsh_user WHERE logiName=#{loginName} AND password=#{password} AND `status`=0;
     </select>
+
+    <insert id="insertUser" parameterType="com.t28.forest.user.entity.UserDTO">
+        INSERT INTO jsh_erp.jsh_user(username, loginame, password, `position`, department, email, phonenum, ismanager, isystem, `status`, description, remark, tenant_id)
+        VALUES (#{userName},#{loginName},#{password},#{position},#{department},#{email},#{phoneNum},#{isManager},#{isystem},#{status},#{description},#{remark},#{tenantId});
+    </insert>
 
 </mapper>

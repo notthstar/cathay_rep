@@ -1,5 +1,7 @@
 package com.t28.forest.user.entity;
 
+import java.util.Objects;
+
 /**
  * @author XiangYuFeng
  * @description 用户表数据传输对象
@@ -66,8 +68,8 @@ public class UserDTO {
 
     public UserDTO() {}
 
-    public UserDTO(String userName, String password) {
-        this.userName = userName;
+    public UserDTO(String loginName, String password) {
+        this.loginName = loginName;
         this.password = password;
     }
 
@@ -80,6 +82,9 @@ public class UserDTO {
     }
 
     public String getUserName() {
+        if (Objects.isNull(userName)) {
+            return "张三";
+        }
         return userName;
     }
 
@@ -136,6 +141,9 @@ public class UserDTO {
     }
 
     public Integer getIsManager() {
+        if (Objects.isNull(isManager)) {
+            return 1;
+        }
         return isManager;
     }
 
@@ -144,6 +152,9 @@ public class UserDTO {
     }
 
     public Integer getIsystem() {
+        if (Objects.isNull(isystem)) {
+            return 0;
+        }
         return isystem;
     }
 
@@ -152,6 +163,9 @@ public class UserDTO {
     }
 
     public Integer getStatus() {
+        if (Objects.isNull(status)) {
+            return 0;
+        }
         return status;
     }
 

@@ -12,11 +12,11 @@ public interface UserService {
 
     /**
      * 用户登录的方法
-     * @param userName
+     * @param loginName
      * @param password
      * @return UserDTO
      */
-    public UserDTO login(String userName, String password);
+    public UserDTO login(String loginName, String password);
 
     /**
      * 用户注册的方法

@@ -1,7 +1,15 @@
 package com.t28.forest.user.controller;
 
+import com.t28.forest.user.entity.UserDTO;
+import com.t28.forest.user.service.UserService;
+import org.apache.commons.codec.digest.DigestUtils;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import javax.servlet.http.HttpSession;
+import java.util.Objects;
 
 /**
  * @author XiangYuFeng
@@ -12,9 +20,45 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class UserController {
 
+    @Autowired
+    UserService userService;
+
     @RequestMapping("/toPage")
     public String toPage(String page) {
         return page;
+    }
+
+    @RequestMapping("/login")
+    public String login(UserDTO userDTO, Model model) {
+        UserDTO user = userService.login(userDTO.getLoginName(), DigestUtils.md5Hex(userDTO.getPassword()));
+        // 判断用户名或密码是否错误
+        if (Objects.isNull(user)) {
+            model.addAttribute("msg", "用户名或密码错误！");
+            return "login";
+        }
+        model.addAttribute("user", user);
+        return "index";
+    }
+
+    @RequestMapping("/register")
+    public String register(UserDTO userDTO, Model model) {
+        // 进行密码MD5加密
+        userDTO.setPassword(DigestUtils.md5Hex(userDTO.getPassword()));
+        boolean result = userService.register(userDTO);
+        // 成功，则返回到登陆页面
+        if (result) {
+            model.addAttribute("loginName", userDTO.getLoginName());
+            return "login";
+        }
+        // 否则返回注册页面
+        return "register";
+    }
+
+    @RequestMapping("/userOut")
+    public String userOut(HttpSession session) {
+        // 清楚session中的数据
+        session.invalidate();
+        return "login";
     }
 
 }
