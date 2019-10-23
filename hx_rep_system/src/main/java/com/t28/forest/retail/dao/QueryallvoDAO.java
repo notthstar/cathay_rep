@@ -22,4 +22,6 @@ public interface QueryallvoDAO {
      * @return :List
      */
     public List<Queryallvo> queryAll();
+
+
 }
