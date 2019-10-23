@@ -9,8 +9,8 @@ package com.t28.forest.warehouse;
 import org.junit.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
-@SpringBootTest
-public class JunitTest {
+//@SpringBootTest
+public class WarehouseJunitTest {
 
     @Test
     public void test(){

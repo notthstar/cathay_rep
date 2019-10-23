@@ -6,5 +6,5 @@
  */
 package com.t28.forest.purchasing;
 
-public class JunitTest {
+public class PurchasingJunitTest {
 }
