@@ -1,7 +1,5 @@
 package com.t28.forest.sales.vo;
 
-import java.util.Objects;
-
 /**
  * @author XiangYuFeng
  * @description 分页信息页面显示对象

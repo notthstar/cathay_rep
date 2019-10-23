@@ -1,6 +1,7 @@
 package com.t28.forest.shared.cond;
 
 import java.util.Date;
+import java.util.Objects;
 
 /**
  * @author XiangYuFeng
@@ -29,8 +30,8 @@ public class Condition {
     public Condition() {}
 
     public Condition(String code, String name, Date beginDate, Date endDate) {
-        this.code = code;
-        this.name = name;
+        setCode(code);
+        setName(name);
         this.beginDate = beginDate;
         this.endDate = endDate;
     }
@@ -40,6 +41,10 @@ public class Condition {
     }
 
     public void setCode(String code) {
+        if (Objects.equals("", code.trim())) {
+            this.code = null;
+            return;
+        }
         this.code = code;
     }
 
@@ -48,6 +53,10 @@ public class Condition {
     }
 
     public void setName(String name) {
+        if (Objects.equals("", name.trim())) {
+            this.name = null;
+            return;
+        }
         this.name = name;
     }
 
