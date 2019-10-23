@@ -65,7 +65,7 @@ public class WareBillVO {
     }
 
     public void setMate(String mate) {
-        mate = mate;
+        this.mate = mate;
     }
 
     public Date getOpertime() {
@@ -73,7 +73,8 @@ public class WareBillVO {
     }
 
     public void setOpertime(Date opertime) {
-        opertime = opertime;
+
+        this.opertime = opertime;
     }
 
 
@@ -98,8 +99,8 @@ public class WareBillVO {
         return "WareBillVO{" +
                 "supplier='" + supplier + '\'' +
                 ", number='" + number + '\'' +
-                ", Mate='" + mate + '\'' +
-                ", Opertime=" + opertime +
+                ", mate='" + mate + '\'' +
+                ", opertime=" + opertime +
                 ", operPersonName='" + operPersonName + '\'' +
                 ", totalPrice=" + totalPrice +
                 '}';

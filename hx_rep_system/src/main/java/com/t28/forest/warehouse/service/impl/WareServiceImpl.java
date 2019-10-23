@@ -18,10 +18,6 @@ import java.util.List;
 public class WareServiceImpl implements WareService {
     @Autowired
     WarehouseDao warehouseDao;
-    @Override
-    public String getMate(int id) {
-        return warehouseDao.selectMaterial(id);
-    }
 
     @Override
     public List<WareBillVO> getWareBill(String type, String subType) {

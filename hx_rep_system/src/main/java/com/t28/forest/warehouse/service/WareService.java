@@ -11,7 +11,6 @@ import com.t28.forest.warehouse.entity.vo.WareBillVO;
 import java.util.List;
 
 public interface WareService {
-    String getMate(int id);
 
     List<WareBillVO> getWareBill( String type,String subType);
 

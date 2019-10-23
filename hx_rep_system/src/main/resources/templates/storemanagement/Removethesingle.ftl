@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>华夏ERP/其他入库</title>
+    <title>华夏ERP/拆卸单</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="robots" content="all,follow">
@@ -60,7 +60,6 @@
                         </div></a></li>
                   </ul>
                 </li>
-                
                 <!-- Languages dropdown    -->
                  <li class="nav-item dropdown">
                 	<a id="languages" rel="nofollow" data-target="#" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link language dropdown-toggle">
@@ -95,7 +94,7 @@
           <!-- Sidebar Navidation Menus--><span class="heading">Main</span>
           <ul class="list-unstyled">
           	<!--下拉列表1-->
-                    <li><a href="#retailmanagement" aria-expanded="false" data-toggle="collapse" id="retailadministration"> <i class="fa fa-podcast"></i>零售管理 </a>
+                    <li><a href="#retailmanagement" aria-expanded="false" data-toggle="collapse"> <i class="fa fa-podcast"></i>零售管理 </a>
                     	<ul class="collapse list-unstyled" id="retailmanagement">
                     		<li><a href="retailmanagement/storage.html"><i class="fa fa-toggle-off"></i>零售出库</a></li>
                     		<li><a href="retailmanagement/returned.html"><i class="fa fa-toggle-off"></i>零售退货</a></li>
@@ -110,8 +109,8 @@
                     	</ul>
                     </li>
                     <!--下拉列表3-->
-                    <li><a href="#salesmanagement" aria-expanded="false" data-toggle="collapse"> <i class="fa fa-plus-square-o"></i>销售管理</a>
-                    	<ul class="collapse list-unstyled" id="salesmanagement">
+                    <li><a href="#salesmanagement" aria-expanded="false" data-toggle="collapse" id="marketingmanagement"> <i class="fa fa-plus-square-o"></i>销售管理</a>
+                    	<ul class="collapse list-unstyled" id="salesmanagement" data-ride="carousel">
                     		<li><a href="salesmanagement/sell.html"><i class="fa fa-toggle-off"></i>销售订单</a></li>
                     		<li><a href="salesmanagement/Salesofoutbound.html"><i class="fa fa-toggle-off"></i>销售出库</a></li>
                     		<li><a href="salesmanagement/Salesreturn.html"><i class="fa fa-toggle-off"></i>销售退货</a></li>
@@ -120,13 +119,25 @@
                     <!--下拉列表4-->
                     <li><a href="#storemanagement" aria-expanded="false" data-toggle="collapse" id="warehousemanagement"> <i class="fa fa-plus-square"></i>仓库管理</a>
                     	<ul class="collapse list-unstyled" id="storemanagement">
-                    		<li class="active"><a href="l"><i class="fa fa-toggle-off"></i>其他入库</a></li>
-                    		<li><a href=""><i class="fa fa-toggle-off"></i>其他出库</a></li>
-                    		<li><a href=".html"><i class="fa fa-toggle-off"></i>调拨出库</a></li>
-                    		<li><a href="html"><i class="fa fa-toggle-off"></i>组装单</a></li>
-                    		<li><a href="ml"><i class="fa fa-toggle-off"></i>拆卸单</a></li>
+                    		<li><a href="inWarehouseVO"><i class="fa fa-toggle-off"></i>其他入库</a></li>
+                    		<li><a href="outWareBillVO"><i class="fa fa-toggle-off"></i>其他出库</a></li>
+                    		<li><a href="allocateBillVO"><i class="fa fa-toggle-off"></i>调拨出库</a></li>
+                    		<li><a href="assembleBillVO"><i class="fa fa-toggle-off"></i>组装单</a></li>
+                    		<li class="active"><a href="ml"><i class="fa fa-toggle-off"></i>拆卸单</a></li>
                     	</ul>
                     </li>
+                    <!--<li><a href="index.html"> <i class="icon-home"></i>Home </a></li>
+                    <li><a href="tables.html"> <i class="icon-grid"></i>Tables </a></li>
+                    <li class="active"><a href="charts.html"> <i class="fa fa-bar-chart"></i>Charts </a></li>
+                    <li><a href="forms.html"> <i class="icon-padnote"></i>Forms </a></li>
+                    <li><a href="#exampledropdownDropdown" aria-expanded="false" data-toggle="collapse"> <i class="icon-interface-windows"></i>Example dropdown </a>
+                      <ul id="exampledropdownDropdown" class="collapse list-unstyled ">
+                        <li><a href="#">Page</a></li>
+                        <li><a href="#">Page</a></li>
+                        <li><a href="#">Page</a></li>
+                      </ul>
+                    </li>
+                    <li><a href="login.html"> <i class="icon-interface-windows"></i>Login page </a></li>-->
           </ul><!--<span class="heading">Extras</span>
           <ul class="list-unstyled">
             <li> <a href="#"> <i class="icon-flask"></i>Demo </a></li>
@@ -146,7 +157,7 @@
           <div class="breadcrumb-holder container-fluid">
             <ul class="breadcrumb">
               <li class="breadcrumb-item"><a href="index.html">首页</a></li>
-              <li class="breadcrumb-item active">其他入库</li>
+              <li class="breadcrumb-item active">拆卸单</li>
             </ul>
           </div>
           
@@ -165,47 +176,44 @@
                     <div class="card-header d-flex align-items-center">
                     	<strong>
                     			<i class="fa fa-window-maximize" aria-hidden="true"></i>
-                      		其他入库列表</strong>
+                      		拆卸单列表</strong>
                     </div>
                     <div class="card-body">
-                    	<form class="form-horizontal" role="form">
+                    	<form class="form-horizontal">
                       <table>
                       	<tr>
                       		<div class="form-group">
-                      		<td>单据编号：</td>
-                      		<td width="150px">
-                      			<input type="text" class="form-control">
+                      			<td>单据编号：</td>
+                      			<td width="150px"><input type="text" class="form-control"></td>
+                      		</div>
+                      		
+                      		<div class="form-group">
+                      			<td>商品信息：</td>
+                      			<td width="150px"><input type="text" class="form-control" placeholder="名称/型号"></td>
+                      		</div>
+                      		
+                      		<div class="form-group">
+                      			<td>单据日期：</td>
+                      			<td width="170px"><input type="date" class="form-control" pattern="yyyy-MM-dd"></td>
+                      		</div>
+                      		
+                      		<div class="form-group">
+                      			<td>-</td>
+                      			<td width="170px"><input type="date" class="form-control" pattern="yyyy-MM-dd"></td>
+                      		</div>
+                      		<div class="form-group">
+                      			<td>
+                      			<a href="#">
+                      			<button class="btn btn-success" style="width: 122px;"><i class="fa fa-search"></i>
+                      				查询</button>
+                      			</a>
                       		</td>
                       		</div>
                       		<div class="form-group">
-                      		<td>商品信息：</td>
-                      		<td width="150px"><input type="text" class="form-control" placeholder="名称/型号"></td>
-                      		</div>
-                      		<div class="form-group">
-                      		<td>单据日期：</td>
-                      		<td width="170px"><input type="date" class="form-control" pattern="yyyy-MM-dd"></td>
-                      		</div>
-                      		<div class="form-group">
-                      		<td>-</td>
-                      		<td width="170px"><input type="date" class="form-control" pattern="yyyy-MM-dd"></td>
-                      		</div>
-                      		<div class="form-group">
                       		<td>
                       			<a href="#">
-                      			<button class="btn btn-success" style="width: 122px;">
-                      				<i class="fa fa-search"></i>
-                      				查询
-                      			</button>
-                      			</a>
-                      		</td>	
-                      		</div>
-                      		<div class="form-group">
-                      		<td>
-                      			<a href="#">
-                      			<button type="reset" class="btn btn-success"  style="width: 122px;">
-                      				<i class="fa fa-share-square"></i>
-                      				重置
-                      			</button>
+                      			<button type="reset" class="btn btn-success"  style="width: 122px;"><i class="fa fa-share-square"></i>
+                      			重置</button>
                       			</a>
                       		</td>
                       		</div>
@@ -217,33 +225,33 @@
                       		<tr class="text-bold">
                       			<td><input type="checkbox" title="全选" id="chElt" onclick="checkOrCancelAll()"></td>
                       			<td>操作</td>
-                      			<td>供应商名称</td>
                       			<td>单据编号</td>
                       			<td>商品信息</td>
                       			<td>单据日期</td>
                       			<td>操作员</td>
                       			<td>金额合计</td>
                       		</tr>
-                      		<tr>
-                      			<td><input type="checkbox" name="cElt"></td>
-                      			<td style="display: flex; justify-content: space-between;">
-                      				<a href="#">
-                      					<i class="fa fa-list" title="查看"></i>
-                      				</a>
-                      				<a href="#" style="color: green;">
-                      					<i class="fa fa-pencil-square-o" title="编辑"></i>
-                      				</a>
-                      				<a href="#" style="color: red;">
-                      					<i class="fa fa-trash-o" title="删除"></i>
-                      				</a>
-                      			</td>
-                      			<td>数据</td>
-                      			<td>数据</td>
-                      			<td>数据</td>
-                      			<td>数据</td>
-                      			<td>数据</td>
-                      			<td>数据</td>
-                      		</tr>
+                      		<#list disAssembleBillVOList as list>
+							<tr>
+                                <td><input type="checkbox" name="cElt"></td>
+                                <td style="display: flex; justify-content: space-between;">
+                                    <a href="#">
+                                        <i class="fa fa-list" title="查看"></i>
+                                    </a>
+                                    <a href="#" style="color: green;">
+                                        <i class="fa fa-pencil-square-o" title="编辑"></i>
+                                    </a>
+                                    <a href="#" style="color: red;">
+                                        <i class="fa fa-trash-o" title="删除"></i>
+                                    </a>
+                                </td>
+                                <td>${list.number}</td>
+                                <td>${list.mate}</td>
+                                <td>${list.opertime?string("yyyy-MM-dd HH:mm:ss")}</td>
+                                <td>${list.operPersonName}</td>
+                                <td>${list.totalPrice}</td>
+                            </tr>
+							</#list>
                       	</table>
                       </div>
                       <div style="display: flex;justify-content: flex-end;">
@@ -251,39 +259,12 @@
                       		<i class="fa fa-plus"></i>
                       		添加
                       	</button>&nbsp;
-                      	<button class="btn btn-danger" title="删除"><i class="fa fa-times"></i>
+                      	<button class="btn btn-danger" title="删除">
+                      		<i class="fa fa-times"></i>
                       		删除
                       	</button>
                       </div>
-                      <div style="display: flex;justify-content: center;">
-                         	<ul class="pagination">
-    												<li class="page-item">
-      												<a href="#" class="page-link">
-        												<span aria-hidden="true">&laquo;</span>
-      												</a>
-    												</li>
-    												<li class="page-item">
-    													<a href="#" class="page-link">1</a>
-    												</li>
-    												<li class="page-item">
-    													<a href="#" class="page-link">2</a>
-    												</li>
-    												<li class="page-item">
-    													<a href="#" class="page-link">3</a>
-    												</li>
-    												<li class="page-item">
-    													<a href="#" class="page-link">4</a>
-    												</li>
-    												<li class="page-item">
-    													<a href="#" class="page-link">5</a>
-    												</li>
-    												<li class="page-item">
-      												<a href="#" class="page-link">
-        												<span aria-hidden="true">&raquo;</span>
-      												</a>
-    												</li>
-  												</ul>
-                      </div>
+
                     </div>
                   </div>
                 </div>
@@ -301,7 +282,7 @@
 									<div class="modal-header">
 										<span class="modal-title" id="mymodalriLabel">
 											<i class="fa fa-cog fa-spin fa-3x fa-fw" style="font-size: 23px;"></i>
-											添加其他入库信息
+											添加拆卸单信息
 										</span>
 										<button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="fa fa-times" style="color: red;"></i>
 										</button>
@@ -310,19 +291,14 @@
 										<form class="form-horizontal">
 											<table class="form-group">
 												<tr>
-													<td>会员卡号：</td>
-													<td width="205px">
-														<select class="form-control">
-															<option>1</option>
-															<option>2</option>
-														</select>
-													</td>
-													<td>单据日期：</td>
-													<td width="205px"><input type="date" class="form-control" pattern="yyyy-MM-dd"></td>
-													<td>单据编号：</td>
-													<td width="205px">
-														<input type="text" class="form-control">
-													</td>
+														
+														<td>单据日期：</td>
+														<td width="345px">
+														<input type="date" class="form-control" pattern="yyyy-MM-dd"></td>
+														<td>单据编号：</td>
+														<td width="345px">
+														<input type="text" class="form-control"></td>
+														</td>
 												</tr>
 											</table>
 													<div style="display: flex;justify-content: space-between;">
@@ -356,15 +332,12 @@
                       					撤销
                       				</button>
                       			</a>
-                      				<button class="btn btn-success btn-sm" title="新增会员" data-toggle='modal' data-target="#rigerth" type="button">
-                      					<i class="fa fa-shopping-cart"></i>
-                      					添加供应商
-                      				</button>
 													</div>
 										<div style="margin-top: 20px;">
                       	<table class="table table-hover text-center">
                       		<tr class="text-bold">
                       			<td><input type="checkbox" title="全选" id="thElt" onclick="checkOrCancelMo()"></td>
+                      			<td>商品类型</td>
                       			<td>仓库名称</td>
                       			<td>品名(型号)</td>
                       			<td>库存</td>
@@ -384,6 +357,7 @@
                       			<td>数据</td>
                       			<td>数据</td>
                       			<td>数据</td>
+                      			<td>数据</td>
                       		</tr>
                       	</table>
                       </div>
@@ -393,7 +367,7 @@
                       	</div>
                       </div>
                       <div class="modal-footer">
-                      	<button class="btn btn-success col-md-12">保存</button>&nbsp;
+                      	<button class="btn btn-success col-md-12">保存</button>
                       </div>
                   </form>
 							</div>
@@ -401,105 +375,12 @@
 					</div>
 			</div>
 			
-			
-			<!--新增供应商模态框-->
-			<div class="modal fade" role="dialog" tabindex="-1" aria-hidden="false" aria-labelledby="mymodalrigerth" data-backdrop="static" data-keyboard="true" id="rigerth">
-			<div class="modal-dialog modal-lg">
-				<div class="modal-content" style="width: 878px;">
-					<div class="modal-header">
-						<span class="modal-title" id="mymodalriLabel">
-											<i class="fa fa-cog fa-spin fa-3x fa-fw" style="font-size: 23px;"></i>
-											添加供应商
-										</span>
-										<button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="fa fa-times" style="color: red;"></i>
-										</button>
-					</div>
-					<div class="modal-body">
-						<form class="form-horizontal">
-							<table>
-								<tr>
-									<td style="width: 500px;">
-										<input type="text" class="form-control" placeholder="用户名">
-									</td>
-									<td style="width: 500px;">
-										<input type="text" class="form-control" placeholder="联系人">
-									</td>
-								</tr>
-								<tr>
-									<td style="width: 500px;">
-										<input type="text" class="form-control" placeholder="手机号码">
-									</td>
-									<td style="width: 500px;">
-										<input type="text" class="form-control" placeholder="邮箱">
-									</td>
-								</tr>
-								<tr>
-									<td style="width: 500px;">
-										<input type="text" class="form-control" placeholder="联系电话">
-									</td>
-									<td style="width: 500px;">
-										<input type="text" class="form-control" placeholder="传真">
-									</td>
-								</tr>
-								<tr>
-									<td style="width: 500px;">
-										<input type="text" class="form-control" placeholder="期初应收">
-									</td>
-									<td style="width: 500px;">
-										<input type="text" class="form-control" placeholder="期初应付">
-									</td>
-								</tr>
-								<tr>
-									<td style="width: 500px;">
-										<input type="text" class="form-control" placeholder="累计应收" readonly="readonly">
-									</td>
-									<td style="width: 500px;">
-										<input type="text" class="form-control" placeholder="累计应付" readonly="readonly">
-									</td>
-								</tr>
-								<tr>
-									<td style="width: 500px;">
-										<input type="text" class="form-control" placeholder="纳税人识别号">
-									</td>
-									<td style="width: 500px;">
-										<input type="text" class="form-control" placeholder="税率(%)">
-									</td>
-								</tr>
-								<tr>
-									<td style="width: 500px;">
-										<input type="text" class="form-control" placeholder="开户行">
-									</td>
-									<td style="width: 500px;">
-										<input type="text" class="form-control" placeholder="账号">
-									</td>
-								</tr>
-								<tr>
-									<td style="width: 1000px;" colspan="2">
-										<input type="text" class="form-control" placeholder="地址">
-									</td>
-								</tr>
-								<tr>
-									<td style="width: 1000px;" colspan="2">
-										<textarea class="form-control" rows="2" placeholder="备注"></textarea>
-									</td> 
-								</tr>
-							</table>
-							<div class="modal-footer">
-									<button class="btn btn-success col-md-12" type="submit">保存</button>
-							</div>
-						</form>
-					</div>
-				</div>
-			</div>
-		</div>
-			
-			
     
     <!-- JavaScript files-->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/popper.js/umd/popper.min.js"> </script>
     <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-    <script src="jquery.cookie/jquery.cookie.js"> </script>
+    <script src="vendor/jquery.cookie/jquery.cookie.js"> </script>
     <script src="vendor/chart.js/Chart.min.js"></script>
     <script src="vendor/jquery-validation/jquery.validate.min.js"></script>
     <script src="js/charts-custom.js"></script>
