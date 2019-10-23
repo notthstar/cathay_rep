@@ -26,8 +26,9 @@ public class PageVO {
     }
 
     public void setCurrent(Integer current) {
-        if (this.current < 1) {
+        if (current < 1) {
             this.current = 1;
+            return;
         }
         this.current = current;
     }
