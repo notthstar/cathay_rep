@@ -4,7 +4,13 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>华夏ERP/销售订单</title>
-	  <#include "../header/headerLink.html"/>
+	<#include "../header/headerLink.html"/>
+	<style>
+		.product td input[type="text"]{
+			width: 62px;
+			height: 24px;
+		}
+	</style>
   </head>
   <body>
     <#--<div class="page">-->
@@ -253,30 +259,69 @@
                       			<td>金额合计</td>
                       			<td>状态</td>
                       		</tr>
-                      		<tr>
-                      			<td><input type="checkbox" name="cElt"></td>
-                      			<td style="display: flex; justify-content: space-between;">
-                      				<a href="#">
-                      					<i class="fa fa-list" title="查看"></i>
-                      				</a>
-                      				<a href="#" style="color: green;">
-                      					<i class="fa fa-pencil-square-o" title="编辑"></i>
-                      				</a>
-                      				<a href="#" style="color: red;">
-                      					<i class="fa fa-trash-o" title="删除"></i>
-                      				</a>
-                      				<a href="#" style="color: yellow;">
-                      					<i class="fa fa-share" title="转销售出库"></i>
-                      				</a>
-                      			</td>
-                      			<td>数据</td>
-                      			<td>数据</td>
-                      			<td>数据</td>
-                      			<td>数据</td>
-                      			<td>数据</td>
-                      			<td>数据</td>
-                      			<td>数据</td>
-                      		</tr>
+							<#list bills as bill>
+								<tr>
+									<td><input type="checkbox" name="cElt"></td>
+									<td style="display: flex; justify-content: space-between;">
+										<a href="#">
+											<i class="fa fa-list" title="查看"></i>
+										</a>
+										<a href="#" style="color: green;">
+											<i class="fa fa-pencil-square-o" title="编辑"></i>
+										</a>
+										<a href="#" style="color: red;">
+											<i class="fa fa-trash-o" title="删除" onclick="#"></i>
+										</a>
+										<a href="#" style="color: yellow;">
+											<i class="fa fa-share" title="转销售出库"></i>
+										</a>
+									</td>
+									<td>${bill.customerName}</td>
+									<td>${bill.billNum}</td>
+									<td>${bill.productName}</td>
+									<td>${bill.billCreateTime?string('yyyy-mm-dd')}</td>
+									<td>${bill.operator}</td>
+									<td>${bill.totalPrice}</td>
+									<#--<td>${bill.billStatus}</td>-->
+									<#--<#if bill.billStatus == "0">-->
+										<#--<td>未审核</td>-->
+									<#--</#if>-->
+									<#switch bill.billStatus>
+										<#case "0">
+											<td>未审核</td>
+											<#break>
+										<#case "1">
+											<td>已审核</td>
+											<#break>
+										<#default>
+											<td>已转采购|销售</td>
+									</#switch>
+								</tr>
+							</#list>
+                      		<#--<tr>-->
+                      			<#--<td><input type="checkbox" name="cElt"></td>-->
+                      			<#--<td style="display: flex; justify-content: space-between;">-->
+                      				<#--<a href="#">-->
+                      					<#--<i class="fa fa-list" title="查看"></i>-->
+                      				<#--</a>-->
+                      				<#--<a href="#" style="color: green;">-->
+                      					<#--<i class="fa fa-pencil-square-o" title="编辑"></i>-->
+                      				<#--</a>-->
+                      				<#--<a href="#" style="color: red;">-->
+                      					<#--<i class="fa fa-trash-o" title="删除"></i>-->
+                      				<#--</a>-->
+                      				<#--<a href="#" style="color: yellow;">-->
+                      					<#--<i class="fa fa-share" title="转销售出库"></i>-->
+                      				<#--</a>-->
+                      			<#--</td>-->
+                      			<#--<td>数据</td>-->
+                      			<#--<td>数据</td>-->
+                      			<#--<td>数据</td>-->
+                      			<#--<td>数据</td>-->
+                      			<#--<td>数据</td>-->
+                      			<#--<td>数据</td>-->
+                      			<#--<td>数据</td>-->
+                      		<#--</tr>-->
                       	</table>
                       </div>
                       <div style="display: flex;justify-content: flex-end;">
@@ -299,31 +344,38 @@
                       </div>
                       <div style="display: flex;justify-content: center;">
                          	<ul class="pagination">
-    							<li class="page-item">
-      								<a href="#" class="page-link">
-        							<span aria-hidden="true">&laquo;</span>
-      								</a>
-    							</li>
-    							<li class="page-item">
-    								<a href="#" class="page-link">1</a>
-    							</li>
-    							<li class="page-item">
-    								<a href="#" class="page-link">2</a>
-    							</li>
-    							<li class="page-item">
-    								<a href="#" class="page-link">3</a>
-    							</li>
-    							<li class="page-item">
-    								<a href="#" class="page-link">4</a>
-    							</li>
-    							<li class="page-item">
-    								<a href="#" class="page-link">5</a>
-    							</li>
-    							<li class="page-item">
-      								<a href="#" class="page-link">
-        							<span aria-hidden="true">&raquo;</span>
-      								</a>
-    							</li>
+								<#if pageVO??>
+									<#--${pageVO.current} ---- ${pageVO.pageSize} ----- ${pageVO.total} ---- ${pageVO.currentPage}-->
+									<#if pageVO.current gt 1>
+										<li class="page-item">
+											<a href="/showSales?current=${pageVO.currentPage-1}&pageSize=4" class="page-link">
+												<span aria-hidden="true">&laquo;</span>
+											</a>
+										</li>
+										<li class="page-item">
+											<a href="/showSales?current=${pageVO.currentPage-1}&pageSize=4" class="page-link">${pageVO.currentPage-1}</a>
+										</li>
+									</#if>
+									<li class="page-item active">
+										<a href="/showSales?current=${pageVO.currentPage}&pageSize=4" class="page-link">${pageVO.currentPage}</a>
+									</li>
+									<#--<li class="page-item">-->
+										<#--<a href="#" class="page-link">4</a>-->
+									<#--</li>-->
+									<#--<li class="page-item">-->
+										<#--<a href="#" class="page-link">5</a>-->
+									<#--</li>-->
+									<#if pageVO.currentPage lt pageVO.total>
+										<li class="page-item">
+											<a href="/showSales?current=${pageVO.currentPage+1}&pageSize=4" class="page-link">${pageVO.currentPage+1}</a>
+										</li>
+										<li class="page-item">
+											<a href="/showSales?current=${pageVO.currentPage+1}&pageSize=4" class="page-link">
+												<span aria-hidden="true">&raquo;</span>
+											</a>
+										</li>
+									</#if>
+								</#if>
   							</ul>
                       </div>
                     </div>
@@ -378,18 +430,18 @@
 												</tr>
 											</table>
 													<div style="display: flex;justify-content: space-between;">
-														<a href="#">
-															<button class="btn btn-success btn-sm" title="添加行">
+														<#--<a href="#">-->
+															<button class="btn btn-success btn-sm" type="button" title="添加行" onclick="return addLine()">
                       					<i class="fa fa-plus-square"></i>
                       					添加
                       				</button>
-                      			</a>
-                      			<a href="#">
-                      				<button class="btn btn-danger btn-sm" title="删除行">
+                      			<#--</a>-->
+                      			<#--<a href="#">-->
+                      				<button class="btn btn-danger btn-sm" title="删除行" type="button" onclick="deleteLine()">
                       					<i class="fa fa-trash-o"></i>
                       					删除
                       				</button>
-                      			</a>
+                      			<#--</a>-->
                       			<a href="#">
                       				<button class="btn btn-success btn-sm" title="新增仓库">
                       					<i class="fa fa-cart-arrow-down"></i>
@@ -402,15 +454,15 @@
                       					添加商品
                       				</button>
                       			</a>
-                      			<a href="#">
-                      				<button class="btn btn-warning btn-sm" title="撤销">
+                      			<#--<a href="#">-->
+                      				<button class="btn btn-warning btn-sm" title="撤销" type="button" onclick="revokeLine()">
                       					<i class="fa fa-mail-reply"></i>
                       					撤销
                       				</button>
-                      			</a>
+                      			<#--</a>-->
 													</div>
 										<div style="margin-top: 20px;">
-                      	<table class="table table-hover text-center">
+                      	<table class="table table-hover text-center" id="productList">
                       		<tr class="text-bold">
                       			<td><input type="checkbox" title="全选" id="thElt" onclick="checkOrCancelMo()"></td>
                       			<td>仓库名称</td>
@@ -422,16 +474,24 @@
                       			<td>金额</td>
                       			<td>备注</td>
                       		</tr>
-                      		<tr>
+                      		<tr class="product">
                       			<td><input type="checkbox" name="tElt"></td>
-                      			<td>数据</td>
-                      			<td>数据</td>
-                      			<td>数据</td>
-                      			<td>数据</td>
-                      			<td>数据</td>
-                      			<td>数据</td>
-                      			<td>数据</td>
-                      			<td>数据</td>
+                      			<td><select name="">
+										<option>仓库1</option>
+										<option>仓库2</option>
+									</select></td>
+                      			<td>
+									<select name="">
+										<option>商品1</option>
+										<option>商品2</option>
+									</select>
+								</td>
+                      			<td><input type="text" readonly></td>
+                      			<td><input type="text" readonly></td>
+                      			<td><input type="text"></td>
+                      			<td><input type="text"></td>
+                      			<td><input type="text"></td>
+                      			<td><input type="text"></td>
                       		</tr>
                       	</table>
                       </div>
@@ -467,7 +527,35 @@
 					}
 				}
 			}
-    	
+
+		/**
+		 * 删除行
+		 */
+    	function deleteLine() {
+    		// let table = document.getElementById("productList");
+    		let $1 = $("#productList");
+    		let children = $1.children();
+    		alert(children.length);
+    		// let childNodes = table.children;
+    		// alert(childNodes);
+			// for (let i=0; i<childNodes.length; i++) {
+			// 	alert(childNodes[i]);
+			// 	if (childNodes[i] == true) {
+			// 		table.removeChild(childNodes[i]);
+			// 	}
+			// }
+		}
+
+		/**
+		 * 撤销行
+		 */
+		function revokeLine() {
+			let table = document.getElementById("productList");
+			let childList = table.childNodes;
+			// for (let i = 1;i<childList.length;i++) {
+			// 	table.removeChild(childList[i]);
+			// }
+		}
     	function checkOrCancelMo(){
 				var chElt = document.getElementById("thElt");
 				var checkedElt = chElt.checked;
@@ -483,9 +571,18 @@
 				}
 			}
     	
-    	window.onload = function(){
-    		document.getElementById("marketingmanagement").click();
-    	}
+    	// window.onload = function(){
+    	// 	document.getElementById("marketingmanagement").click();
+    	// }
+
+		/**
+		 * 添加行
+		 */
+    	function addLine() {
+    		let tdVal = $(".product").html();
+    		let trObj = "<tr class='product'>"+tdVal+"</tr>";
+			$("#productList").append(trObj);
+		}
     </script>
   </body>
 </html>

@@ -26,4 +26,9 @@ public class DepoTheadServiceImpl implements DepoTheadService {
     public List<SalesBillVO> getBillByPage(PageVO pageVO, Condition condition) {
         return depoTheadDao.findBillByPage(pageVO, condition);
     }
+
+    @Override
+    public Integer getBillCount(Condition condition) {
+        return depoTheadDao.findBillCount(condition);
+    }
 }

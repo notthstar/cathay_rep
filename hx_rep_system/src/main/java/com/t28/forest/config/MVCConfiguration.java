@@ -22,4 +22,5 @@ public class MVCConfiguration extends WebMvcConfigurerAdapter {
         registry.addViewController("/").setViewName("login");
         super.addViewControllers(registry);
     }
+
 }

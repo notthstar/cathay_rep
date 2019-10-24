@@ -15,10 +15,32 @@ public class PageVO {
      * 每页显示的数据条数
      */
     private Integer pageSize;
+    /**
+     * 总页数
+     */
+    private Integer total;
+
+    public PageVO() {}
 
     public PageVO(Integer current, Integer pageSize) {
         setCurrent(current);
         this.pageSize = pageSize;
+    }
+
+    public Integer getTotal() {
+        return total;
+    }
+
+    public void setTotal(Integer total) {
+        this.total = total;
+    }
+
+    /**
+     * 页面模板属性的获取是通过get方法确定的
+     * 页面显示当前页的方法
+     */
+    public Integer getCurrentPage() {
+        return current;
     }
 
     public Integer getCurrent() {

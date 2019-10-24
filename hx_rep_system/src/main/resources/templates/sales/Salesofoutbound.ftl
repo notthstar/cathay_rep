@@ -176,7 +176,7 @@
           <!-- Breadcrumb-->
           <div class="breadcrumb-holder container-fluid">
             <ul class="breadcrumb">
-              <li class="breadcrumb-item"><a href="index.html">首页</a></li>
+              <li class="breadcrumb-item"><a href="/toPage?page=index">首页</a></li>
               <li class="breadcrumb-item active">销售出库</li>
             </ul>
           </div>
@@ -525,7 +525,7 @@
 					}
 				}
 			}
-    	
+
     	window.onload = function(){
     		document.getElementById("marketingmanagement").click();
     	}

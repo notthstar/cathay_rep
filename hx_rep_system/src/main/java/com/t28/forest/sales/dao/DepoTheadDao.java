@@ -25,4 +25,11 @@ public interface DepoTheadDao {
      */
     public List<SalesBillVO> findBillByPage(@Param("pageVO") PageVO pageVO, @Param("condition")Condition condition);
 
+    /**
+     * 根据条件查询数据总条数
+     * @param condition
+     * @return Integer
+     */
+    public Integer findBillCount(@Param("condition")Condition condition);
+
 }

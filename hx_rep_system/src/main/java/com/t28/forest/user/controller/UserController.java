@@ -29,14 +29,14 @@ public class UserController {
     }
 
     @RequestMapping("/login")
-    public String login(UserDTO userDTO, Model model) {
+    public String login(UserDTO userDTO, Model model, HttpSession session) {
         UserDTO user = userService.login(userDTO.getLoginName(), DigestUtils.md5Hex(userDTO.getPassword()));
         // 判断用户名或密码是否错误
         if (Objects.isNull(user)) {
             model.addAttribute("msg", "用户名或密码错误！");
             return "login";
         }
-        model.addAttribute("user", user);
+        session.setAttribute("user", user);
         return "index";
     }
 

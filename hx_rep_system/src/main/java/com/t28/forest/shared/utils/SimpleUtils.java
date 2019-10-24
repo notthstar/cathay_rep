@@ -36,4 +36,16 @@ public class SimpleUtils {
         }
     }
 
+    /**
+     * 时间转字符串方法
+     * @deprecated 入参日期格式必须为 yyyy-MM-dd HH:mm:ss
+     * @param date
+     * @return java.lang.String
+     */
+    public static String dateToStr(Date date) {
+        synchronized (sdf) {
+            return sdf.format(date);
+        }
+    }
+
 }

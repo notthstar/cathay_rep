@@ -22,4 +22,11 @@ public interface DepoTheadService {
      */
     public List<SalesBillVO> getBillByPage(PageVO pageVO, Condition condition);
 
+    /**
+     * 根据条件查询数据条数
+     * @param condition 条件
+     * @return Integer
+     */
+    public Integer getBillCount(Condition condition);
+
 }

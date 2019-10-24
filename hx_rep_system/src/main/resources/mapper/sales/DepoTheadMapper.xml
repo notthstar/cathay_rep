@@ -18,6 +18,19 @@
         LIMIT #{pageVO.current},#{pageVO.pageSize};
     </select>
 
+    <select id="findBillCount" resultType="Integer">
+        SELECT COUNT(1) `count`
+        FROM jsh_depothead t1,jsh_depotitem t2,jsh_material t3,jsh_supplier t4
+        WHERE t1.id = t2.HeaderId
+        AND t2.MaterialId = t3.Id
+        AND t1.OrganId=t4.id
+        AND t1.SubType='销售'
+        AND t1.delete_Flag = 0
+        <if test="null != condition">
+            <include refid="selectSql"/>
+        </if>;
+    </select>
+
     <!--查询SQL语句条件拼接
             模糊查询商品名称
             模糊查询单据编号信息
