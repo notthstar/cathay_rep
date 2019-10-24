@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<!-- namespace指用户自定义的命名空间 -->
+<mapper namespace="com.t28.forest.warehouse.dao.WarehouseDao">
+
+
+     <select id="selectAll" resultType="com.t28.forest.warehouse.entity.vo.WareBillVO">
+		select distinct dh.*,
+         s.supplier,concat(m.Name,' ',m.Model) as mate
+        from jsh_depothead dh,jsh_material m,jsh_supplier s,jsh_depotitem tm
+        where  dh.OrganId = s.id
+			and dh.id= tm.HeaderId
+			and tm.MaterialId = m.id
+            and dh.Type=#{type}
+            and dh.SubType=#{subType}
+     </select>
+    
+    <select id="selectByCond"  resultType="com.t28.forest.warehouse.entity.vo.WareBillVO">
+        	select distinct dh.*,
+         s.supplier,concat(m.Name,' ',m.Model) as mate
+        from jsh_depothead dh,jsh_material m,jsh_supplier s,jsh_depotitem tm
+        where  dh.OrganId = s.id
+			and dh.id= tm.HeaderId
+			and tm.MaterialId = m.id
+            and dh.Type=#{type}
+            and dh.SubType=#{subType}
+        <where>
+            <if test="number!=null">
+                and number like %#{number}%
+            </if>
+            <if test="mate!=null">
+                and concat(m.Name,' ',m.Model) like %#{mate}%
+            </if>
+            <if test="startTime!=null||endTime!=null">
+                    and opertime BETWEEN #{startTime} and #{endTime}
+            </if>
+        </where>
+
+    </select>
+</mapper>

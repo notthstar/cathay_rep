@@ -3,24 +3,24 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>华夏ERP/其他入库</title>
+    <title>华夏ERP/零售出库</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="robots" content="all,follow">
     <!-- Bootstrap CSS-->
-    <link rel="stylesheet" href="../vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
     <!-- Font Awesome CSS-->
-    <link rel="stylesheet" href="../vendor/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="vendor/font-awesome/css/font-awesome.min.css">
     <!-- Fontastic Custom icon font-->
-    <link rel="stylesheet" href="../css/fontastic.css">
+    <link rel="stylesheet" href="css/fontastic.css">
     <!-- Google fonts - Poppins -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,700">
     <!-- theme stylesheet-->
-    <link rel="stylesheet" href="../css/style.default.css" id="theme-stylesheet">
+    <link rel="stylesheet" href="css/style.default.css" id="theme-stylesheet">
     <!-- Custom stylesheet - for your changes-->
-    <link rel="stylesheet" href="../css/custom.css">
+    <link rel="stylesheet" href="css/custom.css">
     <!-- Favicon-->
-    <link rel="shortcut icon" href="../img/flag-china.png">
+    <link rel="shortcut icon" href="img/flag-china.png">
     <!-- Tweaks for older IEs--><!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
@@ -46,11 +46,11 @@
                   <div class="brand-text d-none d-sm-inline-block d-lg-none"><strong>BD</strong></div></a>
                 <!-- Toggle Button--><a id="toggle-btn" href="#" class="menu-btn active"><span></span><span></span><span></span></a>
               </div>
-              <!-- Navbar Menu -->
+              <!-- 导航菜单 -->
               <ul class="nav-menu list-unstyled d-flex flex-md-row align-items-md-center">
-                <!-- Search-->
+                <!-- 搜索-->
                 <li class="nav-item d-flex align-items-center"><a id="search" href="#"><i class="icon-search"></i></a></li>
-                <!-- Notifications-->
+                <!-- 信箱通知-->
                 <li class="nav-item dropdown"> <a id="notifications" rel="nofollow" data-target="#" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link"><i class="fa fa-bell-o"></i><span class="badge bg-red badge-corner">0</span></a>
                   <ul aria-labelledby="notifications" class="dropdown-menu">
                     <li><a rel="nofollow" href="#" class="dropdown-item"> 
@@ -61,7 +61,7 @@
                   </ul>
                 </li>
                 
-                <!-- Languages dropdown    -->
+                <!-- 下拉    -->
                  <li class="nav-item dropdown">
                 	<a id="languages" rel="nofollow" data-target="#" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link language dropdown-toggle">
                 		<span class="fa fa-user-o"></span>
@@ -74,34 +74,34 @@
                 </li>
                   </ul>
                 </li>
-                <!-- Logout    -->
-                <!--<li class="nav-item"><a href="login.html" class="nav-link logout"> <span class="d-none d-sm-inline">Logout</span><i class="fa fa-sign-out"></i></a></li>-->
+                <!-- 退出   -->
+                <!--<li class="nav-item"><a href="login.ftl" class="nav-link logout"> <span class="d-none d-sm-inline">Logout</span><i class="fa fa-sign-out"></i></a></li>-->
               </ul>
             </div>
           </div>
         </nav>
       </header>
       <div class="page-content d-flex align-items-stretch"> 
-        <!-- Side Navbar -->
+        <!-- 测导航 -->
         <nav class="side-navbar">
-          <!-- Sidebar Header-->
+          <!-- 侧边栏标题-->
           <div class="sidebar-header d-flex align-items-center">
-            <div class="avatar"><img src="../img/nerd bot.png" width="50px" height="50px" title="欢迎你,管理员"></div>
+            <div class="avatar"><img src="img/nerd bot.png" width="50px" height="50px" title="欢迎你,管理员"></div>
             <div class="title">
               <h1 class="h4">管理员</h1>
               <p>欢迎你</p>
             </div>
           </div>
-          <!-- Sidebar Navidation Menus--><span class="heading">Main</span>
+          <span class="heading">Main</span>
           <ul class="list-unstyled">
-          	<!--下拉列表1-->
+          			<!--下拉导航列表1-->
                     <li><a href="#retailmanagement" aria-expanded="false" data-toggle="collapse" id="retailadministration"> <i class="fa fa-podcast"></i>零售管理 </a>
                     	<ul class="collapse list-unstyled" id="retailmanagement">
-                    		<li><a href="../retailmanagement/storage.html"><i class="fa fa-toggle-off"></i>零售出库</a></li>
-                    		<li><a href="../retailmanagement/returned.html"><i class="fa fa-toggle-off"></i>零售退货</a></li>
+                    		<li class="active"><a href="/storage"><i class="fa fa-toggle-off"></i>零售出库</a></li>
+                    		<li><a href="/returned"><i class="fa fa-toggle-off"></i>零售退货</a></li>
                     	</ul>
                     </li>
-                    <!--下拉列表2-->
+                    <!--下拉导航列表2-->
                     <li><a href="#purchasingmanagement" aria-expanded="false" data-toggle="collapse"> <i class="fa fa-bookmark-o"></i>采购管理</a>
                     	<ul class="collapse list-unstyled" id="purchasingmanagement">
                     		<li><a href="../purchasingmanagement/purchaseorder.html"><i class="fa fa-toggle-off"></i>采购订单</a></li>
@@ -109,7 +109,7 @@
                     		<li><a href="../purchasingmanagement/Purchasereturn.html"><i class="fa fa-toggle-off"></i>采购退货</a></li>
                     	</ul>
                     </li>
-                    <!--下拉列表3-->
+                    <!--下拉导航列表3-->
                     <li><a href="#salesmanagement" aria-expanded="false" data-toggle="collapse"> <i class="fa fa-plus-square-o"></i>销售管理</a>
                     	<ul class="collapse list-unstyled" id="salesmanagement">
                     		<li><a href="../salesmanagement/sell.html"><i class="fa fa-toggle-off"></i>销售订单</a></li>
@@ -117,43 +117,37 @@
                     		<li><a href="../salesmanagement/Salesreturn.html"><i class="fa fa-toggle-off"></i>销售退货</a></li>
                     	</ul>
                     </li>
-                    <!--下拉列表4-->
-                    <li><a href="#storemanagement" aria-expanded="false" data-toggle="collapse" id="warehousemanagement"> <i class="fa fa-plus-square"></i>仓库管理</a>
+                    <!--下拉导航列表4-->
+                    <li><a href="#storemanagement" aria-expanded="false" data-toggle="collapse"> <i class="fa fa-plus-square"></i>仓库管理</a>
                     	<ul class="collapse list-unstyled" id="storemanagement">
-                    		<li class="active"><a href="../storemanagement/Otherwarehouse.html"><i class="fa fa-toggle-off"></i>其他入库</a></li>
+                    		<li><a href="../storemanagement/Otherwarehouse.html"><i class="fa fa-toggle-off"></i>其他入库</a></li>
                     		<li><a href="../storemanagement/Otheroutbound.html"><i class="fa fa-toggle-off"></i>其他出库</a></li>
                     		<li><a href="../storemanagement/allocatingoutbound.html"><i class="fa fa-toggle-off"></i>调拨出库</a></li>
                     		<li><a href="../storemanagement/Assemblythesingle.html"><i class="fa fa-toggle-off"></i>组装单</a></li>
                     		<li><a href="../storemanagement/Removethesingle.html"><i class="fa fa-toggle-off"></i>拆卸单</a></li>
                     	</ul>
                     </li>
-          </ul><!--<span class="heading">Extras</span>
-          <ul class="list-unstyled">
-            <li> <a href="#"> <i class="icon-flask"></i>Demo </a></li>
-            <li> <a href="#"> <i class="icon-screen"></i>Demo </a></li>
-            <li> <a href="#"> <i class="icon-mail"></i>Demo </a></li>
-            <li> <a href="#"> <i class="icon-picture"></i>Demo </a></li>
-          </ul>-->
+          </ul>
         </nav>
         <div class="content-inner">
-          <!-- Page Header-->
+          <!-- 页眉-->
           <header class="page-header">
             <div class="container-fluid">
-              <h2 class="no-margin-bottom">仓库管理</h2>
+              <h2 class="no-margin-bottom">零售管理</h2>
             </div>
           </header>
-          <!-- Breadcrumb-->
+          <!-- 导航-->
           <div class="breadcrumb-holder container-fluid">
             <ul class="breadcrumb">
               <li class="breadcrumb-item"><a href="index.html">首页</a></li>
-              <li class="breadcrumb-item active">其他入库</li>
+              <li class="breadcrumb-item active">零售出库</li>
             </ul>
           </div>
           
           
           
           
-          <!--表单-->
+          <!--零售出库列表-->
           <section class="forms"> 
             <div class="container-fluid">
               <div class="row">
@@ -165,7 +159,7 @@
                     <div class="card-header d-flex align-items-center">
                     	<strong>
                     			<i class="fa fa-window-maximize" aria-hidden="true"></i>
-                      		其他入库列表</strong>
+                      		零售出库列表</strong>
                     </div>
                     <div class="card-body">
                     	<form class="form-horizontal" role="form">
@@ -217,13 +211,15 @@
                       		<tr class="text-bold">
                       			<td><input type="checkbox" title="全选" id="chElt" onclick="checkOrCancelAll()"></td>
                       			<td>操作</td>
-                      			<td>供应商名称</td>
+                      			<td>会员卡号</td>
                       			<td>单据编号</td>
                       			<td>商品信息</td>
                       			<td>单据日期</td>
                       			<td>操作员</td>
                       			<td>金额合计</td>
+                      			<td>收款</td>
                       		</tr>
+							<#list queryStorageList as storagelist>
                       		<tr>
                       			<td><input type="checkbox" name="cElt"></td>
                       			<td style="display: flex; justify-content: space-between;">
@@ -237,13 +233,15 @@
                       					<i class="fa fa-trash-o" title="删除"></i>
                       				</a>
                       			</td>
-                      			<td>数据</td>
-                      			<td>数据</td>
-                      			<td>数据</td>
-                      			<td>数据</td>
-                      			<td>数据</td>
-                      			<td>数据</td>
+                      			<td>${storagelist.supplier}</td>
+                      			<td>${storagelist.number}</td>
+                      			<td>${storagelist.name}&nbsp;${storagelist.model}</td>
+                      			<td>${storagelist.createTime?string("yyyy-MM-dd HH:mm:ss")}</td>
+                      			<td>${storagelist.operPersonName}</td>
+                      			<td>${storagelist.totalPrice}</td>
+                      			<td>${storagelist.allPrice}</td>
                       		</tr>
+							</#list>
                       	</table>
                       </div>
                       <div style="display: flex;justify-content: flex-end;">
@@ -301,7 +299,7 @@
 									<div class="modal-header">
 										<span class="modal-title" id="mymodalriLabel">
 											<i class="fa fa-cog fa-spin fa-3x fa-fw" style="font-size: 23px;"></i>
-											添加其他入库信息
+											添加零售出库信息
 										</span>
 										<button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="fa fa-times" style="color: red;"></i>
 										</button>
@@ -311,17 +309,24 @@
 											<table class="form-group">
 												<tr>
 													<td>会员卡号：</td>
-													<td width="205px">
+													<td width="120px">
 														<select class="form-control">
 															<option>1</option>
 															<option>2</option>
 														</select>
 													</td>
 													<td>单据日期：</td>
-													<td width="205px"><input type="date" class="form-control" pattern="yyyy-MM-dd"></td>
+													<td width="170px"><input type="date" class="form-control" pattern="yyyy-MM-dd"></td>
 													<td>单据编号：</td>
-													<td width="205px">
+													<td width="120px">
 														<input type="text" class="form-control">
+													</td>
+													<td>付款方式：</td>
+													<td width="120px">
+														<select class="form-control">
+															<option>现金</option>
+															<option>微信</option>
+														</select>
 													</td>
 												</tr>
 											</table>
@@ -357,8 +362,8 @@
                       				</button>
                       			</a>
                       				<button class="btn btn-success btn-sm" title="新增会员" data-toggle='modal' data-target="#rigerth" type="button">
-                      					<i class="fa fa-shopping-cart"></i>
-                      					添加供应商
+                      					<i class="fa fa-user-o"></i>
+                      					添加会员
                       				</button>
 													</div>
 										<div style="margin-top: 20px;">
@@ -388,6 +393,29 @@
                       	</table>
                       </div>
                       <div>
+                      	<table>
+                      		<tr >
+                      			<td>实收金额:</td>
+                      			<td width="156px">
+                      				<input type="text" value="128" readonly="readonly" class="form-control" style="color: green;">
+                      			</td>
+                      			<td>收款金额:</td>
+                      			<td width="156px">
+                      				<input type="text"class="form-control" style="color: red;">
+                      			</td>
+                      			<td>找零:</td>
+                      			<td width="155px">
+                      				<input type="text"class="form-control">
+                      			</td>
+                      			<td>收款账户:</td>
+                      			<td width="155px">
+                      				<select class="form-control">
+                      					<option>wg127</option>
+                      					<option>vg454</option>
+                      				</select>
+                      			</td>
+                      		</tr>
+                      	</table>
                       	<div style="margin-top: 10px;">
                       		<textarea class="form-control" rows="2" placeholder="备注信息"></textarea>
                       	</div>
@@ -402,14 +430,14 @@
 			</div>
 			
 			
-			<!--新增供应商模态框-->
+			<!--新增会员模态框-->
 			<div class="modal fade" role="dialog" tabindex="-1" aria-hidden="false" aria-labelledby="mymodalrigerth" data-backdrop="static" data-keyboard="true" id="rigerth">
 			<div class="modal-dialog modal-lg">
 				<div class="modal-content" style="width: 878px;">
 					<div class="modal-header">
 						<span class="modal-title" id="mymodalriLabel">
 											<i class="fa fa-cog fa-spin fa-3x fa-fw" style="font-size: 23px;"></i>
-											添加供应商
+											添加会员
 										</span>
 										<button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="fa fa-times" style="color: red;"></i>
 										</button>
@@ -496,15 +524,15 @@
 			
     
     <!-- JavaScript files-->
-    <script src="../vendor/jquery/jquery.min.js"></script>
-    <script src="../vendor/popper.js/umd/popper.min.js"> </script>
-    <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
-    <script src="../vendor/jquery.cookie/jquery.cookie.js"> </script>
-    <script src="../vendor/chart.js/Chart.min.js"></script>
-    <script src="../vendor/jquery-validation/jquery.validate.min.js"></script>
-    <script src="../js/charts-custom.js"></script>
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/popper.js/umd/popper.min.js"> </script>
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="vendor/jquery.cookie/jquery.cookie.js"> </script>
+    <script src="vendor/chart.js/Chart.min.js"></script>
+    <script src="vendor/jquery-validation/jquery.validate.min.js"></script>
+    <script src="js/charts-custom.js"></script>
     <!-- Main File-->
-    <script src="../js/front.js"></script>
+    <script src="js/front.js"></script>
     <!--全选框-->
     <script type="text/javascript">
     	function checkOrCancelAll(){
@@ -538,7 +566,7 @@
 			}
     	
     	window.onload = function(){
-    		document.getElementById("warehousemanagement").click();
+    		document.getElementById("retailadministration").click();
     	}
     </script>
   </body>

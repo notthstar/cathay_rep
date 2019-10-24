@@ -21,4 +21,6 @@ public interface QueryallvoService {
      * @return :List
      */
     public List<Queryallvo> getqueryAll();
+
+
 }

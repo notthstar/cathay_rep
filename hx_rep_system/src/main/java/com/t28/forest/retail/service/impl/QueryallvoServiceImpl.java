@@ -21,8 +21,17 @@ public class QueryallvoServiceImpl implements QueryallvoService {
     @Autowired
     private QueryallvoDAO queryallvoDAO;
 
+    /**
+     * 功能描述: 查询全部数据
+     * @since: 1.0.0
+     * @Author: Zsy
+     * @Date: 2019/10/23
+     */
+
     @Override
     public List<Queryallvo> getqueryAll() {
         return queryallvoDAO.queryAll();
     }
+
+
 }

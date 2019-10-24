@@ -10,6 +10,10 @@ import java.util.Date;
  * @Date: 2019/10/21$
  */
 public class Queryallvo {
+    private Integer id;
+    /**
+     * id
+     */
     private String supplier;
     /**
      * 会员卡号
@@ -40,6 +44,13 @@ public class Queryallvo {
      * 收款
      */
 
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
     public String getSupplier() {
         return supplier;
     }
@@ -107,7 +118,8 @@ public class Queryallvo {
     @Override
     public String toString() {
         return "Queryallvo{" +
-                "supplier='" + supplier + '\'' +
+                "id=" + id +
+                ", supplier='" + supplier + '\'' +
                 ", number='" + number + '\'' +
                 ", name='" + name + '\'' +
                 ", model='" + model + '\'' +

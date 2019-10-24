@@ -3,24 +3,24 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>华夏ERP/其他出库</title>
+    <title>华夏ERP/组装单</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="robots" content="all,follow">
     <!-- Bootstrap CSS-->
-    <link rel="stylesheet" href="../vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
     <!-- Font Awesome CSS-->
-    <link rel="stylesheet" href="../vendor/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="vendor/font-awesome/css/font-awesome.min.css">
     <!-- Fontastic Custom icon font-->
-    <link rel="stylesheet" href="../css/fontastic.css">
+    <link rel="stylesheet" href="css/fontastic.css">
     <!-- Google fonts - Poppins -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,700">
     <!-- theme stylesheet-->
-    <link rel="stylesheet" href="../css/style.default.css" id="theme-stylesheet">
+    <link rel="stylesheet" href="css/style.default.css" id="theme-stylesheet">
     <!-- Custom stylesheet - for your changes-->
-    <link rel="stylesheet" href="../css/custom.css">
+    <link rel="stylesheet" href="css/custom.css">
     <!-- Favicon-->
-    <link rel="shortcut icon" href="../img/flag-china.png">
+    <link rel="shortcut icon" href="img/flag-china.png">
     <!-- Tweaks for older IEs--><!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
@@ -85,7 +85,7 @@
         <nav class="side-navbar">
           <!-- Sidebar Header-->
           <div class="sidebar-header d-flex align-items-center">
-            <div class="avatar"><img src="../img/nerd bot.png" width="50px" height="50px" title="欢迎你,管理员"></div>
+            <div class="avatar"><img src="img/nerd%20bot.png" width="50px" height="50px" title="欢迎你,管理员"></div>
             <div class="title">
               <h1 class="h4">管理员</h1>
               <p>欢迎你</p>
@@ -96,34 +96,34 @@
           	<!--下拉列表1-->
                     <li><a href="#retailmanagement" aria-expanded="false" data-toggle="collapse"> <i class="fa fa-podcast"></i>零售管理 </a>
                     	<ul class="collapse list-unstyled" id="retailmanagement">
-                    		<li><a href="../retailmanagement/storage.html"><i class="fa fa-toggle-off"></i>零售出库</a></li>
-                    		<li><a href="../retailmanagement/returned.html"><i class="fa fa-toggle-off"></i>零售退货</a></li>
+                    		<li><a href="retailmanagement/storage.html"><i class="fa fa-toggle-off"></i>零售出库</a></li>
+                    		<li><a href="retailmanagement/returned.html"><i class="fa fa-toggle-off"></i>零售退货</a></li>
                     	</ul>
                     </li>
                     <!--下拉列表2-->
                     <li><a href="#purchasingmanagement" aria-expanded="false" data-toggle="collapse"> <i class="fa fa-bookmark-o"></i>采购管理</a>
                     	<ul class="collapse list-unstyled" id="purchasingmanagement">
-                    		<li><a href="../purchasingmanagement/purchaseorder.html"><i class="fa fa-toggle-off"></i>采购订单</a></li>
-                    		<li><a href="../purchasingmanagement/procurementandstorage.html"><i class="fa fa-toggle-off"></i>采购入库</a></li>
-                    		<li><a href="../purchasingmanagement/Purchasereturn.html"><i class="fa fa-toggle-off"></i>采购退货</a></li>
+                    		<li><a href="purchasingmanagement/purchaseorder.html"><i class="fa fa-toggle-off"></i>采购订单</a></li>
+                    		<li><a href="purchasingmanagement/procurementandstorage.html"><i class="fa fa-toggle-off"></i>采购入库</a></li>
+                    		<li><a href="purchasingmanagement/Purchasereturn.html"><i class="fa fa-toggle-off"></i>采购退货</a></li>
                     	</ul>
                     </li>
                     <!--下拉列表3-->
                     <li><a href="#salesmanagement" aria-expanded="false" data-toggle="collapse" id="marketingmanagement"> <i class="fa fa-plus-square-o"></i>销售管理</a>
                     	<ul class="collapse list-unstyled" id="salesmanagement" data-ride="carousel">
-                    		<li><a href="../salesmanagement/sell.html"><i class="fa fa-toggle-off"></i>销售订单</a></li>
-                    		<li><a href="../salesmanagement/Salesofoutbound.html"><i class="fa fa-toggle-off"></i>销售出库</a></li>
-                    		<li><a href="../salesmanagement/Salesreturn.html"><i class="fa fa-toggle-off"></i>销售退货</a></li>
+                    		<li><a href="salesmanagement/sell.html"><i class="fa fa-toggle-off"></i>销售订单</a></li>
+                    		<li><a href="salesmanagement/Salesofoutbound.html"><i class="fa fa-toggle-off"></i>销售出库</a></li>
+                    		<li><a href="salesmanagement/Salesreturn.html"><i class="fa fa-toggle-off"></i>销售退货</a></li>
                     	</ul>
                     </li>
                     <!--下拉列表4-->
                     <li><a href="#storemanagement" aria-expanded="false" data-toggle="collapse" id="warehousemanagement"> <i class="fa fa-plus-square"></i>仓库管理</a>
                     	<ul class="collapse list-unstyled" id="storemanagement">
-                    		<li><a href="../storemanagement/Otherwarehouse.html"><i class="fa fa-toggle-off"></i>其他入库</a></li>
-                    		<li class="active"><a href="../storemanagement/Otheroutbound.html"><i class="fa fa-toggle-off"></i>其他出库</a></li>
-                    		<li><a href="../storemanagement/allocatingoutbound.html"><i class="fa fa-toggle-off"></i>调拨出库</a></li>
-                    		<li><a href="../storemanagement/Assemblythesingle.html"><i class="fa fa-toggle-off"></i>组装单</a></li>
-                    		<li><a href="../storemanagement/Removethesingle.html"><i class="fa fa-toggle-off"></i>拆卸单</a></li>
+                    		<li><a href="inWarehouseVO"><i class="fa fa-toggle-off"></i>其他入库</a></li>
+                    		<li><a href="outWareBillVO"><i class="fa fa-toggle-off"></i>其他出库</a></li>
+                    		<li><a href="allocateBillVO"><i class="fa fa-toggle-off"></i>调拨出库</a></li>
+                    		<li class="active"><a href="html"><i class="fa fa-toggle-off"></i>组装单</a></li>
+                    		<li><a href="disAssembleBillVO"><i class="fa fa-toggle-off"></i>拆卸单</a></li>
                     	</ul>
                     </li>
                     <!--<li><a href="index.html"> <i class="icon-home"></i>Home </a></li>
@@ -157,7 +157,7 @@
           <div class="breadcrumb-holder container-fluid">
             <ul class="breadcrumb">
               <li class="breadcrumb-item"><a href="index.html">首页</a></li>
-              <li class="breadcrumb-item active">其他出库</li>
+              <li class="breadcrumb-item active">组装单</li>
             </ul>
           </div>
           
@@ -176,7 +176,7 @@
                     <div class="card-header d-flex align-items-center">
                     	<strong>
                     			<i class="fa fa-window-maximize" aria-hidden="true"></i>
-                      		其他出库列表</strong>
+                      		组装单列表</strong>
                     </div>
                     <div class="card-body">
                     	<form class="form-horizontal">
@@ -225,33 +225,33 @@
                       		<tr class="text-bold">
                       			<td><input type="checkbox" title="全选" id="chElt" onclick="checkOrCancelAll()"></td>
                       			<td>操作</td>
-                      			<td>客户名称</td>
                       			<td>单据编号</td>
                       			<td>商品信息</td>
                       			<td>单据日期</td>
                       			<td>操作员</td>
                       			<td>金额合计</td>
                       		</tr>
-                      		<tr>
-                      			<td><input type="checkbox" name="cElt"></td>
-                      			<td style="display: flex; justify-content: space-between;">
-                      				<a href="#">
-                      					<i class="fa fa-list" title="查看"></i>
-                      				</a>
-                      				<a href="#" style="color: green;">
-                      					<i class="fa fa-pencil-square-o" title="编辑"></i>
-                      				</a>
-                      				<a href="#" style="color: red;">
-                      					<i class="fa fa-trash-o" title="删除"></i>
-                      				</a>
-                      			</td>
-                      			<td>数据</td>
-                      			<td>数据</td>
-                      			<td>数据</td>
-                      			<td>数据</td>
-                      			<td>数据</td>
-                      			<td>数据</td>
-                      		</tr>
+                            <#list assembleBillVOList as list>
+							<tr>
+                                <td><input type="checkbox" name="cElt"></td>
+                                <td style="display: flex; justify-content: space-between;">
+                                    <a href="#">
+                                        <i class="fa fa-list" title="查看"></i>
+                                    </a>
+                                    <a href="#" style="color: green;">
+                                        <i class="fa fa-pencil-square-o" title="编辑"></i>
+                                    </a>
+                                    <a href="#" style="color: red;">
+                                        <i class="fa fa-trash-o" title="删除"></i>
+                                    </a>
+                                </td>
+                                <td>${list.number}</td>
+                                <td>${list.mate}</td>
+                                <td>${list.opertime?string("yyyy-MM-dd HH:mm:ss")}</td>
+                                <td>${list.operPersonName}</td>
+                                <td>${list.totalPrice}</td>
+                            </tr>
+							</#list>
                       	</table>
                       </div>
                       <div style="display: flex;justify-content: flex-end;">
@@ -264,35 +264,7 @@
                       		删除
                       	</button>
                       </div>
-                      <div style="display: flex;justify-content: center;">
-                         	<ul class="pagination">
-    							<li class="page-item">
-      								<a href="#" class="page-link">
-        							<span aria-hidden="true">&laquo;</span>
-      								</a>
-    							</li>
-    							<li class="page-item">
-    								<a href="#" class="page-link">1</a>
-    							</li>
-    							<li class="page-item">
-    								<a href="#" class="page-link">2</a>
-    							</li>
-    							<li class="page-item">
-    								<a href="#" class="page-link">3</a>
-    							</li>
-    							<li class="page-item">
-    								<a href="#" class="page-link">4</a>
-    							</li>
-    							<li class="page-item">
-    								<a href="#" class="page-link">5</a>
-    							</li>
-    							<li class="page-item">
-      								<a href="#" class="page-link">
-        							<span aria-hidden="true">&raquo;</span>
-      								</a>
-    							</li>
-  							</ul>
-                      </div>
+
                     </div>
                   </div>
                 </div>
@@ -310,7 +282,7 @@
 									<div class="modal-header">
 										<span class="modal-title" id="mymodalriLabel">
 											<i class="fa fa-cog fa-spin fa-3x fa-fw" style="font-size: 23px;"></i>
-											添加其他出库信息
+											添加组装单信息
 										</span>
 										<button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="fa fa-times" style="color: red;"></i>
 										</button>
@@ -319,22 +291,14 @@
 										<form class="form-horizontal">
 											<table class="form-group">
 												<tr>
-														<td>客户：</td>
-														<td width="345px">
-														<select class="form-control">
-															<option>1</option>
-															<option>2</option>
-														</select>
-														</td>
+														
 														<td>单据日期：</td>
 														<td width="345px">
 														<input type="date" class="form-control" pattern="yyyy-MM-dd"></td>
-												</tr>
-												<tr>
 														<td>单据编号：</td>
-														<td width="600px" colspan="4">
-														<input type="text" class="form-control">
-													</td>
+														<td width="345px">
+														<input type="text" class="form-control"></td>
+														</td>
 												</tr>
 											</table>
 													<div style="display: flex;justify-content: space-between;">
@@ -373,24 +337,18 @@
                       	<table class="table table-hover text-center">
                       		<tr class="text-bold">
                       			<td><input type="checkbox" title="全选" id="thElt" onclick="checkOrCancelMo()"></td>
+                      			<td>商品类型</td>
                       			<td>仓库名称</td>
                       			<td>品名(型号)</td>
                       			<td>库存</td>
                       			<td>单位</td>
                       			<td>数量</td>
                       			<td>单价</td>
-                      			<td>含税单价</td>
                       			<td>金额</td>
-                      			<td>税率</td>
-                      			<td>税额</td>
-                      			<td>价税合计</td>
                       			<td>备注</td>
                       		</tr>
                       		<tr>
                       			<td><input type="checkbox" name="tElt"></td>
-                      			<td>数据</td>
-                      			<td>数据</td>
-                      			<td>数据</td>
                       			<td>数据</td>
                       			<td>数据</td>
                       			<td>数据</td>
@@ -419,15 +377,15 @@
 			
     
     <!-- JavaScript files-->
-    <script src="../vendor/jquery/jquery.min.js"></script>
-    <script src="../vendor/popper.js/umd/popper.min.js"> </script>
-    <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
-    <script src="../vendor/jquery.cookie/jquery.cookie.js"> </script>
-    <script src="../vendor/chart.js/Chart.min.js"></script>
-    <script src="../vendor/jquery-validation/jquery.validate.min.js"></script>
-    <script src="../js/charts-custom.js"></script>
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/popper.js/umd/popper.min.js"> </script>
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="vendor/jquery.cookie/jquery.cookie.js"> </script>
+    <script src="vendor/chart.js/Chart.min.js"></script>
+    <script src="vendor/jquery-validation/jquery.validate.min.js"></script>
+    <script src="js/charts-custom.js"></script>
     <!-- Main File-->
-    <script src="../js/front.js"></script>
+    <script src="js/front.js"></script>
     <!--全选框-->
     <script type="text/javascript">
     	function checkOrCancelAll(){

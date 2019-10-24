@@ -17,7 +17,7 @@ import java.util.Date;
  * @Author: lcy
  * @Date: 2019/10/22 9:15
  */
-public class wareBillVO {
+public class WareBillVO {
 
     /**
      *供应商名称
@@ -65,7 +65,7 @@ public class wareBillVO {
     }
 
     public void setMate(String mate) {
-        mate = mate;
+        this.mate = mate;
     }
 
     public Date getOpertime() {
@@ -73,7 +73,8 @@ public class wareBillVO {
     }
 
     public void setOpertime(Date opertime) {
-        opertime = opertime;
+
+        this.opertime = opertime;
     }
 
 
@@ -95,11 +96,11 @@ public class wareBillVO {
 
     @Override
     public String toString() {
-        return "wareBillVO{" +
+        return "WareBillVO{" +
                 "supplier='" + supplier + '\'' +
                 ", number='" + number + '\'' +
-                ", Mate='" + mate + '\'' +
-                ", Opertime=" + opertime +
+                ", mate='" + mate + '\'' +
+                ", opertime=" + opertime +
                 ", operPersonName='" + operPersonName + '\'' +
                 ", totalPrice=" + totalPrice +
                 '}';
