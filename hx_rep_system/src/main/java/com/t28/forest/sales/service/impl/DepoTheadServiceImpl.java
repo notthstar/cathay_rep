@@ -31,4 +31,9 @@ public class DepoTheadServiceImpl implements DepoTheadService {
     public Integer getBillCount(Condition condition) {
         return depoTheadDao.findBillCount(condition);
     }
+
+    @Override
+    public Integer deleteDepoTheadById(Integer id) {
+        return depoTheadDao.deleteDepoTheadById(id);
+    }
 }

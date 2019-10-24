@@ -6,11 +6,12 @@ import com.t28.forest.sales.vo.SalesBillVO;
 import com.t28.forest.shared.cond.Condition;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpSession;
+import java.util.Arrays;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * @author XiangYuFeng
@@ -35,7 +36,26 @@ public class SalesController {
         // 数据添加到session中
         session.setAttribute("bills", bills);
         session.setAttribute("pageVO", pageVO);
+        session.setAttribute("condition", condition);
         return "sales/sell";
+    }
+
+    @RequestMapping("/delSales")
+    public String delSales(Integer[] cElt) {
+        for (int i = 0; i < cElt.length; i++) {
+            depoTheadService.deleteDepoTheadById(cElt[i]);
+        }
+        return "redirect:/showSales?current=1&pageSize=4";
+    }
+
+    @RequestMapping("/exaSales")
+    public String examSales(Integer[] cElt) {
+        return null;
+    }
+
+    @RequestMapping("/addSales")
+    public String addSales() {
+        return null;
     }
 
 }

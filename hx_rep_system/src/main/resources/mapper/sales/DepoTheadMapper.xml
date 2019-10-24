@@ -5,7 +5,7 @@
 
     <!--销售订单查询SQL语句-->
     <select id="findBillByPage" resultType="com.t28.forest.sales.vo.SalesBillVO">
-        SELECT t4.supplier 'customerName',t1.Number 'billNum',t3.Name 'productName',t1.CreateTime 'billCreateTime',t1.OperPersonName 'operator',t1.TotalPrice 'totalPrice',t1.Status 'billStatus'
+        SELECT t4.supplier 'customerName',t1.Number 'billNum',t3.Name 'productName',t1.CreateTime 'billCreateTime',t1.OperPersonName 'operator',t1.TotalPrice 'totalPrice',t1.Status 'billStatus',t1.id 'depoTheadId'
         FROM jsh_depothead t1,jsh_depotitem t2,jsh_material t3,jsh_supplier t4
         WHERE t1.id = t2.HeaderId
         AND t2.MaterialId = t3.Id
@@ -30,6 +30,25 @@
             <include refid="selectSql"/>
         </if>;
     </select>
+
+    <!--逻辑删除单据信息-->
+    <update id="deleteDepoTheadById" parameterType="Integer">
+        UPDATE jsh_depothead SET delete_Flag=1 WHERE id=#{id};
+    </update>
+
+    <update id="updateDepoTheadById" parameterType="com.t28.forest.shared.entity.DepoTheadDTO">
+        UPDATE jsh_depothead
+        <set>
+            <include refid="updateSql"/>
+        </set> WHERE id=#{id};
+    </update>
+
+    <!--修改的SQL语句片段-->
+    <sql id="updateSql">
+        <if test="null != status">
+            `status` = #{status}
+        </if>
+    </sql>
 
     <!--查询SQL语句条件拼接
             模糊查询商品名称

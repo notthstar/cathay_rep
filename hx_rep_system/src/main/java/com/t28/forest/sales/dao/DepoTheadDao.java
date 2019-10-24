@@ -3,6 +3,7 @@ package com.t28.forest.sales.dao;
 import com.t28.forest.sales.vo.PageVO;
 import com.t28.forest.sales.vo.SalesBillVO;
 import com.t28.forest.shared.cond.Condition;
+import com.t28.forest.shared.entity.DepoTheadDTO;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
@@ -31,5 +32,26 @@ public interface DepoTheadDao {
      * @return Integer
      */
     public Integer findBillCount(@Param("condition")Condition condition);
+
+    /**
+     * 根据单据ID逻辑删除单据信息
+     * @param id
+     * @return Integer
+     */
+    public Integer deleteDepoTheadById(Integer id);
+
+    /**
+     * 添加单据主表信息
+     * @param depoTheadDTO
+     * @return Integer
+     */
+    public Integer insertDepoThead(DepoTheadDTO depoTheadDTO);
+
+    /**
+     * 根据ID修改单据主表信息
+     * @param depoTheadDTO
+     * @return Integer
+     */
+    public Integer updateDepoTheadById(DepoTheadDTO depoTheadDTO);
 
 }

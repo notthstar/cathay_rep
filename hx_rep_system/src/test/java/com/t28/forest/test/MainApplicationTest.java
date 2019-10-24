@@ -2,6 +2,7 @@ package com.t28.forest.test;
 
 import static org.junit.Assert.assertTrue;
 
+import com.t28.forest.shared.utils.SimpleUtils;
 import com.t28.forest.user.dao.UserDao;
 import com.t28.forest.user.entity.UserDTO;
 import org.junit.Test;
@@ -36,6 +37,12 @@ public class MainApplicationTest
 //        userDTO.setUserName();
 //        userDTO.setPassword();
         UserDTO user = userDao.findUserByCondition(userDTO);
+    }
+
+    @Test
+    public void createBillNumTest() {
+        String s = SimpleUtils.generateBillNum();
+        System.out.println(s);
     }
 
 }

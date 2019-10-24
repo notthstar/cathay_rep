@@ -29,4 +29,11 @@ public interface DepoTheadService {
      */
     public Integer getBillCount(Condition condition);
 
+    /**
+     * 根据ID逻辑删除单据信息
+     * @param id
+     * @return Integer
+     */
+    public Integer deleteDepoTheadById(Integer id);
+
 }

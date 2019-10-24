@@ -18,7 +18,6 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.List;
 
 @RunWith(SpringRunner.class)
@@ -34,6 +33,12 @@ public class SalesJunitTest {
         for (SalesBillVO bill : bills) {
             System.out.println(bill);
         }
+    }
+
+    @Test
+    public void deleteDepoTheadTest() {
+        Integer result = depoTheadDao.deleteDepoTheadById(8);
+        System.out.println(result);
     }
 
 }

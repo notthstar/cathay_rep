@@ -205,27 +205,27 @@
                       		销售订单列表</strong>
                     </div>
                     <div class="card-body">
-                    	<form class="form-horizontal">
+                    	<form class="form-horizontal" id="subForm" action="/showSales" method="post">
                       <table>
                       	<tr>
                       		<div class="form-group">
                       			<td>单据编号：</td>
-                      			<td width="150px"><input type="text" class="form-control"></td>
+                      			<td width="150px"><input type="text" value="<#if condition??><#if condition.code??>${condition.code}</#if></#if>" name="code" class="form-control"></td>
                       		</div>
                       		
                       		<div class="form-group">
                       			<td>商品信息：</td>
-                      			<td width="150px"><input type="text" class="form-control" placeholder="名称/型号"></td>
+                      			<td width="150px"><input type="text" value="<#if condition??><#if condition.name??>${condition.name}</#if></#if>" name="name" class="form-control" placeholder="名称/型号"></td>
                       		</div>
                       		
                       		<div class="form-group">
                       			<td>单据日期：</td>
-                      			<td width="170px"><input type="date" class="form-control" pattern="yyyy-MM-dd"></td>
+                      			<td width="170px"><input type="date" value="<#if condition??><#if condition.beginDate??>${condition.beginDate?string('yyyy-MM-dd')}</#if></#if>" name="beginDate" class="form-control" pattern="yyyy-MM-dd"></td>
                       		</div>
                       		
                       		<div class="form-group">
                       			<td>-</td>
-                      			<td width="170px"><input type="date" class="form-control" pattern="yyyy-MM-dd"></td>
+                      			<td width="170px"><input type="date" value="<#if condition??><#if condition.endDate??>${condition.endDate?string('yyyy-MM-dd')}</#if></#if>" name="endDate" class="form-control" pattern="yyyy-MM-dd"></td>
                       		</div>
                       		<div class="form-group">
                       			<td>
@@ -242,6 +242,8 @@
                       			重置</button>
                       			</a>
                       		</td>
+								<input type="hidden" value="1" name="current" id="currentPage">
+								<input type="hidden" value="4" name="pageSize" id="pageSize">
                       		</div>
                       	</tr>
                       </table>
@@ -259,9 +261,12 @@
                       			<td>金额合计</td>
                       			<td>状态</td>
                       		</tr>
+							<form action="/delSales" method="post" id="deleteIds">
 							<#list bills as bill>
 								<tr>
-									<td><input type="checkbox" name="cElt"></td>
+									<#--自定义属性单据编号-->
+									<td><input type="checkbox" name="cElt" value="${bill.depoTheadId}"></td>
+									<#--deptId="${bill.depoTheadId}"-->
 									<td style="display: flex; justify-content: space-between;">
 										<a href="#">
 											<i class="fa fa-list" title="查看"></i>
@@ -269,8 +274,8 @@
 										<a href="#" style="color: green;">
 											<i class="fa fa-pencil-square-o" title="编辑"></i>
 										</a>
-										<a href="#" style="color: red;">
-											<i class="fa fa-trash-o" title="删除" onclick="#"></i>
+										<a href="/delSales?cElt=${bill.depoTheadId}" style="color: red;">
+											<i class="fa fa-trash-o" title="删除"></i>
 										</a>
 										<a href="#" style="color: yellow;">
 											<i class="fa fa-share" title="转销售出库"></i>
@@ -298,6 +303,7 @@
 									</#switch>
 								</tr>
 							</#list>
+							</form>
                       		<#--<tr>-->
                       			<#--<td><input type="checkbox" name="cElt"></td>-->
                       			<#--<td style="display: flex; justify-content: space-between;">-->
@@ -329,7 +335,7 @@
                       		<i class="fa fa-plus"></i>
                       		添加
                       	</button>&nbsp;
-                      	<button class="btn btn-danger" title="删除">
+                      	<button class="btn btn-danger" title="删除" onclick="deleteBill()">
                       		<i class="fa fa-times"></i>
                       		删除
                       	</button>&nbsp;
@@ -347,17 +353,17 @@
 								<#if pageVO??>
 									<#--${pageVO.current} ---- ${pageVO.pageSize} ----- ${pageVO.total} ---- ${pageVO.currentPage}-->
 									<#if pageVO.current gt 1>
-										<li class="page-item">
-											<a href="/showSales?current=${pageVO.currentPage-1}&pageSize=4" class="page-link">
+										<li class="page-item" onclick="subPage(${pageVO.currentPage-1})">
+											<a class="page-link">
 												<span aria-hidden="true">&laquo;</span>
 											</a>
 										</li>
-										<li class="page-item">
-											<a href="/showSales?current=${pageVO.currentPage-1}&pageSize=4" class="page-link">${pageVO.currentPage-1}</a>
+										<li class="page-item" onclick="subPage(${pageVO.currentPage-1})">
+											<a class="page-link">${pageVO.currentPage-1}</a>
 										</li>
 									</#if>
-									<li class="page-item active">
-										<a href="/showSales?current=${pageVO.currentPage}&pageSize=4" class="page-link">${pageVO.currentPage}</a>
+									<li class="page-item active" onclick="subPage(${pageVO.currentPage})">
+										<a class="page-link">${pageVO.currentPage}</a>
 									</li>
 									<#--<li class="page-item">-->
 										<#--<a href="#" class="page-link">4</a>-->
@@ -366,11 +372,11 @@
 										<#--<a href="#" class="page-link">5</a>-->
 									<#--</li>-->
 									<#if pageVO.currentPage lt pageVO.total>
-										<li class="page-item">
-											<a href="/showSales?current=${pageVO.currentPage+1}&pageSize=4" class="page-link">${pageVO.currentPage+1}</a>
+										<li class="page-item" onclick="subPage(${pageVO.currentPage+1})">
+											<a class="page-link">${pageVO.currentPage+1}</a>
 										</li>
-										<li class="page-item">
-											<a href="/showSales?current=${pageVO.currentPage+1}&pageSize=4" class="page-link">
+										<li class="page-item" onclick="subPage(${pageVO.currentPage+1})">
+											<a class="page-link">
 												<span aria-hidden="true">&raquo;</span>
 											</a>
 										</li>
@@ -534,8 +540,29 @@
     	function deleteLine() {
     		// let table = document.getElementById("productList");
     		let $1 = $("#productList");
-    		let children = $1.children();
-    		alert(children.length);
+    		// $1.deleteRow();
+
+			let allCheck=document.getElementsByName("tElt");
+
+			for (let i = 0; i < allCheck.length; i++) {
+				let checked = allCheck[i].checked;
+				if (checked == true) {
+					let element = allCheck[i].parentNode;
+				}
+				alert(checked);
+			}
+    		// let children = $1.children;
+    		// alert(children.length);
+    		// // 1
+    		// let children1 = children.children;
+    		// alert(children1.html);
+    		// 4
+    		// let children2 = children.children();
+    		// 9
+    		// alert(children2.length);
+    		// alert(children2.html);
+    		// let children3 = children2.children();
+    		// alert(children3.length);
     		// let childNodes = table.children;
     		// alert(childNodes);
 			// for (let i=0; i<childNodes.length; i++) {
@@ -582,6 +609,23 @@
     		let tdVal = $(".product").html();
     		let trObj = "<tr class='product'>"+tdVal+"</tr>";
 			$("#productList").append(trObj);
+		}
+
+		/**
+		 * 提交分页数据
+		 * @param current
+		 */
+		function subPage(current) {
+			$("#currentPage").val(current);
+			$("#pageSize").val(4);
+			$("#subForm").submit();
+		}
+
+		/**
+		 * 被选中的单据ID提交
+		 */
+		function deleteBill() {
+			$("#deleteIds").submit();
 		}
     </script>
   </body>

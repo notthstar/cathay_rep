@@ -1,5 +1,7 @@
 package com.t28.forest.sales.vo;
 
+import java.util.Objects;
+
 /**
  * @author XiangYuFeng
  * @description 分页信息页面显示对象
@@ -44,6 +46,9 @@ public class PageVO {
     }
 
     public Integer getCurrent() {
+        if (Objects.isNull(current)) {
+            return 1;
+        }
         return (current-1) * pageSize;
     }
 

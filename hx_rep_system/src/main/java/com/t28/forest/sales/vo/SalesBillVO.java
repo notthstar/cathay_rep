@@ -37,6 +37,18 @@ public class SalesBillVO {
      * 单据状态
      */
     private String billStatus;
+    /**
+     * 单据主表ID
+     */
+    private Integer depoTheadId;
+
+    public Integer getDepoTheadId() {
+        return depoTheadId;
+    }
+
+    public void setDepoTheadId(Integer depoTheadId) {
+        this.depoTheadId = depoTheadId;
+    }
 
     public String getCustomerName() {
         return customerName;
