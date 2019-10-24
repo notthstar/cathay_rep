@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.t28.forest.sales.dao.DepoTitemDao">
+
+    <!--根据ID更新单据子表信息-->
+    <update id="updateDepoTitem" parameterType="com.t28.forest.shared.entity.DepoTitemDTO">
+        UPDATE jsh_depotitem
+        <set>
+            <include refid="updateSql"/>
+        </set> WHERE id=#{id};
+    </update>
+
+    <!--添加单据子表信息-->
+    <insert id="insertDepoTitem" parameterType="com.t28.forest.shared.entity.DepoTitemDTO">
+        INSERT INTO jsh_depotitem(headerid, materialid, munit, opernumber, basicnumber, unitprice, taxunitprice, allprice, remark, img, incidentals, depotid, anotherdepotid, taxrate, taxmoney, taxlastmoney, otherfield1, otherfield2, otherfield3, otherfield4, otherfield5, mtype, tenant_id)
+        VALUES(#{});
+    </insert>
+
+    <!--更新数据SQL片段-->
+    <sql id="updateSql">
+        <if test="null != headerId">
+            headerid = #{headerId}
+        </if>
+    </sql>
+
+</mapper>

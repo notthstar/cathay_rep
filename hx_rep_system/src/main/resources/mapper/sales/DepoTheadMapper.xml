@@ -36,12 +36,19 @@
         UPDATE jsh_depothead SET delete_Flag=1 WHERE id=#{id};
     </update>
 
+    <!--通过ID更新单据主表-->
     <update id="updateDepoTheadById" parameterType="com.t28.forest.shared.entity.DepoTheadDTO">
         UPDATE jsh_depothead
         <set>
             <include refid="updateSql"/>
         </set> WHERE id=#{id};
     </update>
+
+    <!--添加单据主表信息-->
+    <insert id="insertDepoThead" parameterType="com.t28.forest.shared.entity.DepoTheadDTO">
+        INSERT INTO jsh_depothead(`type`, subtype, projectid, defaultnumber, `number`, operpersonname, createtime, opertime, organid, handspersonid, accountid, changeamount, allocationprojectid, totalprice, paytype, remark, salesman, accountidlist, accountmoneylist, discount, discountmoney, discountlastmoney, othermoney, othermoneylist, othermoneyitem, accountday, status, linknumber, tenant_id, delete_flag)
+        VALUES();
+    </insert>
 
     <!--修改的SQL语句片段-->
     <sql id="updateSql">
