@@ -134,6 +134,13 @@ public class DepoTheadDTO {
      */
     private String deleteFlag;
 
+    public DepoTheadDTO() {}
+
+    public DepoTheadDTO(Integer id, String status) {
+        this.id = id;
+        this.status = status;
+    }
+
     public Integer getId() {
         return id;
     }

@@ -25,4 +25,11 @@ public interface UserDao {
      */
     public Integer insertUser(UserDTO userDTO);
 
+    /**
+     * 根据ID修改用户信息
+     * @param userDTO
+     * @return Integer
+     */
+    public Integer updateUserById(UserDTO userDTO);
+
 }

@@ -10,6 +10,9 @@
 			width: 62px;
 			height: 24px;
 		}
+		select[name="materialId"] {
+			width: 70px;
+		}
 	</style>
   </head>
   <body>
@@ -266,6 +269,7 @@
 								<tr>
 									<#--自定义属性单据编号-->
 									<td><input type="checkbox" name="cElt" value="${bill.depoTheadId}"></td>
+									<#--<input type="hidden" name="status" value="${bill.billStatus}">-->
 									<#--deptId="${bill.depoTheadId}"-->
 									<td style="display: flex; justify-content: space-between;">
 										<a href="#">
@@ -293,13 +297,13 @@
 									<#--</#if>-->
 									<#switch bill.billStatus>
 										<#case "0">
-											<td>未审核</td>
+											<td style="color: red;">未审核</td>
 											<#break>
 										<#case "1">
-											<td>已审核</td>
+											<td style="color: green;">已审核</td>
 											<#break>
 										<#default>
-											<td>已转采购|销售</td>
+											<td style="color: blue;">已转采购|销售</td>
 									</#switch>
 								</tr>
 							</#list>
@@ -331,19 +335,19 @@
                       	</table>
                       </div>
                       <div style="display: flex;justify-content: flex-end;">
-                      	<button class="btn btn-success" title="添加" data-toggle="modal" data-target="#insert">
+                      	<button class="btn btn-success" title="添加" data-toggle="modal" data-target="#insert" onclick="addBill()">
                       		<i class="fa fa-plus"></i>
                       		添加
                       	</button>&nbsp;
-                      	<button class="btn btn-danger" title="删除" onclick="deleteBill()">
+                      	<button class="btn btn-danger" title="删除" onclick="deleteBill('del')">
                       		<i class="fa fa-times"></i>
                       		删除
                       	</button>&nbsp;
-                      	<button class="btn btn-warning" title="审核通过">
+                      	<button class="btn btn-warning" title="审核通过" onclick="deleteBill('exa')">
                       		<i class="fa fa-share"></i>
                       		审核
                       	</button>&nbsp;
-                      	<button class="btn btn-warning" title="审核不通过">
+                      	<button class="btn btn-warning" title="审核不通过" onclick="deleteBill('nexa')">
                       		<i class="fa fa-reply"></i>
                       		反向审核
                       	</button>
@@ -407,31 +411,29 @@
 										</button>
 									</div>
 									<div class="modal-body">
-										<form class="form-horizontal">
+										<form class="form-horizontal" action="/addSales" method="post">
 											<table class="form-group">
 												<tr>
 														<td>客户：</td>
 														<td width="345px">
-														<select class="form-control">
-															<option>1</option>
-															<option>2</option>
+														<select class="form-control" name="supplierId">
+															<#list suppliers as supplier>
+																<option value="${supplier.id}">${supplier.supplier}</option>
+															</#list>
 														</select>
 														</td>
 														<td>单据日期：</td>
 														<td width="345px">
-														<input type="date" class="form-control" pattern="yyyy-MM-dd"></td>
+														<input type="date" name="billDate" class="form-control" id="billDate"></td>
 												</tr>
 												<tr>
 														<td>单据编号：</td>
 														<td width="345px">
-														<input type="text" class="form-control">
+														<input type="text" name="billNum" id="billNum" class="form-control" readonly>
 													</td>
 														<td>销售人员：</td>
 														<td width="345px">
-														<select class="form-control">
-															<option>1</option>
-															<option>2</option>
-														</select>
+														<select class="form-control"></select>
 													</td>
 												</tr>
 											</table>
@@ -482,53 +484,52 @@
                       		</tr>
                       		<tr class="product">
                       			<td><input type="checkbox" name="tElt"></td>
-                      			<td><select name="">
-										<option>仓库1</option>
-										<option>仓库2</option>
+                      			<td><select name="deptoId" onchange="changedSelect(this)" style="width: 95px;">
+										<#list deptos as depto>
+											<option value="${depto.id}">${depto.name}</option>
+										</#list>
 									</select></td>
                       			<td>
-									<select name="">
-										<option>商品1</option>
-										<option>商品2</option>
-									</select>
+									<select name="materialId" onchange='changedMater(this)'></select>
 								</td>
-                      			<td><input type="text" readonly></td>
-                      			<td><input type="text" readonly></td>
-                      			<td><input type="text"></td>
-                      			<td><input type="text"></td>
-                      			<td><input type="text"></td>
-                      			<td><input type="text"></td>
+                      			<td><input type="text" readonly name="stock"></td>
+                      			<td><input type="text" readonly name="unit"></td>
+                      			<td><input type="text" name="num"></td>
+                      			<td><input type="text" name="retailPrice"></td>
+                      			<td><input type="text" name="money"></td>
+                      			<td><input type="text" name="remark"></td>
                       		</tr>
                       	</table>
                       </div>
+											<input type="hidden" value="${user.name}" name="operPersonName">
+											<input type="hidden" value="${user.id}" name="tenantId">
                       <div>
                       	<div style="margin-top: 10px;">
                       		<textarea class="form-control" rows="2" placeholder="备注信息"></textarea>
                       	</div>
                       </div>
                       <div class="modal-footer">
-                      	<button class="btn btn-success col-md-12">保存</button>
+                      	<button class="btn btn-success col-md-12" type="submit">保存</button>
                       </div>
                   </form>
 							</div>
 						</div>
 					</div>
 			</div>
-			
-    
+
     <#include "../footer/footerLink.html"/>
     <!--全选框-->
     <script type="text/javascript">
     	function checkOrCancelAll(){
-				var chElt=document.getElementById("chElt");
-				var checkedElt=chElt.checked;
-				var allCheck=document.getElementsByName("cElt");
+				let chElt=document.getElementById("chElt");
+				let checkedElt=chElt.checked;
+				let allCheck=document.getElementsByName("cElt");
 				if(checkedElt){
-					for(var i=0;i<allCheck.length;i++){
+					for(let i=0;i<allCheck.length;i++){
 					allCheck[i].checked=true;
 					}
 				}else{
-					for(var i=0;i<allCheck.length;i++){
+					for(let i=0;i<allCheck.length;i++){
 					allCheck[i].checked=false;
 					}
 				}
@@ -537,70 +538,71 @@
 		/**
 		 * 删除行
 		 */
-    	function deleteLine() {
-    		// let table = document.getElementById("productList");
-    		let $1 = $("#productList");
-    		// $1.deleteRow();
-
-			let allCheck=document.getElementsByName("tElt");
-
-			for (let i = 0; i < allCheck.length; i++) {
-				let checked = allCheck[i].checked;
-				if (checked == true) {
-					let element = allCheck[i].parentNode;
-				}
-				alert(checked);
-			}
-    		// let children = $1.children;
-    		// alert(children.length);
-    		// // 1
-    		// let children1 = children.children;
-    		// alert(children1.html);
-    		// 4
-    		// let children2 = children.children();
-    		// 9
-    		// alert(children2.length);
-    		// alert(children2.html);
-    		// let children3 = children2.children();
-    		// alert(children3.length);
-    		// let childNodes = table.children;
-    		// alert(childNodes);
-			// for (let i=0; i<childNodes.length; i++) {
-			// 	alert(childNodes[i]);
-			// 	if (childNodes[i] == true) {
-			// 		table.removeChild(childNodes[i]);
-			// 	}
-			// }
-		}
+    	// function deleteLine() {
+    	// 	// let table = document.getElementById("productList");
+    	// 	let $1 = $("#productList");
+    	// 	// $1.deleteRow();
+		//
+		// 	let allCheck=document.getElementsByName("tElt");
+		//
+		// 	for (let i = 0; i < allCheck.length; i++) {
+		// 		let checked = allCheck[i].checked;
+		// 		if (checked == true) {
+		// 			let element = allCheck[i].parentNode;
+		// 		}
+		// 		alert(checked);
+		// 	}
+    	// 	// let children = $1.children;
+    	// 	// alert(children.length);
+    	// 	// // 1
+    	// 	// let children1 = children.children;
+    	// 	// alert(children1.html);
+    	// 	// 4
+    	// 	// let children2 = children.children();
+    	// 	// 9
+    	// 	// alert(children2.length);
+    	// 	// alert(children2.html);
+    	// 	// let children3 = children2.children();
+    	// 	// alert(children3.length);
+    	// 	// let childNodes = table.children;
+    	// 	// alert(childNodes);
+		// 	// for (let i=0; i<childNodes.length; i++) {
+		// 	// 	alert(childNodes[i]);
+		// 	// 	if (childNodes[i] == true) {
+		// 	// 		table.removeChild(childNodes[i]);
+		// 	// 	}
+		// 	// }
+		// }
 
 		/**
 		 * 撤销行
 		 */
-		function revokeLine() {
-			let table = document.getElementById("productList");
-			let childList = table.childNodes;
-			// for (let i = 1;i<childList.length;i++) {
-			// 	table.removeChild(childList[i]);
-			// }
-		}
+		// function revokeLine() {
+		// 	let table = document.getElementById("productList");
+		// 	let childList = table.childNodes;
+		// 	// for (let i = 1;i<childList.length;i++) {
+		// 	// 	table.removeChild(childList[i]);
+		// 	// }
+		// }
+
     	function checkOrCancelMo(){
-				var chElt = document.getElementById("thElt");
-				var checkedElt = chElt.checked;
-				var allCheck = document.getElementsByName("tElt");
+				let chElt = document.getElementById("thElt");
+				let checkedElt = chElt.checked;
+				let allCheck = document.getElementsByName("tElt");
 				if(checkedElt){
-					for(var i=0;i<allCheck.length;i++){
+					for(let i=0;i<allCheck.length;i++){
 					allCheck[i].checked=true;
 					}
 				}else{
-					for(var i=0;i<allCheck.length;i++){
+					for(let i=0;i<allCheck.length;i++){
 					allCheck[i].checked=false;
 					}
 				}
 			}
     	
-    	// window.onload = function(){
-    	// 	document.getElementById("marketingmanagement").click();
-    	// }
+    	window.onload = function(){
+    		document.getElementById("marketingmanagement").click();
+    	}
 
 		/**
 		 * 添加行
@@ -624,8 +626,71 @@
 		/**
 		 * 被选中的单据ID提交
 		 */
-		function deleteBill() {
-			$("#deleteIds").submit();
+		function deleteBill(sign) {
+			if ('del' === sign) {
+				$("#deleteIds").submit();
+			} else {
+				if ('exa' === sign) {
+					$("#deleteIds").attr("action", "/approveSales?sign=approve").submit();
+				} else {
+					$("#deleteIds").attr("action", "/approveSales?sign=deApprove").submit();
+				}
+			}
+		}
+
+		/**
+		 * 选择仓库商品信息联动方法
+		 * @param obj
+		 */
+		function changedSelect(obj) {
+			let value = obj.options[obj.selectedIndex].value;
+			let i$ = $(obj).parent().siblings().next().next().children();
+			$.post("/materialLink",{"depotId":value},function (data) {
+				let htmlText = "<select name='materialId'>";
+				for (let i = 0; i < data.length; i++) {
+					htmlText += "<option value='" + data[i].id + "'>" + data[i].name + "</option>";
+				}
+				htmlText += "</select>";
+				i$.html(htmlText);
+			});
+		}
+
+		/**
+		 * 商品信息联动
+		 */
+		function changedMater(obj) {
+			let value = obj.options[obj.selectedIndex].value;
+			let i$ = $(obj).parent().next();
+			let stock$ = i$.children();
+			let unit$ = i$.next().children();
+			let num$ = i$.next().next().children();
+			let retailPrice$ = i$.next().next().next().children();
+			let money$ = i$.next().next().next().next().children();
+			let remark$ = i$.next().next().next().next().next().children();
+
+			$.post("/supplierLink", {"supplierId" : value}, function (data) {
+				stock$.val(data.stock);
+				unit$.val(data.unit);
+				num$.val(data.num);
+				retailPrice$.val(data.retailPrice);
+				money$.val(data.money);
+				remark$.val(data.remark);
+			});
+			// let children = obj.parent().siblings().next();
+			// alert(i$.length);
+			// alert(i$);
+			// alert(value);
+		}
+
+		/**
+		 * 生成唯一订单号
+		 */
+		function addBill() {
+			$.post("/createBill",function (data) {
+				$("#billNum").val(data[0]);
+				// 日期设置值，貌似没用
+				// $("#billDate").val(data[1]);
+			});
 		}
     </script>
   </body>

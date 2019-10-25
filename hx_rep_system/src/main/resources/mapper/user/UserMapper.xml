@@ -15,8 +15,23 @@
     </select>
 
     <insert id="insertUser" parameterType="com.t28.forest.user.entity.UserDTO">
-        INSERT INTO jsh_erp.jsh_user(username, loginame, password, `position`, department, email, phonenum, ismanager, isystem, `status`, description, remark, tenant_id)
+        INSERT INTO jsh_user(username, loginame, `password`, `position`, department, email, phonenum, ismanager, isystem, `status`, description, remark, tenant_id)
         VALUES (#{userName},#{loginName},#{password},#{position},#{department},#{email},#{phoneNum},#{isManager},#{isystem},#{status},#{description},#{remark},#{tenantId});
     </insert>
+
+    <!--根据用户ID更新用户信息-->
+    <update id="updateUserById" parameterType="com.t28.forest.user.entity.UserDTO">
+        UPDATE jsh_user
+        <set>
+            <include refid="updateSql"/>
+        </set> WHERE id = #{id};
+    </update>
+
+    <!--更新SQL片段-->
+    <sql id="updateSql">
+        <if test="null != password">
+            `password` = #{password}
+        </if>
+    </sql>
 
 </mapper>

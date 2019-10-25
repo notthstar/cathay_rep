@@ -38,4 +38,13 @@ public class UserServiceImpl implements UserService {
         }
         return false;
     }
+
+    @Override
+    public Boolean updatePassWord(UserDTO userDTO) {
+        int result = userDao.updateUserById(userDTO);
+        if (result > 0) {
+            return true;
+        }
+        return false;
+    }
 }

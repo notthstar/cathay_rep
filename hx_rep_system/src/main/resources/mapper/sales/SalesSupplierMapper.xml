@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.t28.forest.sales.dao.SalesSupplierDao">
+
+    <!--查询所有客户信息-->
+    <select id="findSuppliers" resultType="com.t28.forest.shared.entity.SupplierDTO">
+        SELECT id,supplier FROM jsh_supplier WHERE `type`='客户';
+    </select>
+
+    <!--根据仓库和产品ID查询产品信息-->
+    <select id="findSupplierById" resultType="com.t28.forest.sales.vo.SupplierVO">
+        SELECT t3.Name 'productName',COUNT(t3.Name) 'stock',t3.unit,1 'num',t3.RetailPrice 'retailPrice',t3.RetailPrice 'money',t3.Remark 'remark' FROM jsh_depot t1,jsh_depotitem t2,jsh_material t3 WHERE t2.MaterialId = t3.Id AND t2.DepotId=t1.id AND t1.id=#{depotId} AND t3.Id=#{supplierId} GROUP BY t3.id;
+    </select>
+
+</mapper>
