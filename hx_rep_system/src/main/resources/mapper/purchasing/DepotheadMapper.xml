@@ -3,5 +3,161 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <!-- namespace指用户自定义的命名空间 -->
 <mapper namespace="com.t28.forest.purchasing.dao.DepotheadDao">
+    <!-- 显示与条件查询 -->
+    <select id="getAllDepothead" resultType="com.t28.forest.purchasing.extract.ExtractPurchaseOrderDTO">
+        SELECT
+        DISTINCT
+        t1.id,
+        t2.supplier,
+        t1.Number,
+        t4.name,
+        t1.CreateTime,
+        t1.OperPersonName,
+        t1.TotalPrice,
+        t1.Status,
+        (t1.TotalPrice*t3.TaxRate) AS TaxIncludedAmount,
+        t1.DiscountLastMoney,
+        t1.ChangeAmount
+        FROM
+        jsh_depothead t1,
+        jsh_supplier t2,
+        jsh_depotitem t3,
+        jsh_material t4
+        where
+        t1.OrganId=t2.id
+        AND
+        t1.id = t3.HeaderId
+        AND
+        t3.MaterialId = t4.Id
+        AND t1.SubType='采购'
+        AND t1.delete_Flag = 0
+        <if test="null != condition">
+            <include refid="selectSql"/>
+        </if>
+        LIMIT #{pageVO.current},#{pageVO.pageSize};
+    </select>
+    <!-- 查询总条数 -->
+    <select id="getCountInfo" resultType="Integer">
+        SELECT
+        DISTINCT
+        count(1)
+        FROM
+        jsh_depothead t1,
+        jsh_supplier t2,
+        jsh_depotitem t3,
+        jsh_material t4
+        where
+        t1.OrganId=t2.id
+        AND t1.id = t3.HeaderId
+        AND t3.MaterialId = t4.Id
+        AND t1.SubType='采购'
+        AND t1.delete_Flag = 0
+        <if test="null != condition">
+            <include refid="selectSql"/>
+        </if>;
+    </select>
+    <!-- 查询所以供应商名 -->
+    <select id="getAllName" resultType="com.t28.forest.shared.entity.SupplierDTO">
+        SELECT DISTINCT * FROM  jsh_supplier
+    </select>
+    <!-- 添加供应商信息 -->
+    <insert id="addSupplierInfo" parameterType="com.t28.forest.shared.entity.SupplierDTO">
+        INSERT
+        INTO
+        jsh_supplier(
+        supplier,
+        contacts,
+        telephone,
+        email,
+        phonenum,
+        fax,
+        description,
+        BeginNeedGet,
+        BeginNeedPay,
+        taxNum,
+        taxRate,
+        bankName,
+        accountNumber,
+        address)
+        VALUES(
+        #{supplier},
+        #{contacts},
+        #{telephone},
+        #{email},
+        #{phoneNum},
+        #{fax},
+        #{description},
+        #{beginNeedGet},
+        #{beginNeedPay},
+        #{taxNum},
+        #{taxRate},
+        #{bankName},
+        #{accountNumber},
+        #{address}
+        )
+    </insert>
+    <!-- 根据id查看信息 -->
+    <select id="selectById" resultType="com.t28.forest.purchasing.extract.ExtractPurchaseOrderDTO">
+        SELECT
+        DISTINCT
+        t2.supplier,
+        t1.Number,
+        t4.name,
+        t1.CreateTime,
+        t1.OperPersonName,
+        t1.TotalPrice,
+        t1.Status
+        FROM
+        jsh_depothead t1,
+        jsh_supplier t2,
+        jsh_depotitem t3,
+        jsh_material t4
+        where
+        t1.OrganId=t2.id
+        AND t1.id = t3.HeaderId
+        AND t3.MaterialId = t4.Id
+        AND t1.id=#{id}
+    </select>
+    <!-- 根据id逻辑删除 -->
+    <update id="updateById" parameterType="Integer">
+        UPDATE jsh_depothead SET delete_Flag=1 WHERE id=#{id};
+    </update>
+    <update id="updateDepoTheadById" parameterType="com.t28.forest.shared.entity.DepoTheadDTO">
+        UPDATE jsh_depothead
+        <set>
+            <include refid="updateSql"/>
+        </set> WHERE id=#{id};
+    </update>
 
+
+    <!--修改的SQL语句片段-->
+    <sql id="updateSql">
+        <if test="null != status">
+            `status` = #{status}
+        </if>
+    </sql>
+    <!--查询SQL语句条件拼接
+           模糊查询商品名称
+           模糊查询单据编号信息
+           查询日期范围
+   -->
+    <sql id="selectSql">
+        <if test="null != condition.code">
+            AND `number` LIKE concat('%',#{condition.code},'%')
+        </if>
+        <if test="null != condition.name">
+            AND `name` LIKE concat('%',#{condition.name},'%')
+        </if>
+        <choose>
+            <when test="null != condition.beginDate">
+                <![CDATA[AND createTime >= #{condition.beginDate}]]>
+                <if test="null != condition.endDate">
+                    <![CDATA[AND createTime <= #{condition.endDate}]]>
+                </if>
+            </when>
+            <when test="null != condition.endDate">
+                <![CDATA[AND createTime <= #{condition.endDate}]]>
+            </when>
+        </choose>
+    </sql>
 </mapper>
