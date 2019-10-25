@@ -120,7 +120,7 @@
                     <!--下拉列表4-->
                     <li><a href="#storemanagement" aria-expanded="false" data-toggle="collapse" id="warehousemanagement"> <i class="fa fa-plus-square"></i>仓库管理</a>
                     	<ul class="collapse list-unstyled" id="storemanagement">
-                    		<li class="active"><a href="l"><i class="fa fa-toggle-off"></i>其他入库</a></li>
+                    		<li class="active"><a href="inWarehouseVO"><i class="fa fa-toggle-off"></i>其他入库</a></li>
                     		<li><a href="outWareBillVO"><i class="fa fa-toggle-off"></i>其他出库</a></li>
                     		<li><a href="allocateBillVO"><i class="fa fa-toggle-off"></i>调拨出库</a></li>
                     		<li><a href="assembleBillVO"><i class="fa fa-toggle-off"></i>组装单</a></li>
@@ -168,32 +168,32 @@
                       		其他入库列表</strong>
                     </div>
                     <div class="card-body">
-                    	<form class="form-horizontal" role="form">
+                    	<form class="form-horizontal" role="form" action="/inWareByCond" method="post">
                       <table>
                       	<tr>
                       		<div class="form-group">
                       		<td>单据编号：</td>
                       		<td width="150px">
-                      			<input type="text" class="form-control">
+                      			<input type="text" class="form-control" id="number" name="number">
                       		</td>
                       		</div>
                       		<div class="form-group">
                       		<td>商品信息：</td>
-                      		<td width="150px"><input type="text" class="form-control" placeholder="名称/型号"></td>
+                      		<td width="150px"><input type="text" class="form-control" id="mate" name="mate" placeholder="名称/型号"></td>
                       		</div>
                       		<div class="form-group">
                       		<td>单据日期：</td>
-                      		<td width="170px"><input type="date" class="form-control" pattern="yyyy-MM-dd"></td>
+                      		<td width="170px"><input type="date" class="form-control" id="startTime" name="startTime" pattern="yyyy-MM-dd"></td>
                       		</div>
                       		<div class="form-group">
                       		<td>-</td>
-                      		<td width="170px"><input type="date" class="form-control" pattern="yyyy-MM-dd"></td>
+                      		<td width="170px"><input type="date" class="form-control" id="endTime" name="endTime" pattern="yyyy-MM-dd"></td>
                       		</div>
                       		<div class="form-group">
                       		<td>
-                      			<a href="#">
-                      			<button class="btn btn-success" style="width: 122px;">
-                      				<i class="fa fa-search"></i>
+
+                      			<button class="btn btn-success" style="width: 122px;" type="submit">
+
                       				查询
                       			</button>
                       			</a>

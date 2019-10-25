@@ -19,25 +19,23 @@
      </select>
     
     <select id="selectByCond"  resultType="com.t28.forest.warehouse.entity.vo.WareBillVO">
-        	select distinct dh.*,
-         s.supplier,concat(m.Name,' ',m.Model) as mate
+        select distinct dh.*,
+        s.supplier,concat(m.Name,' ',m.Model) as mate
         from jsh_depothead dh,jsh_material m,jsh_supplier s,jsh_depotitem tm
-        where  dh.OrganId = s.id
-			and dh.id= tm.HeaderId
+        <where>
+			dh.id= tm.HeaderId
 			and tm.MaterialId = m.id
             and dh.Type=#{type}
             and dh.SubType=#{subType}
-        <where>
             <if test="number!=null">
-                and number like %#{number}%
+                and number like '%${number}%'
             </if>
             <if test="mate!=null">
-                and concat(m.Name,' ',m.Model) like %#{mate}%
+                and concat(m.Name,' ',m.Model) like '%${mate}%'
             </if>
             <if test="startTime!=null||endTime!=null">
                     and opertime BETWEEN #{startTime} and #{endTime}
             </if>
         </where>
-
     </select>
 </mapper>
