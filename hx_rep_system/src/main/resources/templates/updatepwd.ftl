@@ -17,13 +17,16 @@
             <div class="col-lg-6  bg-white">
               <div class="form d-flex align-items-center">
                 <div class="content">
-                  <form class="form-validate">
+                  <form class="form-validate" action="/uptPwd" method="post">
+                    <#if msg??>
+                      <span style="color: red;">${msg}</span>
+                    </#if>
                       <div class="form-group">
-                          <input id="register-password" type="password" name="registerEmail" class="input-material">
+                          <input id="register-password" type="password" name="oldPwd" class="input-material">
                           <label for="register-password" class="label-material">旧密码:</label>
                         </div>
                     <div class="form-group">
-                      <input id="register-password" type="password" name="registerEmail" class="input-material">
+                      <input id="register-password" type="password" name="password" class="input-material">
                       <label for="register-password" class="label-material">新密码:</label>
                     </div>
                     <div class="form-group">

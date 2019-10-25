@@ -27,7 +27,7 @@
         mi.tenant_id = sl.id;
     </select>
     <!--根据id删除数据-->
-    <delete id="deleteById" parameterType="com.t28.forest.retail.entity.Queryallvo">
-        delete
-    </delete>
+    <!--<delete id="deleteById" parameterType="com.t28.forest.retail.entity.Queryallvo">-->
+        <!--delete-->
+    <!--</delete>-->
 </mapper>

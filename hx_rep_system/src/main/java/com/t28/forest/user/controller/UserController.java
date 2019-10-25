@@ -54,9 +54,30 @@ public class UserController {
         return "register";
     }
 
+    @RequestMapping("/uptPwd")
+    public String updatePwd(UserDTO userDTO, String oldPwd, HttpSession session, Model model) {
+        // 判断用户输入是否为空
+        if (Objects.isNull(oldPwd) || Objects.isNull(userDTO) || Objects.isNull(userDTO.getPassword())) {
+            model.addAttribute("msg", "密码不能为空！");
+            return "updatepwd";
+        }
+        // 从session中获取用户的旧密码
+        UserDTO user = (UserDTO) session.getAttribute("user");
+        // 判断用户输入的旧密码是否正确
+        if (!oldPwd.equals(user.getPassword())) {
+            model.addAttribute("msg", "旧密码错误！");
+            return "updatepwd";
+        }
+        // 更新session中的用户数据，修改密码，返回主页
+        user.setPassword(userDTO.getPassword());
+        session.setAttribute("user", user);
+        userService.updatePassWord(userDTO);
+        return "index";
+    }
+
     @RequestMapping("/userOut")
     public String userOut(HttpSession session) {
-        // 清楚session中的数据
+        // 清除session中的数据
         session.invalidate();
         return "login";
     }

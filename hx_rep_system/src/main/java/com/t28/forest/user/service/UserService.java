@@ -25,4 +25,11 @@ public interface UserService {
      */
     public Boolean register(UserDTO userDTO);
 
+    /**
+     * 根据ID更新用户信息
+     * @param userDTO
+     * @return Boolean
+     */
+    public Boolean updatePassWord(UserDTO userDTO);
+
 }

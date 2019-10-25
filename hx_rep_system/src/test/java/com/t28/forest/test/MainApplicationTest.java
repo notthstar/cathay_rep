@@ -41,7 +41,7 @@ public class MainApplicationTest
 
     @Test
     public void createBillNumTest() {
-        String s = SimpleUtils.generateBillNum();
+        String s = SimpleUtils.generateBillNum("DDJE");
         System.out.println(s);
     }
 

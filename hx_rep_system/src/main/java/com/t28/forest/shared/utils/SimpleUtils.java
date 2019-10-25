@@ -3,7 +3,6 @@ package com.t28.forest.shared.utils;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.UUID;
 
 /**
  * @author XiangYuFeng
@@ -16,7 +15,7 @@ public class SimpleUtils {
     /**
      * 时间日期格式化对象
      */
-    private static SimpleDateFormat sdf = new SimpleDateFormat();
+    private static SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
     /**
      * 工具类不允许实例化
@@ -25,7 +24,7 @@ public class SimpleUtils {
 
     /**
      * 字符串转时间类型工具
-     * 入参字符串格式 yyyy-mm-dd hh:mm:ss 小于某个时间 hh 为 24 ，大于 某个时间 hh 为 00
+     * 入参字符串格式 yyyy-mm-dd HH:mm:ss 小于某个时间 hh 为 24 ，大于 某个时间 hh 为 00
      * @param date
      * @return java.util.Date
      * @throws ParseException
@@ -51,11 +50,12 @@ public class SimpleUtils {
 
     /**
      * 生成唯一单据号的方法
+     * @param prefix 订单号前缀
      * @return java.lang.String
      */
-    public static String generateBillNum() {
+    public static String generateBillNum(String prefix) {
         Long timestamp = System.currentTimeMillis();
-        return "XSCK" + timestamp.toString();
+        return prefix + timestamp.toString();
     }
 
 }

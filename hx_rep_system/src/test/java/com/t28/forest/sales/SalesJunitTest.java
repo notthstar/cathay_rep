@@ -7,9 +7,16 @@
 package com.t28.forest.sales;
 
 import com.t28.forest.sales.dao.DepoTheadDao;
+import com.t28.forest.sales.dao.SalesDepotDao;
+import com.t28.forest.sales.dao.SalesMaterialDao;
+import com.t28.forest.sales.dao.SalesSupplierDao;
 import com.t28.forest.sales.vo.PageVO;
 import com.t28.forest.sales.vo.SalesBillVO;
+import com.t28.forest.sales.vo.SupplierVO;
 import com.t28.forest.shared.cond.Condition;
+import com.t28.forest.shared.entity.DepotDTO;
+import com.t28.forest.shared.entity.MaterialDTO;
+import com.t28.forest.shared.entity.SupplierDTO;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,6 +46,42 @@ public class SalesJunitTest {
     public void deleteDepoTheadTest() {
         Integer result = depoTheadDao.deleteDepoTheadById(8);
         System.out.println(result);
+    }
+
+    @Autowired
+    SalesDepotDao salesDepotDao;
+
+    @Test
+    public void findDepotsTest() {
+        List<DepotDTO> depots = salesDepotDao.findDepots();
+        for (int i = 0; i < depots.size(); i++) {
+            System.out.println(depots.get(i));
+        }
+    }
+
+    @Autowired
+    SalesMaterialDao materialDao;
+
+    @Test
+    public void findMaterialTest() {
+        List<MaterialDTO> materials = materialDao.findMaterialsByDepotId(3);
+        for (int i = 0; i < materials.size(); i++) {
+            System.out.println(materials.get(i));
+        }
+    }
+
+    @Autowired
+    SalesSupplierDao supplierDao;
+
+    @Test
+    public void findSuppliersTest() {
+//        List<SupplierDTO> suppliers = supplierDao.findSuppliers();
+//        for (int i = 0; i < suppliers.size(); i++) {
+//            System.out.println(suppliers.get(i));
+//        }
+
+        SupplierVO supplier = supplierDao.findSupplierById(485, 3);
+        System.out.println(supplier);
     }
 
 }
