@@ -11,6 +11,7 @@ import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Component;
 
+import java.util.Date;
 import java.util.List;
 @Mapper
 @Component
@@ -35,6 +36,6 @@ public interface WarehouseDao {
        * @Date: 2019/10/23 15:25
        */
       List<WareBillVO> selectByCond(@Param("type")String type, @Param("subType") String subType,
-                                    @Param("number") String number,@Param("mate") String mate,
-                                    @Param("startTime") String startTime,@Param("endTime") String endTime);
+                                    @Param("number") String number, @Param("mate") String mate,
+                                    @Param("startTime") Date startTime, @Param("endTime") Date endTime);
 }

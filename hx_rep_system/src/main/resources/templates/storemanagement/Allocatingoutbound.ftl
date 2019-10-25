@@ -121,7 +121,7 @@
                     	<ul class="collapse list-unstyled" id="storemanagement">
                     		<li><a href="inWarehouseVO"><i class="fa fa-toggle-off"></i>其他入库</a></li>
                     		<li><a href="outWareBillVO"><i class="fa fa-toggle-off"></i>其他出库</a></li>
-                    		<li class="active"><a href=".html"><i class="fa fa-toggle-off"></i>调拨出库</a></li>
+                    		<li class="active"><a href="allocateBillVO"><i class="fa fa-toggle-off"></i>调拨出库</a></li>
                     		<li><a href="assembleBillVO"><i class="fa fa-toggle-off"></i>组装单</a></li>
                     		<li><a href="disAssembleBillVO"><i class="fa fa-toggle-off"></i>拆卸单</a></li>
                     	</ul>
