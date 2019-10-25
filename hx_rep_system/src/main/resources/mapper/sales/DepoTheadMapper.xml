@@ -45,7 +45,7 @@
     </update>
 
     <!--添加单据主表信息-->
-    <insert id="insertDepoThead" parameterType="com.t28.forest.shared.entity.DepoTheadDTO" useGeneratedKeys="true" keyColumn="id">
+    <insert id="insertDepoThead" parameterType="com.t28.forest.shared.entity.DepoTheadDTO" useGeneratedKeys="true" keyProperty="id">
         INSERT INTO jsh_depothead(`type`, subtype, projectid, defaultnumber, `number`, operpersonname, createtime, opertime, organid, handspersonid, accountid, changeamount, allocationprojectid, totalprice, paytype, remark, salesman, accountidlist, accountmoneylist, discount, discountmoney, discountlastmoney, othermoney, othermoneylist, othermoneyitem, accountday, `status`, linknumber, tenant_id, delete_flag)
         VALUES(#{type},#{subType},#{projectId},#{defaultNumber},#{number},#{openPersonName},#{createTime},#{operTime},#{organId},#{handsPersonId},#{accountId},#{changeAmount},#{allocationProjectId},#{totalPrice},#{payType},#{remark},#{salesMan},#{accountIdList},#{accountMoneyList},#{disCount},#{disCountMoney},#{disCountLashMoney},#{otherMoney},#{otherMoneyList},#{otherMoneyItem},#{accountDay},#{status},#{linkNumber},#{tenantId},#{deleteFlag});
     </insert>

@@ -501,7 +501,7 @@
                       		</tr>
                       	</table>
                       </div>
-											<input type="hidden" value="${user.name}" name="operPersonName">
+											<input type="hidden" value="${user.userName}" name="operPersonName">
 											<input type="hidden" value="${user.id}" name="tenantId">
                       <div>
                       	<div style="margin-top: 10px;">
