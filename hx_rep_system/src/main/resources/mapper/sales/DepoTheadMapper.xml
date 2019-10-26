@@ -11,10 +11,12 @@
         AND t2.MaterialId = t3.Id
         AND t1.OrganId=t4.id
         AND t1.SubType='销售'
+        AND t1.type = '出库'
         AND t1.delete_Flag = 0
         <if test="null != condition">
             <include refid="selectSql"/>
         </if>
+        ORDER BY t1.id DESC
         LIMIT #{pageVO.current},#{pageVO.pageSize};
     </select>
 
@@ -25,6 +27,7 @@
         AND t2.MaterialId = t3.Id
         AND t1.OrganId=t4.id
         AND t1.SubType='销售'
+        AND t1.type = '出库'
         AND t1.delete_Flag = 0
         <if test="null != condition">
             <include refid="selectSql"/>

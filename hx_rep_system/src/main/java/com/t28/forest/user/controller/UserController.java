@@ -64,6 +64,7 @@ public class UserController {
         // 从session中获取用户的旧密码
         UserDTO user = (UserDTO) session.getAttribute("user");
         // 判断用户输入的旧密码是否正确
+        oldPwd = DigestUtils.md5Hex(oldPwd);
         if (!oldPwd.equals(user.getPassword())) {
             model.addAttribute("msg", "旧密码错误！");
             return "updatepwd";
