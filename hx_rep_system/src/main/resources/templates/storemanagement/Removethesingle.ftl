@@ -179,7 +179,7 @@
                       		拆卸单列表</strong>
                     </div>
                     <div class="card-body">
-                    	<form class="form-horizontal">
+                    	<form class="form-horizontal" method="post" action="assembleByCond">
                       <table>
                       	<tr>
                       		<div class="form-group">
@@ -203,10 +203,10 @@
                       		</div>
                       		<div class="form-group">
                       			<td>
-                      			<a href="#">
-                      			<button class="btn btn-success" style="width: 122px;"><i class="fa fa-search"></i>
+
+                      			<button class="btn btn-success" style="width: 122px;" type="submit"><i class="fa fa-search"></i>
                       				查询</button>
-                      			</a>
+
                       		</td>
                       		</div>
                       		<div class="form-group">

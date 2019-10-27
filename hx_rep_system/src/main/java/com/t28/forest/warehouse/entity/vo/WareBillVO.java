@@ -7,6 +7,8 @@
 package com.t28.forest.warehouse.entity.vo;
 
 
+import com.t28.forest.shared.entity.AccounTheadDTO;
+
 import java.util.Date;
 
 /**
@@ -19,6 +21,7 @@ import java.util.Date;
  */
 public class WareBillVO {
 
+    private  int id;
     /**
      *供应商名称
      */
@@ -43,6 +46,27 @@ public class WareBillVO {
      *金额合计
      */
     private int totalPrice;
+
+    /**
+     *单据主表
+     */
+    private AccounTheadDTO dto;
+
+    public AccounTheadDTO getDto() {
+        return dto;
+    }
+
+    public void setDto(AccounTheadDTO dto) {
+        this.dto = dto;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getSupplier() {
         return supplier;
@@ -97,7 +121,8 @@ public class WareBillVO {
     @Override
     public String toString() {
         return "WareBillVO{" +
-                "supplier='" + supplier + '\'' +
+                "id=" + id +
+                ", supplier='" + supplier + '\'' +
                 ", number='" + number + '\'' +
                 ", mate='" + mate + '\'' +
                 ", opertime=" + opertime +

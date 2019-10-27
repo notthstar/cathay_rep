@@ -117,15 +117,16 @@
                     	</ul>
                     </li>
                     <!--下拉列表4-->
-                    <li><a href="#storemanagement" aria-expanded="false" data-toggle="collapse" id="warehousemanagement"> <i class="fa fa-plus-square"></i>仓库管理</a>
-                    	<ul class="collapse list-unstyled" id="storemanagement">
-                    		<li><a href="inWarehouseVO"><i class="fa fa-toggle-off"></i>其他入库</a></li>
-                    		<li><a href="outWareBillVO"><i class="fa fa-toggle-off"></i>其他出库</a></li>
-                    		<li class="active"><a href="allocateBillVO"><i class="fa fa-toggle-off"></i>调拨出库</a></li>
-                    		<li><a href="assembleBillVO"><i class="fa fa-toggle-off"></i>组装单</a></li>
-                    		<li><a href="disAssembleBillVO"><i class="fa fa-toggle-off"></i>拆卸单</a></li>
-                    	</ul>
-                    </li>
+					  <li><a href="#storemanagement" aria-expanded="false" data-toggle="collapse" id="warehousemanagement">
+						  <i class="fa fa-plus-square"></i>仓库管理</a>
+						  <ul class="collapse list-unstyled" id="storemanagement">
+							  <li><a href="inWarehouseVO"><i class="fa fa-toggle-off"></i>其他入库</a></li>
+							  <li><a href="outWareBillVO"><i class="fa fa-toggle-off"></i>其他出库</a></li>
+							  <li class="active"><a href="allocateBillVO"><i class="fa fa-toggle-off"></i>调拨出库</a></li>
+							  <li><a href="assembleBillVO"><i class="fa fa-toggle-off"></i>组装单</a></li>
+							  <li><a href="disAssembleBillVO"><i class="fa fa-toggle-off"></i>拆卸单</a></li>
+						  </ul>
+					  </li>
                     <!--<li><a href="index.html"> <i class="icon-home"></i>Home </a></li>
                     <li><a href="tables.html"> <i class="icon-grid"></i>Tables </a></li>
                     <li class="active"><a href="charts.html"> <i class="fa fa-bar-chart"></i>Charts </a></li>
@@ -179,7 +180,7 @@
                       		调拨出库列表</strong>
                     </div>
                     <div class="card-body">
-                    	<form class="form-horizontal">
+                    	<form class="form-horizontal" method="post" action="/allocateByCond">
                       <table>
                       	<tr>
                       		<div class="form-group">
@@ -203,10 +204,11 @@
                       		</div>
                       		<div class="form-group">
                       			<td>
-                      			<a href="#">
-                      			<button class="btn btn-success" style="width: 122px;"><i class="fa fa-search"></i>
-                      				查询</button>
-                      			</a>
+
+                      			<button class="btn btn-success" style="width: 122px;" type="submit"><i class="fa fa-search"></i>
+                      				查询
+								</button>
+
                       		</td>
                       		</div>
                       		<div class="form-group">
@@ -241,7 +243,7 @@
                                     <a href="#" style="color: green;">
                                         <i class="fa fa-pencil-square-o" title="编辑"></i>
                                     </a>
-                                    <a href="#" style="color: red;">
+                                    <a href="#deleteModal" style="color: red;">
                                         <i class="fa fa-trash-o" title="删除"></i>
                                     </a>
                                 </td>
@@ -274,7 +276,28 @@
         </div>
       </div>
     </div>
-    
+	<#--删除数据模态框-->
+    <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-hidden="true" data-keyboard="true" data-backdrop="static">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="modal-title">
+                        <i class="fa fa-cog fa-spin fa-3x fa-fw" style="font-size: 23px;"></i>
+                        删除提示
+                    </span>
+                </div>
+                <div class="modal-body">
+                    请确认是否删除该信息
+                </div>
+                <#list queryStorageList as list>
+                <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" onclick="">确认</button>
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">取消</button>
+                </div>
+                </#list>
+            </div>
+        </div>
+    </div>
     			<!--模态框-->
           <div class="modal fade" id="insert" tabindex="-1" role="dialog" aria-hidden="false" aria-labelledby="mymodalriLabel" data-backdrop="static" data-keyboard="true">
 							<div class="modal-dialog modal-lg">
@@ -313,6 +336,7 @@
                       					<i class="fa fa-trash-o"></i>
                       					删除
                       				</button>
+
                       			</a>
                       			<a href="#">
                       				<button class="btn btn-success btn-sm" title="新增仓库">

@@ -120,7 +120,7 @@
                     <li><a href="#storemanagement" aria-expanded="false" data-toggle="collapse" id="warehousemanagement"> <i class="fa fa-plus-square"></i>仓库管理</a>
                     	<ul class="collapse list-unstyled" id="storemanagement">
                     		<li><a href="inWarehouseVO"><i class="fa fa-toggle-off"></i>其他入库</a></li>
-                    		<li class="active"><a href="outWareBillVO"><i class="fa fa-toggle-off"></i>其他出库</a></li>
+                    		<li class="active"><a href=""><i class="fa fa-toggle-off"></i>其他出库</a></li>
                     		<li><a href="allocateBillVO"><i class="fa fa-toggle-off"></i>调拨出库</a></li>
                     		<li><a href="assembleBillVO"><i class="fa fa-toggle-off"></i>组装单</a></li>
                     		<li><a href="disAssembleBillVO"><i class="fa fa-toggle-off"></i>拆卸单</a></li>
@@ -179,7 +179,7 @@
                       		其他出库列表</strong>
                     </div>
                     <div class="card-body">
-                    	<form class="form-horizontal">
+                    	<form class="form-horizontal" action="/outWareByCond" method="post">
                       <table>
                       	<tr>
                       		<div class="form-group">
@@ -203,10 +203,10 @@
                       		</div>
                       		<div class="form-group">
                       			<td>
-                      			<a href="#">
-                      			<button class="btn btn-success" style="width: 122px;"><i class="fa fa-search"></i>
+
+                      			<button class="btn btn-success" style="width: 122px;" type="submit"><i class="fa fa-search"></i>
                       				查询</button>
-                      			</a>
+
                       		</td>
                       		</div>
                       		<div class="form-group">

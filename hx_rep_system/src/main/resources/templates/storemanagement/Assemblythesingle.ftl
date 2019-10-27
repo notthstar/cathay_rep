@@ -179,7 +179,7 @@
                       		组装单列表</strong>
                     </div>
                     <div class="card-body">
-                    	<form class="form-horizontal">
+                    	<form class="form-horizontal" action="/assembleByCond" method="post">
                       <table>
                       	<tr>
                       		<div class="form-group">
