@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.t28.forest.user.dao.UserDao">
+
+    <!--用户查询结果映射Map-->
+    <resultMap id="selectMap" type="com.t28.forest.user.entity.UserDTO">
+        <result property="loginName" column="logiName"/>
+        <result property="tenantId" column="tenant_id"/>
+    </resultMap>
+
+    <!--查询用户信息根据条件-->
+    <select id="findUserByCondition" resultMap="selectMap" parameterType="com.t28.forest.user.entity.UserDTO">
+        SELECT * FROM jsh_user WHERE logiName=#{loginName} AND password=#{password} AND `status`=0;
+    </select>
+
+    <insert id="insertUser" parameterType="com.t28.forest.user.entity.UserDTO">
+        INSERT INTO jsh_user(username, loginame, `password`, `position`, department, email, phonenum, ismanager, isystem, `status`, description, remark, tenant_id)
+        VALUES (#{userName},#{loginName},#{password},#{position},#{department},#{email},#{phoneNum},#{isManager},#{isystem},#{status},#{description},#{remark},#{tenantId});
+    </insert>
+
+    <!--根据用户ID更新用户信息-->
+    <update id="updateUserById" parameterType="com.t28.forest.user.entity.UserDTO">
+        UPDATE jsh_user
+        <set>
+            <include refid="updateSql"/>
+        </set> WHERE id = #{id};
+    </update>
+
+    <!--更新SQL片段-->
+    <sql id="updateSql">
+        <if test="null != password">
+            `password` = #{password}
+        </if>
+    </sql>
+
+</mapper>

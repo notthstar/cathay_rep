@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<!-- namespace指用户自定义的命名空间 -->
+<mapper namespace="com.t28.forest.warehouse.dao.WarehouseDao">
+
+
+     <select id="selectAll" resultType="com.t28.forest.warehouse.entity.vo.WareBillVO">
+		select distinct dh.*,
+         s.supplier,concat(m.Name,' ',m.Model) as mate
+        from jsh_depothead dh,jsh_material m,jsh_supplier s,jsh_depotitem tm
+        where  dh.OrganId = s.id
+			and dh.id= tm.HeaderId
+			and tm.MaterialId = m.id
+            and dh.Type=#{type}
+            and dh.SubType=#{subType}
+            and ifnull(dh.delete_Flag,'0') !='1'
+            and ifnull(s.delete_Flag,'0') !='1'
+            and ifnull(m.delete_Flag,'0') !='1'
+            and ifnull(tm.delete_Flag,'0') !='1'
+     </select>
+    
+    <select id="selectByCond"  resultType="com.t28.forest.warehouse.entity.vo.WareBillVO">
+        select DISTINCT dh.*,
+        s.supplier,concat(m.Name,' ',m.Model) as mate
+        from jsh_depothead dh,jsh_material m,jsh_supplier s,jsh_depotitem tm
+        <where>
+			dh.id= tm.HeaderId
+            and dh.OrganId = s.id
+			and tm.MaterialId = m.id
+            and dh.Type=#{type}
+            and dh.SubType=#{subType}
+            and ifnull(dh.delete_Flag,'0') !='1'
+            and ifnull(s.delete_Flag,'0') !='1'
+            and ifnull(m.delete_Flag,'0') !='1'
+            and ifnull(tm.delete_Flag,'0') !='1'
+            <if test="number!=null">
+                and number like '%${number}%'
+            </if>
+            <if test="mate!=null">
+                and concat(m.Name,' ',m.Model) like '%${mate}%'
+            </if>
+            <if test="startTime!=null||endTime!=null">
+                    and opertime BETWEEN #{startTime} and #{endTime}
+            </if>
+        </where>
+    </select>
+    <resultMap id="idMap" type="com.t28.forest.warehouse.entity.vo.WareBillVO">
+         <collection property="dto"   ofType="com.t28.forest.shared.entity.DepoTheadDTO">
+             <result column="PayType" property="payType"></result>
+         </collection>
+    </resultMap>
+    <select id="selectById" resultMap="idMap">
+        select distinct dh.*,
+        s.supplier,concat(m.Name,' ',m.Model) as mate
+        from jsh_depothead dh,jsh_material m,jsh_supplier s,jsh_depotitem tm
+        where  dh.OrganId = s.id
+			and dh.id= tm.HeaderId
+			and tm.MaterialId = m.id
+            and dh.Type=#{type}
+            and dh.SubType=#{subType}
+            and ifnull(dh.delete_Flag,'0') !='1'
+            and ifnull(s.delete_Flag,'0') !='1'
+            and ifnull(m.delete_Flag,'0') !='1'
+            and ifnull(tm.delete_Flag,'0') !='1'
+        <if test="id!=null">
+            and id = #{id}
+        </if>
+    </select>
+    
+    <update id="deleteById" >
+         UPDATE jsh_depothead SET delete_Flag = 1 where id=#{id}
+    </update>
+
+    <select id="selectDept" resultType="com.t28.forest.shared.entity.DepotDTO">
+         SELECT id,name FROM jsh_depot  where tenant_id = 63
+    </select>
+
+    <select id="selectSupp" resultType="com.t28.forest.shared.entity.SupplierDTO">
+        select id,supplier from jsh_supplier where tenant_id = 63 and delete_flag !=1 and type = '供应商'
+    </select>
+
+    <insert id="addWare">
+        INSERT INTO jsh_depothead (type,SubType,Number,OrganId,TotalPrice,OperTime)
+        VALUES('入库','其它',#{number},#{supp},#{price},#{OperTime})
+    </insert>
+    <insert id="addWareInfo">
+        INSERT INTO jsh_depotitem (HeaderId,MaterialId,DepotId,AllPrice) VALUES(#{id},#{name},#{dept},#{price})
+    </insert>
+    <select id="selectId" resultType="java.lang.Integer">
+        select * from jsh_depothead where id = (select max(id) from jsh_depothead)
+    </select>
+    <select id="selectMate" resultType="com.t28.forest.warehouse.entity.vo.WareBillVO">
+        select distinct m.id,concat(m.Name,' ',m.Model) as mate
+        from jsh_depothead dh,jsh_material m,jsh_depotitem tm
+        where
+		dh.id= tm.HeaderId
+			and tm.MaterialId = m.id
+            and dh.Type='入库'
+            and dh.SubType='其它'
+    </select>
+</mapper>

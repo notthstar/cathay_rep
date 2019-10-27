@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- namespace指用户自定义的命名空间 -->
+<mapper namespace="com.t28.forest.retail.dao.QueryallvoDAO">
+    <!--首页显示数据-->
+    <select id="queryAll" resultType="com.t28.forest.retail.entity.Queryallvo">
+        SELECT
+        distinct
+        sl.supplier,
+        dh.Number,
+        mi.Name,
+        mi.Model,
+        dh.CreateTime,
+        dh.OperPersonName,
+        dh.TotalPrice,
+        di.AllPrice
+        FROM
+        jsh_depothead dh,
+        jsh_depotitem di,
+        jsh_material mi,
+        jsh_supplier sl
+        WHERE
+        dh.Id = di.tenant_id
+        AND
+        mi.tenant_id = sl.id;
+    </select>
+    <!--根据id删除数据-->
+    <!--<delete id="deleteById" parameterType="com.t28.forest.retail.entity.Queryallvo">-->
+        <!--delete-->
+    <!--</delete>-->
+</mapper>

@@ -1,0 +1,37 @@
+<span class="heading">Main</span>
+<ul class="list-unstyled">
+    <!--下拉列表1-->
+    <li><a href="#retailmanagement" aria-expanded="false" data-toggle="collapse"> <i class="fa fa-podcast"></i>零售管理 </a>
+        <ul class="collapse list-unstyled" id="retailmanagement">
+            <li><a href="retailmanagement/storage.html"><i class="fa fa-toggle-off"></i>零售出库</a></li>
+            <li><a href="retailmanagement/returned.html"><i class="fa fa-toggle-off"></i>零售退货</a></li>
+        </ul>
+    </li>
+    <!--下拉列表2-->
+    <li><a href="#purchasingmanagement" aria-expanded="false" data-toggle="collapse"> <i class="fa fa-bookmark-o"></i>采购管理</a>
+        <ul class="collapse list-unstyled" id="purchasingmanagement">
+            <li onclick="addActive(this)"><a href="/showDepothadInfo?current=1&pageSize=5"><i class="fa fa-toggle-off"></i>采购订单</a></li>
+            <li onclick="addActive(this)"><a href="/showpurchasesystem?current=1&pageSize=5"><i class="fa fa-toggle-off"></i>采购入库</a></li>
+            <li onclick="addActive(this)"><a href="/showpurchasereturn?current=1&pageSize=5"><i class="fa fa-toggle-off"></i>采购退货</a></li>
+        </ul>
+    </li>
+    <!--下拉列表3-->
+    <li><a href="#salesmanagement" aria-expanded="false" data-toggle="collapse" id="marketingmanagement"> <i class="fa fa-plus-square-o"></i>销售管理</a>
+        <ul class="collapse list-unstyled" id="salesmanagement">
+            <li onclick="addActive(this)"><a href="/showSales?current=1&pageSize=4"><i class="fa fa-toggle-off"></i>销售订单</a></li>
+            <li onclick="addActive(this)"><a href="/toPage?page=sales/Salesofoutbound"><i class="fa fa-toggle-off"></i>销售出库</a></li>
+            <li onclick="addActive(this)"><a href="/toPage?page=sales/Salesreturn"><i class="fa fa-toggle-off"></i>销售退货</a></li>
+        </ul>
+    </li>
+    <!--下拉列表4-->
+    <li><a href="#storemanagement" aria-expanded="false" data-toggle="collapse"> <i class="fa fa-plus-square-o"></i>仓库管理</a>
+        <ul class="collapse list-unstyled" id="storemanagement">
+            <li><a href="inWarehouseVO"><i class="fa fa-toggle-off"></i>其他入库</a></li>
+            <li><a href="outWareBillVO"><i class="fa fa-toggle-off"></i>其他出库</a></li>
+            <li><a href="allocateBillVO"><i class="fa fa-toggle-off"></i>调拨出库</a></li>
+            <li><a href="assembleBillVO"><i class="fa fa-toggle-off"></i>组装单</a></li>
+            <li><a href="disAssembleBillVO"><i class="fa fa-toggle-off"></i>拆卸单</a></li>
+        </ul>
+    </li>
+</ul>
+</nav>
